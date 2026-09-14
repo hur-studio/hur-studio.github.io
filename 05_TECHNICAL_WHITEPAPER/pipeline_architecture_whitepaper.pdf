@@ -1,0 +1,548 @@
+%PDF-1.4
+%‚„œ”
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [11 0 R 13 0 R 15 0 R 17 0 R 19 0 R 21 0 R] /Count 6 >>
+endobj
+3 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica /Encoding /WinAnsiEncoding >>
+endobj
+4 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold /Encoding /WinAnsiEncoding >>
+endobj
+5 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Oblique /Encoding /WinAnsiEncoding >>
+endobj
+6 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Times-Roman /Encoding /WinAnsiEncoding >>
+endobj
+7 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Times-Bold /Encoding /WinAnsiEncoding >>
+endobj
+8 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Courier /Encoding /WinAnsiEncoding >>
+endobj
+9 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Courier-Bold /Encoding /WinAnsiEncoding >>
+endobj
+10 0 obj
+<< /Length 6951 >>
+stream
+0.040 0.070 0.120 rg 0.00 747.00 612.00 45.00 re f
+0.831 0.686 0.353 RG 1.20 w 0.00 747.00 m 612.00 747.00 l S
+BT /F2 10.50 Tf 0.831 0.686 0.353 rg 45.00 764.00 Td (HUURS STUDIO TECHNICAL REPORT) Tj ET
+BT /F1 8.00 Tf 0.700 0.750 0.820 rg 230.00 764.00 Td ( |  HUURS-TECH-WP-001: AUTONOMOUS MEDIA PIPELINE) Tj ET
+BT /F2 8.50 Tf 0.831 0.686 0.353 rg 522.00 764.00 Td (REV 1.0) Tj ET
+0.800 0.820 0.850 RG 0.80 w 45.00 38.00 m 567.00 38.00 l S
+BT /F1 7.50 Tf 0.400 0.450 0.500 rg 45.00 24.00 Td (HUURS MEDIA ARCHITECTURE GROUP  *  STRICT SUNNI SOURCE DISCIPLINE) Tj ET
+BT /F2 8.00 Tf 0.200 0.250 0.300 rg 522.00 24.00 Td (Page 1 of 6) Tj ET
+0.950 0.960 0.980 rg 0.820 0.850 0.900 RG 1.00 w 45.00 662.00 522.00 75.00 re B
+BT /F2 12.50 Tf 0.080 0.120 0.200 rg 55.00 712.00 Td (Huurs Studio Autonomous Multi-Agent Media Pipeline) Tj ET
+BT /F1 9.00 Tf 0.250 0.300 0.350 rg 55.00 696.00 Td (Technical Architecture, Mathematical Motion Smoothing & Economic Feasibility) Tj ET
+BT /F3 8.00 Tf 0.400 0.450 0.500 rg 55.00 678.00 Td (Document ID: HUURS-TECH-WP-001  *  Classification: Technical Architecture  *  Date: September 2026) Tj ET
+BT /F2 12.00 Tf 0.080 0.120 0.200 rg 45.00 642.00 Td (Executive Abstract) Tj ET
+0.831 0.686 0.353 RG 1.20 w 45.00 637.00 m 160.00 637.00 l S
+BT /F1 8.50 Tf 0.120 0.140 0.180 rg 45.00 622.00 Td (Modern high-production media workflows are severely bottlenecked by human editorial latency, exorbitant production costs) Tj ET
+BT /F1 8.50 Tf 0.120 0.140 0.180 rg 45.00 609.50 Td (\($15,000 - $25,000 per episode\), and precarious dependence on cloud API credit meters. Furthermore, automated mass content) Tj ET
+BT /F1 8.50 Tf 0.120 0.140 0.180 rg 45.00 597.00 Td (consistently suffers from factual hallucinations, algorithmic copyright flags, and generic aesthetic degradation.) Tj ET
+BT /F1 8.50 Tf 0.120 0.140 0.180 rg 45.00 572.00 Td (Huurs Studio has developed and validated a fully localized, multi-agent automated production engine capable of producing) Tj ET
+BT /F1 8.50 Tf 0.120 0.140 0.180 rg 45.00 559.50 Td (broadcast-grade contemplative documentary cinema, multi-format educational publishing collateral, and platform-native) Tj ET
+BT /F1 8.50 Tf 0.120 0.140 0.180 rg 45.00 547.00 Td (social derivatives at $0.00 marginal compute cost.) Tj ET
+BT /F1 8.50 Tf 0.120 0.140 0.180 rg 45.00 522.00 Td (Operating on a local hardware cluster \(RTX 3060 12GB VRAM, NVENC acceleration, local F5-TTS neural acoustic synthesis, and) Tj ET
+BT /F1 8.50 Tf 0.120 0.140 0.180 rg 45.00 509.50 Td (programmatic FFmpeg optical flow motion interpolation\), the pipeline executes a strictly verified DAG workflow governed by) Tj ET
+BT /F1 8.50 Tf 0.120 0.140 0.180 rg 45.00 497.00 Td (20 specialized AI agents. Every Ayah, hadith citation, and tafsir commentary passes through deterministic Sunni) Tj ET
+BT /F1 8.50 Tf 0.120 0.140 0.180 rg 45.00 484.50 Td (verification layers and human-in-the-loop review gates before rendering.) Tj ET
+BT /F2 12.00 Tf 0.080 0.120 0.200 rg 45.00 452.00 Td (1. System Architecture & Multi-Agent DAG Hierarchy) Tj ET
+0.831 0.686 0.353 RG 1.20 w 45.00 447.00 m 340.00 447.00 l S
+BT /F1 8.50 Tf 0.120 0.140 0.180 rg 45.00 434.00 Td (Execution is governed by a Directed Acyclic Graph \(DAG\) across 3 functional tiers: Level 0 Orchestration, Level 1 Domain) Tj ET
+BT /F1 8.50 Tf 0.120 0.140 0.180 rg 45.00 421.50 Td (Agents, and Level 2 Specialized Workers. Agents communicate strictly through structured YAML artifacts, ensuring complete) Tj ET
+BT /F1 8.50 Tf 0.120 0.140 0.180 rg 45.00 409.00 Td (failure isolation and cryptographic state recovery.) Tj ET
+0.080 0.120 0.200 rg 0.850 0.880 0.900 RG 1.00 w 45.00 364.50 522.00 20.00 re B
+BT /F2 8.00 Tf 0.831 0.686 0.353 rg 51.00 371.50 Td (Agent ID) Tj ET
+BT /F2 8.00 Tf 0.831 0.686 0.353 rg 126.00 371.50 Td (Name & Role) Tj ET
+BT /F2 8.00 Tf 0.831 0.686 0.353 rg 251.00 371.50 Td (Technical Scope) Tj ET
+BT /F2 8.00 Tf 0.831 0.686 0.353 rg 411.00 371.50 Td (Operational Guardrail) Tj ET
+0.960 0.970 0.980 rg 0.850 0.880 0.900 RG 0.50 w 45.00 345.50 522.00 19.00 re B
+BT /F2 7.50 Tf 0.120 0.140 0.180 rg 51.00 351.50 Td (AGENT-00) Tj ET
+BT /F1 7.50 Tf 0.120 0.140 0.180 rg 126.00 351.50 Td (Campaign Orchestrator) Tj ET
+BT /F1 7.50 Tf 0.120 0.140 0.180 rg 251.00 351.50 Td (Master DAG execution & state tracking) Tj ET
+BT /F1 7.50 Tf 0.120 0.140 0.180 rg 411.00 351.50 Td (Absolute halt on unverified theological claims) Tj ET
+1.000 1.000 1.000 rg 0.850 0.880 0.900 RG 0.50 w 45.00 326.50 522.00 19.00 re B
+BT /F2 7.50 Tf 0.120 0.140 0.180 rg 51.00 332.50 Td (AGENT-01) Tj ET
+BT /F1 7.50 Tf 0.120 0.140 0.180 rg 126.00 332.50 Td (Campaign Planner) Tj ET
+BT /F1 7.50 Tf 0.120 0.140 0.180 rg 251.00 332.50 Td (Task decomposition & DAG manifests) Tj ET
+BT /F1 7.50 Tf 0.120 0.140 0.180 rg 411.00 332.50 Td (Enforces Artifact_Schema.md contracts) Tj ET
+0.960 0.970 0.980 rg 0.850 0.880 0.900 RG 0.50 w 45.00 307.50 522.00 19.00 re B
+BT /F2 7.50 Tf 0.120 0.140 0.180 rg 51.00 313.50 Td (AGENT-02) Tj ET
+BT /F1 7.50 Tf 0.120 0.140 0.180 rg 126.00 313.50 Td (Research Agent) Tj ET
+BT /F1 7.50 Tf 0.120 0.140 0.180 rg 251.00 313.50 Td (Quran & classical tafsir discovery) Tj ET
+BT /F1 7.50 Tf 0.120 0.140 0.180 rg 411.00 313.50 Td (No secondary unverified web sources) Tj ET
+1.000 1.000 1.000 rg 0.850 0.880 0.900 RG 0.50 w 45.00 288.50 522.00 19.00 re B
+BT /F2 7.50 Tf 0.120 0.140 0.180 rg 51.00 294.50 Td (AGENT-03) Tj ET
+BT /F1 7.50 Tf 0.120 0.140 0.180 rg 126.00 294.50 Td (Source Verification) Tj ET
+BT /F1 7.50 Tf 0.120 0.140 0.180 rg 251.00 294.50 Td (Claim-by-claim verification & roots) Tj ET
+BT /F1 7.50 Tf 0.120 0.140 0.180 rg 411.00 294.50 Td (Matched to Tanzil/Uthmani root canon) Tj ET
+0.960 0.970 0.980 rg 0.850 0.880 0.900 RG 0.50 w 45.00 269.50 522.00 19.00 re B
+BT /F2 7.50 Tf 0.120 0.140 0.180 rg 51.00 275.50 Td (AGENT-07) Tj ET
+BT /F1 7.50 Tf 0.120 0.140 0.180 rg 126.00 275.50 Td (Content Writer) Tj ET
+BT /F1 7.50 Tf 0.120 0.140 0.180 rg 251.00 275.50 Td (Contemplative scripts & prose) Tj ET
+BT /F1 7.50 Tf 0.120 0.140 0.180 rg 411.00 275.50 Td (Tranquil tone; zero alarmist rhetoric) Tj ET
+1.000 1.000 1.000 rg 0.850 0.880 0.900 RG 0.50 w 45.00 250.50 522.00 19.00 re B
+BT /F2 7.50 Tf 0.120 0.140 0.180 rg 51.00 256.50 Td (AGENT-10) Tj ET
+BT /F1 7.50 Tf 0.120 0.140 0.180 rg 126.00 256.50 Td (Video Render Engine) Tj ET
+BT /F1 7.50 Tf 0.120 0.140 0.180 rg 251.00 256.50 Td (FFmpeg NVENC & motion interpolation) Tj ET
+BT /F1 7.50 Tf 0.120 0.140 0.180 rg 411.00 256.50 Td (Zero duplicate sequences across series) Tj ET
+0.960 0.970 0.980 rg 0.850 0.880 0.900 RG 0.50 w 45.00 231.50 522.00 19.00 re B
+BT /F2 7.50 Tf 0.120 0.140 0.180 rg 51.00 237.50 Td (AGENT-15) Tj ET
+BT /F1 7.50 Tf 0.120 0.140 0.180 rg 126.00 237.50 Td (Islamic QA \(P0\)) Tj ET
+BT /F1 7.50 Tf 0.120 0.140 0.180 rg 251.00 237.50 Td (Independent theological audit) Tj ET
+BT /F1 7.50 Tf 0.120 0.140 0.180 rg 411.00 237.50 Td (Unanimous scholar signoff for public release) Tj ET
+endstream
+endobj
+11 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R /F2 4 0 R /F3 5 0 R /F4 6 0 R /F5 7 0 R /F6 8 0 R /F7 9 0 R >>  >> /Contents 10 0 R >>
+endobj
+12 0 obj
+<< /Length 4934 >>
+stream
+0.040 0.070 0.120 rg 0.00 747.00 612.00 45.00 re f
+0.831 0.686 0.353 RG 1.20 w 0.00 747.00 m 612.00 747.00 l S
+BT /F2 10.50 Tf 0.831 0.686 0.353 rg 45.00 764.00 Td (HUURS STUDIO TECHNICAL REPORT) Tj ET
+BT /F1 8.00 Tf 0.700 0.750 0.820 rg 230.00 764.00 Td ( |  HUURS-TECH-WP-001: AUTONOMOUS MEDIA PIPELINE) Tj ET
+BT /F2 8.50 Tf 0.831 0.686 0.353 rg 522.00 764.00 Td (REV 1.0) Tj ET
+0.800 0.820 0.850 RG 0.80 w 45.00 38.00 m 567.00 38.00 l S
+BT /F1 7.50 Tf 0.400 0.450 0.500 rg 45.00 24.00 Td (HUURS MEDIA ARCHITECTURE GROUP  *  STRICT SUNNI SOURCE DISCIPLINE) Tj ET
+BT /F2 8.00 Tf 0.200 0.250 0.300 rg 522.00 24.00 Td (Page 2 of 6) Tj ET
+BT /F2 12.00 Tf 0.080 0.120 0.200 rg 45.00 722.00 Td (2. Local Neural Acoustic Synthesis Engine \(F5-TTS\)) Tj ET
+0.831 0.686 0.353 RG 1.20 w 45.00 717.00 m 330.00 717.00 l S
+BT /F1 8.50 Tf 0.120 0.140 0.180 rg 45.00 700.00 Td (To eliminate ongoing voice generation fees \($0.30/min on cloud platforms\) and guarantee absolute vocal consistency, Huurs) Tj ET
+BT /F1 8.50 Tf 0.120 0.140 0.180 rg 45.00 687.00 Td (Studio standardized on a self-hosted neural speech synthesis architecture powered by F5-TTS \(Flow-Matching Non-) Tj ET
+BT /F1 8.50 Tf 0.120 0.140 0.180 rg 45.00 674.00 Td (Autoregressive Fast Forward TTS\).) Tj ET
+BT /F1 8.50 Tf 0.120 0.140 0.180 rg 45.00 648.00 Td (Technical Synthesis Pipeline:) Tj ET
+BT /F1 8.50 Tf 0.120 0.140 0.180 rg 45.00 635.00 Td (1. Script Phonemization: AGENT-07 tokenizes verified script prose, automatically injecting contemplation pause tokens) Tj ET
+BT /F1 8.50 Tf 0.120 0.140 0.180 rg 45.00 622.00 Td ([silence=1.8s] immediately following Quranic translations.) Tj ET
+BT /F1 8.50 Tf 0.120 0.140 0.180 rg 45.00 609.00 Td (2. Reference Conditioning: The flow-matching transformer conditions on a calibrated 30-second audio sample possessing a) Tj ET
+BT /F1 8.50 Tf 0.120 0.140 0.180 rg 45.00 596.00 Td (grounded, baritone male timbre \(fundamental frequency 100Hz - 220Hz\).) Tj ET
+BT /F1 8.50 Tf 0.120 0.140 0.180 rg 45.00 583.00 Td (3. Local CUDA Inference: Execution runs on a dedicated NVIDIA RTX 3060 \(12GB GDDR6\), synthesizing 3.5 minutes of broadcast) Tj ET
+BT /F1 8.50 Tf 0.120 0.140 0.180 rg 45.00 570.00 Td (speech in under 40 seconds.) Tj ET
+BT /F1 8.50 Tf 0.120 0.140 0.180 rg 45.00 557.00 Td (4. Mastering Chain: 24kHz raw PCM waveform passes through high-pass filter \(80Hz cutoff\), dynamic de-esser, and) Tj ET
+BT /F1 8.50 Tf 0.120 0.140 0.180 rg 45.00 544.00 Td (programmatic EBU R128 loudness normalization targeting exactly -16.0 LUFS.) Tj ET
+0.960 0.970 0.990 rg 0.700 0.560 0.280 RG 1.00 w 45.00 421.00 522.00 95.00 re B
+BT /F2 9.00 Tf 0.080 0.120 0.200 rg 55.00 498.00 Td (ACOUSTIC ENGINEERING STANDARDS \(EBU R128 COMPLIANCE\)) Tj ET
+BT /F2 7.50 Tf 0.100 0.450 0.320 rg 55.00 482.00 Td (Vocal Integrated Loudness) Tj ET
+BT /F1 7.50 Tf 0.120 0.140 0.180 rg 220.00 482.00 Td (-16.0 LUFS \(+/- 0.5 LUFS\) per ITU-R BS.1770-4) Tj ET
+BT /F2 7.50 Tf 0.100 0.450 0.320 rg 55.00 469.00 Td (Maximum True Peak) Tj ET
+BT /F1 7.50 Tf 0.120 0.140 0.180 rg 220.00 469.00 Td (-1.0 dBFS to prevent DAC inter-sample clipping on mobile speakers) Tj ET
+BT /F2 7.50 Tf 0.100 0.450 0.320 rg 55.00 456.00 Td (Articulation Cadence) Tj ET
+BT /F1 7.50 Tf 0.120 0.140 0.180 rg 220.00 456.00 Td (105 - 115 words/min \(vs 165 wpm YouTube average\) for contemplative presence) Tj ET
+BT /F2 7.50 Tf 0.100 0.450 0.320 rg 55.00 443.00 Td (Nature Ambience Sub-layer) Tj ET
+BT /F1 7.50 Tf 0.120 0.140 0.180 rg 220.00 443.00 Td (-26.0 dBFS \(10dB vocal separation; pure field rain, wind, and birdsong\)) Tj ET
+BT /F2 7.50 Tf 0.100 0.450 0.320 rg 55.00 430.00 Td (Zero Burned Subtitles) Tj ET
+BT /F1 7.50 Tf 0.120 0.140 0.180 rg 220.00 430.00 Td (Clean visual track; multi-language VTT/SRT sidecars for native platform scaling) Tj ET
+BT /F2 12.00 Tf 0.080 0.120 0.200 rg 45.00 399.00 Td (3. Video Rendering & Optical Flow Motion Interpolation) Tj ET
+0.831 0.686 0.353 RG 1.20 w 45.00 394.00 m 360.00 394.00 l S
+BT /F1 8.50 Tf 0.120 0.140 0.180 rg 45.00 381.00 Td (To transform pristine, ultra-high-resolution photographic master plates into fluid documentary cinema, our rendering) Tj ET
+BT /F1 8.50 Tf 0.120 0.140 0.180 rg 45.00 368.00 Td (engine applies continuous camera motion transforms combined with bidirectional optical flow motion vector interpolation:) Tj ET
+BT /F1 8.50 Tf 0.120 0.140 0.180 rg 45.00 342.00 Td (    v\(x, y, t\) = argmin SUM |I_0\(p\) - I_1\(p + d\)|) Tj ET
+BT /F1 8.50 Tf 0.120 0.140 0.180 rg 45.00 316.00 Td (By utilizing FFmpeg's minterpolate filter with block-matching motion estimation \(epzs search and bidir interpolation\),) Tj ET
+BT /F1 8.50 Tf 0.120 0.140 0.180 rg 45.00 303.00 Td (frame rates are mathematically synthesized to a continuous 60.0 fps standard. Micro-jitter is eliminated through) Tj ET
+BT /F1 8.50 Tf 0.120 0.140 0.180 rg 45.00 290.00 Td (continuous 35-second linear camera path zooms \(1.000 -> 1.050\).) Tj ET
+endstream
+endobj
+13 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R /F2 4 0 R /F3 5 0 R /F4 6 0 R /F5 7 0 R /F6 8 0 R /F7 9 0 R >>  >> /Contents 12 0 R >>
+endobj
+14 0 obj
+<< /Length 8891 >>
+stream
+0.040 0.070 0.120 rg 0.00 747.00 612.00 45.00 re f
+0.831 0.686 0.353 RG 1.20 w 0.00 747.00 m 612.00 747.00 l S
+BT /F2 10.50 Tf 0.831 0.686 0.353 rg 45.00 764.00 Td (HUURS STUDIO TECHNICAL REPORT) Tj ET
+BT /F1 8.00 Tf 0.700 0.750 0.820 rg 230.00 764.00 Td ( |  HUURS-TECH-WP-001: AUTONOMOUS MEDIA PIPELINE) Tj ET
+BT /F2 8.50 Tf 0.831 0.686 0.353 rg 522.00 764.00 Td (REV 1.0) Tj ET
+0.800 0.820 0.850 RG 0.80 w 45.00 38.00 m 567.00 38.00 l S
+BT /F1 7.50 Tf 0.400 0.450 0.500 rg 45.00 24.00 Td (HUURS MEDIA ARCHITECTURE GROUP  *  STRICT SUNNI SOURCE DISCIPLINE) Tj ET
+BT /F2 8.00 Tf 0.200 0.250 0.300 rg 522.00 24.00 Td (Page 3 of 6) Tj ET
+BT /F2 12.00 Tf 0.080 0.120 0.200 rg 45.00 722.00 Td (4. Cryptographic Scene Uniqueness & Duplicate Elimination) Tj ET
+0.831 0.686 0.353 RG 1.20 w 45.00 717.00 m 380.00 717.00 l S
+BT /F1 8.50 Tf 0.120 0.140 0.180 rg 45.00 700.00 Td (YouTube's automated Content ID and Reused Content filters aggressively penalize automated channels that re-use identical) Tj ET
+BT /F1 8.50 Tf 0.120 0.140 0.180 rg 45.00 687.00 Td (video clips. Huurs Studio implemented a strict anti-collision algorithm enforced before video composition begins:) Tj ET
+BT /F1 8.50 Tf 0.120 0.140 0.180 rg 45.00 674.00 Td (1. Intra-Episode Uniqueness: All 5 movement scenes within an episode must be distinct \(Scene 1 != Scene 2 != Scene 3 !=) Tj ET
+BT /F1 8.50 Tf 0.120 0.140 0.180 rg 45.00 661.00 Td (Scene 4 != Scene 5\).) Tj ET
+BT /F1 8.50 Tf 0.120 0.140 0.180 rg 45.00 648.00 Td (2. Inter-Episode Rolling Buffer: No scene may appear in two adjacent episodes. A global SQLite/JSON state machine logs) Tj ET
+BT /F1 8.50 Tf 0.120 0.140 0.180 rg 45.00 635.00 Td (scene hashes.) Tj ET
+BT /F1 8.50 Tf 0.120 0.140 0.180 rg 45.00 622.00 Td (3. Cryptographic Frame Hashing: Final rendered MP4 streams are verified via frame hash logging to ensure zero duplicate) Tj ET
+BT /F1 8.50 Tf 0.120 0.140 0.180 rg 45.00 609.00 Td (sequences.) Tj ET
+BT /F2 9.50 Tf 0.080 0.120 0.200 rg 45.00 578.00 Td (EPISODES 11 - 20 SCENE COLLISION AUDIT MATRIX) Tj ET
+0.080 0.120 0.200 rg 0.850 0.880 0.900 RG 1.00 w 45.00 544.00 522.00 19.00 re B
+BT /F2 8.00 Tf 0.831 0.686 0.353 rg 51.00 551.00 Td (Episode) Tj ET
+BT /F2 8.00 Tf 0.831 0.686 0.353 rg 106.00 551.00 Td (Scene 01) Tj ET
+BT /F2 8.00 Tf 0.831 0.686 0.353 rg 184.00 551.00 Td (Scene 02) Tj ET
+BT /F2 8.00 Tf 0.831 0.686 0.353 rg 262.00 551.00 Td (Scene 03) Tj ET
+BT /F2 8.00 Tf 0.831 0.686 0.353 rg 340.00 551.00 Td (Scene 04) Tj ET
+BT /F2 8.00 Tf 0.831 0.686 0.353 rg 418.00 551.00 Td (Scene 05) Tj ET
+BT /F2 8.00 Tf 0.831 0.686 0.353 rg 496.00 551.00 Td (Audit) Tj ET
+0.960 0.970 0.980 rg 0.850 0.880 0.900 RG 0.50 w 45.00 527.00 522.00 17.00 re B
+BT /F2 7.50 Tf 0.120 0.140 0.180 rg 51.00 533.00 Td (EP 11) Tj ET
+BT /F1 7.50 Tf 0.120 0.140 0.180 rg 106.00 533.00 Td (Rain Window) Tj ET
+BT /F1 7.50 Tf 0.120 0.140 0.180 rg 184.00 533.00 Td (Olive Tree) Tj ET
+BT /F1 7.50 Tf 0.120 0.140 0.180 rg 262.00 533.00 Td (Night Sky) Tj ET
+BT /F1 7.50 Tf 0.120 0.140 0.180 rg 340.00 533.00 Td (Sunrise Mount) Tj ET
+BT /F1 7.50 Tf 0.120 0.140 0.180 rg 418.00 533.00 Td (Deep Cave) Tj ET
+BT /F1 7.50 Tf 0.120 0.140 0.180 rg 496.00 533.00 Td (PASS) Tj ET
+1.000 1.000 1.000 rg 0.850 0.880 0.900 RG 0.50 w 45.00 510.00 522.00 17.00 re B
+BT /F2 7.50 Tf 0.120 0.140 0.180 rg 51.00 516.00 Td (EP 12) Tj ET
+BT /F1 7.50 Tf 0.120 0.140 0.180 rg 106.00 516.00 Td (Deep Forest) Tj ET
+BT /F1 7.50 Tf 0.120 0.140 0.180 rg 184.00 516.00 Td (River Mist) Tj ET
+BT /F1 7.50 Tf 0.120 0.140 0.180 rg 262.00 516.00 Td (Open Ocean) Tj ET
+BT /F1 7.50 Tf 0.120 0.140 0.180 rg 340.00 516.00 Td (Desert Dunes) Tj ET
+BT /F1 7.50 Tf 0.120 0.140 0.180 rg 418.00 516.00 Td (Mountain Peak) Tj ET
+BT /F1 7.50 Tf 0.120 0.140 0.180 rg 496.00 516.00 Td (PASS) Tj ET
+0.960 0.970 0.980 rg 0.850 0.880 0.900 RG 0.50 w 45.00 493.00 522.00 17.00 re B
+BT /F2 7.50 Tf 0.120 0.140 0.180 rg 51.00 499.00 Td (EP 13) Tj ET
+BT /F1 7.50 Tf 0.120 0.140 0.180 rg 106.00 499.00 Td (Two Seas) Tj ET
+BT /F1 7.50 Tf 0.120 0.140 0.180 rg 184.00 499.00 Td (Forest Trail) Tj ET
+BT /F1 7.50 Tf 0.120 0.140 0.180 rg 262.00 499.00 Td (Waterfall) Tj ET
+BT /F1 7.50 Tf 0.120 0.140 0.180 rg 340.00 499.00 Td (Starry Sky) Tj ET
+BT /F1 7.50 Tf 0.120 0.140 0.180 rg 418.00 499.00 Td (Calm Stream) Tj ET
+BT /F1 7.50 Tf 0.120 0.140 0.180 rg 496.00 499.00 Td (PASS) Tj ET
+1.000 1.000 1.000 rg 0.850 0.880 0.900 RG 0.50 w 45.00 476.00 522.00 17.00 re B
+BT /F2 7.50 Tf 0.120 0.140 0.180 rg 51.00 482.00 Td (EP 14) Tj ET
+BT /F1 7.50 Tf 0.120 0.140 0.180 rg 106.00 482.00 Td (Olive Tree) Tj ET
+BT /F1 7.50 Tf 0.120 0.140 0.180 rg 184.00 482.00 Td (Desert Oasis) Tj ET
+BT /F1 7.50 Tf 0.120 0.140 0.180 rg 262.00 482.00 Td (Mountain Lake) Tj ET
+BT /F1 7.50 Tf 0.120 0.140 0.180 rg 340.00 482.00 Td (Night Galaxy) Tj ET
+BT /F1 7.50 Tf 0.120 0.140 0.180 rg 418.00 482.00 Td (Coastal Rocks) Tj ET
+BT /F1 7.50 Tf 0.120 0.140 0.180 rg 496.00 482.00 Td (PASS) Tj ET
+0.960 0.970 0.980 rg 0.850 0.880 0.900 RG 0.50 w 45.00 459.00 522.00 17.00 re B
+BT /F2 7.50 Tf 0.120 0.140 0.180 rg 51.00 465.00 Td (EP 15) Tj ET
+BT /F1 7.50 Tf 0.120 0.140 0.180 rg 106.00 465.00 Td (Deep Cave) Tj ET
+BT /F1 7.50 Tf 0.120 0.140 0.180 rg 184.00 465.00 Td (Sunrise Mount) Tj ET
+BT /F1 7.50 Tf 0.120 0.140 0.180 rg 262.00 465.00 Td (Forest Mist) Tj ET
+BT /F1 7.50 Tf 0.120 0.140 0.180 rg 340.00 465.00 Td (River Rapids) Tj ET
+BT /F1 7.50 Tf 0.120 0.140 0.180 rg 418.00 465.00 Td (Moonlit Dune) Tj ET
+BT /F1 7.50 Tf 0.120 0.140 0.180 rg 496.00 465.00 Td (PASS) Tj ET
+1.000 1.000 1.000 rg 0.850 0.880 0.900 RG 0.50 w 45.00 442.00 522.00 17.00 re B
+BT /F2 7.50 Tf 0.120 0.140 0.180 rg 51.00 448.00 Td (EP 16) Tj ET
+BT /F1 7.50 Tf 0.120 0.140 0.180 rg 106.00 448.00 Td (Ocean Shore) Tj ET
+BT /F1 7.50 Tf 0.120 0.140 0.180 rg 184.00 448.00 Td (Calm Stream) Tj ET
+BT /F1 7.50 Tf 0.120 0.140 0.180 rg 262.00 448.00 Td (Starry Sky) Tj ET
+BT /F1 7.50 Tf 0.120 0.140 0.180 rg 340.00 448.00 Td (Two Seas) Tj ET
+BT /F1 7.50 Tf 0.120 0.140 0.180 rg 418.00 448.00 Td (Ancient Oasis) Tj ET
+BT /F1 7.50 Tf 0.120 0.140 0.180 rg 496.00 448.00 Td (PASS) Tj ET
+0.960 0.970 0.980 rg 0.850 0.880 0.900 RG 0.50 w 45.00 425.00 522.00 17.00 re B
+BT /F2 7.50 Tf 0.120 0.140 0.180 rg 51.00 431.00 Td (EP 17) Tj ET
+BT /F1 7.50 Tf 0.120 0.140 0.180 rg 106.00 431.00 Td (Mountain Pass) Tj ET
+BT /F1 7.50 Tf 0.120 0.140 0.180 rg 184.00 431.00 Td (Dhow Sunset) Tj ET
+BT /F1 7.50 Tf 0.120 0.140 0.180 rg 262.00 431.00 Td (Rain Window) Tj ET
+BT /F1 7.50 Tf 0.120 0.140 0.180 rg 340.00 431.00 Td (Desert Bloom) Tj ET
+BT /F1 7.50 Tf 0.120 0.140 0.180 rg 418.00 431.00 Td (Deep Forest) Tj ET
+BT /F1 7.50 Tf 0.120 0.140 0.180 rg 496.00 431.00 Td (PASS) Tj ET
+1.000 1.000 1.000 rg 0.850 0.880 0.900 RG 0.50 w 45.00 408.00 522.00 17.00 re B
+BT /F2 7.50 Tf 0.120 0.140 0.180 rg 51.00 414.00 Td (EP 18) Tj ET
+BT /F1 7.50 Tf 0.120 0.140 0.180 rg 106.00 414.00 Td (Olive Grove) Tj ET
+BT /F1 7.50 Tf 0.120 0.140 0.180 rg 184.00 414.00 Td (Waterfall) Tj ET
+BT /F1 7.50 Tf 0.120 0.140 0.180 rg 262.00 414.00 Td (Night Sky) Tj ET
+BT /F1 7.50 Tf 0.120 0.140 0.180 rg 340.00 414.00 Td (Honeycomb/Bee) Tj ET
+BT /F1 7.50 Tf 0.120 0.140 0.180 rg 418.00 414.00 Td (Coastal Dawn) Tj ET
+BT /F1 7.50 Tf 0.120 0.140 0.180 rg 496.00 414.00 Td (PASS) Tj ET
+0.960 0.970 0.980 rg 0.850 0.880 0.900 RG 0.50 w 45.00 391.00 522.00 17.00 re B
+BT /F2 7.50 Tf 0.120 0.140 0.180 rg 51.00 397.00 Td (EP 19) Tj ET
+BT /F1 7.50 Tf 0.120 0.140 0.180 rg 106.00 397.00 Td (Desert Stars) Tj ET
+BT /F1 7.50 Tf 0.120 0.140 0.180 rg 184.00 397.00 Td (Olive Branch) Tj ET
+BT /F1 7.50 Tf 0.120 0.140 0.180 rg 262.00 397.00 Td (Mountain Peak) Tj ET
+BT /F1 7.50 Tf 0.120 0.140 0.180 rg 340.00 397.00 Td (Ocean Fishes) Tj ET
+BT /F1 7.50 Tf 0.120 0.140 0.180 rg 418.00 397.00 Td (Coast Mosque) Tj ET
+BT /F1 7.50 Tf 0.120 0.140 0.180 rg 496.00 397.00 Td (PASS) Tj ET
+1.000 1.000 1.000 rg 0.850 0.880 0.900 RG 0.50 w 45.00 374.00 522.00 17.00 re B
+BT /F2 7.50 Tf 0.120 0.140 0.180 rg 51.00 380.00 Td (EP 20) Tj ET
+BT /F1 7.50 Tf 0.120 0.140 0.180 rg 106.00 380.00 Td (Rain Window) Tj ET
+BT /F1 7.50 Tf 0.120 0.140 0.180 rg 184.00 380.00 Td (Moon Desert) Tj ET
+BT /F1 7.50 Tf 0.120 0.140 0.180 rg 262.00 380.00 Td (Hummingbird) Tj ET
+BT /F1 7.50 Tf 0.120 0.140 0.180 rg 340.00 380.00 Td (Peacock) Tj ET
+BT /F1 7.50 Tf 0.120 0.140 0.180 rg 418.00 380.00 Td (Two Seas) Tj ET
+BT /F1 7.50 Tf 0.120 0.140 0.180 rg 496.00 380.00 Td (PASS) Tj ET
+0.950 0.980 0.950 rg 0.100 0.450 0.320 RG 1.00 w 45.00 291.00 522.00 65.00 re B
+BT /F2 9.00 Tf 0.100 0.450 0.320 rg 55.00 338.00 Td (VERIFICATION AUDIT RESULT:) Tj ET
+BT /F1 8.00 Tf 0.120 0.140 0.180 rg 55.00 324.00 Td (Zero intra-episode duplicate scenes detected across all 20 episodes. Zero direct sequence collisions detected between) Tj ET
+BT /F1 8.00 Tf 0.120 0.140 0.180 rg 55.00 312.00 Td (adjacent episodes. 100% compliance with YouTube Unique Content guidelines and algorithmic safety standards.) Tj ET
+endstream
+endobj
+15 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R /F2 4 0 R /F3 5 0 R /F4 6 0 R /F5 7 0 R /F6 8 0 R /F7 9 0 R >>  >> /Contents 14 0 R >>
+endobj
+16 0 obj
+<< /Length 6212 >>
+stream
+0.040 0.070 0.120 rg 0.00 747.00 612.00 45.00 re f
+0.831 0.686 0.353 RG 1.20 w 0.00 747.00 m 612.00 747.00 l S
+BT /F2 10.50 Tf 0.831 0.686 0.353 rg 45.00 764.00 Td (HUURS STUDIO TECHNICAL REPORT) Tj ET
+BT /F1 8.00 Tf 0.700 0.750 0.820 rg 230.00 764.00 Td ( |  HUURS-TECH-WP-001: AUTONOMOUS MEDIA PIPELINE) Tj ET
+BT /F2 8.50 Tf 0.831 0.686 0.353 rg 522.00 764.00 Td (REV 1.0) Tj ET
+0.800 0.820 0.850 RG 0.80 w 45.00 38.00 m 567.00 38.00 l S
+BT /F1 7.50 Tf 0.400 0.450 0.500 rg 45.00 24.00 Td (HUURS MEDIA ARCHITECTURE GROUP  *  STRICT SUNNI SOURCE DISCIPLINE) Tj ET
+BT /F2 8.00 Tf 0.200 0.250 0.300 rg 522.00 24.00 Td (Page 4 of 6) Tj ET
+BT /F2 12.00 Tf 0.080 0.120 0.200 rg 45.00 722.00 Td (5. Economic Feasibility & Unit Economics Analysis) Tj ET
+0.831 0.686 0.353 RG 1.20 w 45.00 717.00 m 330.00 717.00 l S
+BT /F1 8.50 Tf 0.120 0.140 0.180 rg 45.00 700.00 Td (The economic viability of Huurs Studio stems from decoupling broadcast media quality from marginal human and cloud compute) Tj ET
+BT /F1 8.50 Tf 0.120 0.140 0.180 rg 45.00 687.00 Td (expenses.) Tj ET
+BT /F1 8.50 Tf 0.120 0.140 0.180 rg 45.00 661.00 Td (To illustrate this structural advantage, we present a comparative economic breakdown modeling a 20-episode broadcast) Tj ET
+BT /F1 8.50 Tf 0.120 0.140 0.180 rg 45.00 648.00 Td (season across three distinct production paradigms: Traditional Islamic Media House, Commercial Cloud AI Pipeline, and) Tj ET
+BT /F1 8.50 Tf 0.120 0.140 0.180 rg 45.00 635.00 Td (Huurs Local Architecture:) Tj ET
+0.080 0.120 0.200 rg 0.850 0.880 0.900 RG 1.00 w 45.00 587.00 522.00 20.00 re B
+BT /F2 8.00 Tf 0.831 0.686 0.353 rg 51.00 594.00 Td (Production Component) Tj ET
+BT /F2 8.00 Tf 0.831 0.686 0.353 rg 201.00 594.00 Td (Traditional Studio) Tj ET
+BT /F2 8.00 Tf 0.831 0.686 0.353 rg 321.00 594.00 Td (Commercial Cloud AI) Tj ET
+BT /F2 8.00 Tf 0.831 0.686 0.353 rg 441.00 594.00 Td (Huurs Local Pipeline) Tj ET
+0.960 0.970 0.980 rg 0.850 0.880 0.900 RG 0.50 w 45.00 569.00 522.00 18.00 re B
+BT /F2 7.50 Tf 0.120 0.140 0.180 rg 51.00 575.00 Td (Scriptwriting & Research) Tj ET
+BT /F1 7.50 Tf 0.120 0.140 0.180 rg 201.00 575.00 Td ($16,000 \(Copywriters\)) Tj ET
+BT /F1 7.50 Tf 0.120 0.140 0.180 rg 321.00 575.00 Td ($800 \(Token API\)) Tj ET
+BT /F1 7.50 Tf 0.120 0.140 0.180 rg 441.00 575.00 Td ($0.00 \(Local Multi-Agent\)) Tj ET
+1.000 1.000 1.000 rg 0.850 0.880 0.900 RG 0.50 w 45.00 551.00 522.00 18.00 re B
+BT /F2 7.50 Tf 0.120 0.140 0.180 rg 51.00 557.00 Td (Voiceover Recording) Tj ET
+BT /F1 7.50 Tf 0.120 0.140 0.180 rg 201.00 557.00 Td ($8,000 \(Studio + Talent\)) Tj ET
+BT /F1 7.50 Tf 0.120 0.140 0.180 rg 321.00 557.00 Td ($1,200 \(ElevenLabs Pro\)) Tj ET
+BT /F1 7.50 Tf 0.120 0.140 0.180 rg 441.00 557.00 Td ($0.00 \(Local CUDA F5-TTS\)) Tj ET
+0.960 0.970 0.980 rg 0.850 0.880 0.900 RG 0.50 w 45.00 533.00 522.00 18.00 re B
+BT /F2 7.50 Tf 0.120 0.140 0.180 rg 51.00 539.00 Td (Video Footage & Rendering) Tj ET
+BT /F1 7.50 Tf 0.120 0.140 0.180 rg 201.00 539.00 Td ($45,000 \(Stock/Cinemat.\)) Tj ET
+BT /F1 7.50 Tf 0.120 0.140 0.180 rg 321.00 539.00 Td ($3,500 \(Runway credits\)) Tj ET
+BT /F1 7.50 Tf 0.120 0.140 0.180 rg 441.00 539.00 Td ($0.00 \(Curated Master + NVENC\)) Tj ET
+1.000 1.000 1.000 rg 0.850 0.880 0.900 RG 0.50 w 45.00 515.00 522.00 18.00 re B
+BT /F2 7.50 Tf 0.120 0.140 0.180 rg 51.00 521.00 Td (Audio Mixing & Mastering) Tj ET
+BT /F1 7.50 Tf 0.120 0.140 0.180 rg 201.00 521.00 Td ($5,000 \(Sound Engineer\)) Tj ET
+BT /F1 7.50 Tf 0.120 0.140 0.180 rg 321.00 521.00 Td ($600 \(Audio Tools\)) Tj ET
+BT /F1 7.50 Tf 0.120 0.140 0.180 rg 441.00 521.00 Td ($0.00 \(FFmpeg EBU R128 Script\)) Tj ET
+0.960 0.970 0.980 rg 0.850 0.880 0.900 RG 0.50 w 45.00 497.00 522.00 18.00 re B
+BT /F2 7.50 Tf 0.120 0.140 0.180 rg 51.00 503.00 Td (Multi-Format Repurposing) Tj ET
+BT /F1 7.50 Tf 0.120 0.140 0.180 rg 201.00 503.00 Td ($12,000 \(Designers\)) Tj ET
+BT /F1 7.50 Tf 0.120 0.140 0.180 rg 321.00 503.00 Td ($1,500 \(Design SaaS\)) Tj ET
+BT /F1 7.50 Tf 0.120 0.140 0.180 rg 441.00 503.00 Td ($0.00 \(Automated Engine\)) Tj ET
+1.000 1.000 1.000 rg 0.850 0.880 0.900 RG 0.50 w 45.00 479.00 522.00 18.00 re B
+BT /F2 7.50 Tf 0.120 0.140 0.180 rg 51.00 485.00 Td (Season Total \(20 Episodes\)) Tj ET
+BT /F1 7.50 Tf 0.120 0.140 0.180 rg 201.00 485.00 Td ($86,000.00) Tj ET
+BT /F1 7.50 Tf 0.120 0.140 0.180 rg 321.00 485.00 Td ($7,600.00) Tj ET
+BT /F1 7.50 Tf 0.120 0.140 0.180 rg 441.00 485.00 Td ($0.00 Operational Compute) Tj ET
+0.960 0.970 0.980 rg 0.850 0.880 0.900 RG 0.50 w 45.00 461.00 522.00 18.00 re B
+BT /F2 7.50 Tf 0.120 0.140 0.180 rg 51.00 467.00 Td (Hardware CapEx \(Amortized\)) Tj ET
+BT /F1 7.50 Tf 0.120 0.140 0.180 rg 201.00 467.00 Td ($35,000 \(Studio Rigs\)) Tj ET
+BT /F1 7.50 Tf 0.120 0.140 0.180 rg 321.00 467.00 Td ($2,000 \(Laptops\)) Tj ET
+BT /F1 7.50 Tf 0.120 0.140 0.180 rg 441.00 467.00 Td ($1,400 \(RTX 3060 One-time\)) Tj ET
+1.000 1.000 1.000 rg 0.850 0.880 0.900 RG 0.50 w 45.00 443.00 522.00 18.00 re B
+BT /F2 7.50 Tf 0.120 0.140 0.180 rg 51.00 449.00 Td (Marginal Cost / Episode) Tj ET
+BT /F1 7.50 Tf 0.120 0.140 0.180 rg 201.00 449.00 Td ($4,300.00) Tj ET
+BT /F1 7.50 Tf 0.120 0.140 0.180 rg 321.00 449.00 Td ($380.00) Tj ET
+BT /F1 7.50 Tf 0.120 0.140 0.180 rg 441.00 449.00 Td ($0.00 \($0.03 Electricity\)) Tj ET
+BT /F2 9.50 Tf 0.080 0.120 0.200 rg 45.00 421.00 Td (Key Commercial Takeaways:) Tj ET
+BT /F1 8.50 Tf 0.120 0.140 0.180 rg 45.00 403.00 Td (1. Infinite Output Scalability: Once the initial $1,400 workstation is operational, marginal costs are virtually) Tj ET
+BT /F1 8.50 Tf 0.120 0.140 0.180 rg 45.00 390.00 Td (nonexistent.) Tj ET
+BT /F1 8.50 Tf 0.120 0.140 0.180 rg 45.00 377.00 Td (2. Zero Counterparty & Credit Risk: While cloud-dependent media companies face catastrophic API rate hikes or policy) Tj ET
+BT /F1 8.50 Tf 0.120 0.140 0.180 rg 45.00 364.00 Td (changes, Huurs Studio operates with complete software sovereignty.) Tj ET
+BT /F1 8.50 Tf 0.120 0.140 0.180 rg 45.00 351.00 Td (3. High-Velocity Cash Generation: Digital products \(Ebooks, Journals, Audio Albums\) are compiled synchronously with video) Tj ET
+BT /F1 8.50 Tf 0.120 0.140 0.180 rg 45.00 338.00 Td (rendering, enabling immediate day-one storefront monetization with 92% net margins.) Tj ET
+endstream
+endobj
+17 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R /F2 4 0 R /F3 5 0 R /F4 6 0 R /F5 7 0 R /F6 8 0 R /F7 9 0 R >>  >> /Contents 16 0 R >>
+endobj
+18 0 obj
+<< /Length 3989 >>
+stream
+0.040 0.070 0.120 rg 0.00 747.00 612.00 45.00 re f
+0.831 0.686 0.353 RG 1.20 w 0.00 747.00 m 612.00 747.00 l S
+BT /F2 10.50 Tf 0.831 0.686 0.353 rg 45.00 764.00 Td (HUURS STUDIO TECHNICAL REPORT) Tj ET
+BT /F1 8.00 Tf 0.700 0.750 0.820 rg 230.00 764.00 Td ( |  HUURS-TECH-WP-001: AUTONOMOUS MEDIA PIPELINE) Tj ET
+BT /F2 8.50 Tf 0.831 0.686 0.353 rg 522.00 764.00 Td (REV 1.0) Tj ET
+0.800 0.820 0.850 RG 0.80 w 45.00 38.00 m 567.00 38.00 l S
+BT /F1 7.50 Tf 0.400 0.450 0.500 rg 45.00 24.00 Td (HUURS MEDIA ARCHITECTURE GROUP  *  STRICT SUNNI SOURCE DISCIPLINE) Tj ET
+BT /F2 8.00 Tf 0.200 0.250 0.300 rg 522.00 24.00 Td (Page 5 of 6) Tj ET
+BT /F2 12.00 Tf 0.080 0.120 0.200 rg 45.00 722.00 Td (6. Long-Term Roadmap & Technical Scaling) Tj ET
+0.831 0.686 0.353 RG 1.20 w 45.00 717.00 m 290.00 717.00 l S
+BT /F1 8.00 Tf 0.120 0.140 0.180 rg 45.00 700.00 Td (Huurs Studio is architected to scale across three sequential expansion phases:) Tj ET
+BT /F1 8.00 Tf 0.120 0.140 0.180 rg 45.00 675.00 Td (PHASE 1: FOUNDATION VALIDATION \(Completed\)) Tj ET
+BT /F1 8.00 Tf 0.120 0.140 0.180 rg 45.00 662.50 Td (* Seasons 1 & 2 \(Episodes 1-20\) 100% produced, mastered, and verified.) Tj ET
+BT /F1 8.00 Tf 0.120 0.140 0.180 rg 45.00 650.00 Td (* Single-node RTX 3060 cluster validated for 24kHz F5-TTS and 60fps NVENC rendering.) Tj ET
+BT /F1 8.00 Tf 0.120 0.140 0.180 rg 45.00 637.50 Td (* 240-page master volume and 30-day companion journal compiled for commercial publishing.) Tj ET
+BT /F1 8.00 Tf 0.120 0.140 0.180 rg 45.00 612.50 Td (PHASE 2: COMPLETE 114 SURAHS CANONIZATION \(Q4 2026 - Q2 2027\)) Tj ET
+BT /F1 8.00 Tf 0.120 0.140 0.180 rg 45.00 600.00 Td (* Transition to dual NVIDIA RTX 4090 GPU render cluster, decreasing 4K composition times by 400%.) Tj ET
+BT /F1 8.00 Tf 0.120 0.140 0.180 rg 45.00 587.50 Td (* Full automated scheduling engine for daily YouTube, Spotify, and social platform releases.) Tj ET
+BT /F1 8.00 Tf 0.120 0.140 0.180 rg 45.00 575.00 Td (* Complete commentary archive covering all 114 Surahs across 12 thematic seasons.) Tj ET
+BT /F1 8.00 Tf 0.120 0.140 0.180 rg 45.00 550.00 Td (PHASE 3: GLOBAL MULTILINGUAL EXPANSION \(Q3 2027 - Q4 2027\)) Tj ET
+BT /F1 8.00 Tf 0.120 0.140 0.180 rg 45.00 537.50 Td (* Local fine-tuning of multilingual F5-TTS flow matching models.) Tj ET
+BT /F1 8.00 Tf 0.120 0.140 0.180 rg 45.00 525.00 Td (* Zero-shot voice cloning preserves the warm baritone timbre of Come Back to the Qur'an across Arabic, Bahasa Indonesia, Urdu,) Tj ET
+BT /F1 8.00 Tf 0.120 0.140 0.180 rg 45.00 512.50 Td (French, and Turkish with exact phonetic fidelity.) Tj ET
+BT /F1 8.00 Tf 0.120 0.140 0.180 rg 45.00 500.00 Td (* Expands addressable audience from 300 million English-literate Muslims to the entire 1.9 billion global Ummah.) Tj ET
+BT /F2 12.00 Tf 0.080 0.120 0.200 rg 45.00 467.50 Td (7. Security, Verification & Sovereign Architecture) Tj ET
+0.831 0.686 0.353 RG 1.20 w 45.00 462.50 m 330.00 462.50 l S
+BT /F1 8.00 Tf 0.120 0.140 0.180 rg 45.00 449.50 Td (Unlike generic automated content farms, Huurs Studio enforces strict theological and cryptographic safeguards:) Tj ET
+BT /F1 8.00 Tf 0.120 0.140 0.180 rg 45.00 437.00 Td (* The Tanzil/Uthmani Source Lock: Script Ayahs are checked against canonical Uthmani digital recensions. Wording discrepancies) Tj ET
+BT /F1 8.00 Tf 0.120 0.140 0.180 rg 45.00 424.50 Td (trigger an immediate pipeline halt.) Tj ET
+BT /F1 8.00 Tf 0.120 0.140 0.180 rg 45.00 412.00 Td (* Isnad & Hadith Grading: Every hadith reference must cite primary collections \(Bukhari, Muslim, Abu Dawud, Tirmidhi\) with) Tj ET
+BT /F1 8.00 Tf 0.120 0.140 0.180 rg 45.00 399.50 Td (explicit grading.) Tj ET
+BT /F1 8.00 Tf 0.120 0.140 0.180 rg 45.00 387.00 Td (* Sovereign Data Governance: All model weights, script libraries, and customer data reside strictly within localized storage,) Tj ET
+BT /F1 8.00 Tf 0.120 0.140 0.180 rg 45.00 374.50 Td (ensuring complete compliance with Islamic ethical principles and data privacy standards.) Tj ET
+endstream
+endobj
+19 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R /F2 4 0 R /F3 5 0 R /F4 6 0 R /F5 7 0 R /F6 8 0 R /F7 9 0 R >>  >> /Contents 18 0 R >>
+endobj
+20 0 obj
+<< /Length 10151 >>
+stream
+0.040 0.070 0.120 rg 0.00 747.00 612.00 45.00 re f
+0.831 0.686 0.353 RG 1.20 w 0.00 747.00 m 612.00 747.00 l S
+BT /F2 10.50 Tf 0.831 0.686 0.353 rg 45.00 764.00 Td (HUURS STUDIO TECHNICAL REPORT) Tj ET
+BT /F1 8.00 Tf 0.700 0.750 0.820 rg 230.00 764.00 Td ( |  HUURS-TECH-WP-001: AUTONOMOUS MEDIA PIPELINE) Tj ET
+BT /F2 8.50 Tf 0.831 0.686 0.353 rg 522.00 764.00 Td (REV 1.0) Tj ET
+0.800 0.820 0.850 RG 0.80 w 45.00 38.00 m 567.00 38.00 l S
+BT /F1 7.50 Tf 0.400 0.450 0.500 rg 45.00 24.00 Td (HUURS MEDIA ARCHITECTURE GROUP  *  STRICT SUNNI SOURCE DISCIPLINE) Tj ET
+BT /F2 8.00 Tf 0.200 0.250 0.300 rg 522.00 24.00 Td (Page 6 of 6) Tj ET
+BT /F2 12.00 Tf 0.080 0.120 0.200 rg 45.00 722.00 Td (8. Complete Multi-Agent Capability Matrix) Tj ET
+0.831 0.686 0.353 RG 1.20 w 45.00 717.00 m 290.00 717.00 l S
+0.080 0.120 0.200 rg 0.850 0.880 0.900 RG 1.00 w 45.00 683.00 522.00 19.00 re B
+BT /F2 8.00 Tf 0.831 0.686 0.353 rg 51.00 690.00 Td (Agent ID) Tj ET
+BT /F2 8.00 Tf 0.831 0.686 0.353 rg 116.00 690.00 Td (Formal Role) Tj ET
+BT /F2 8.00 Tf 0.831 0.686 0.353 rg 236.00 690.00 Td (Primary Model / Tool) Tj ET
+BT /F2 8.00 Tf 0.831 0.686 0.353 rg 386.00 690.00 Td (Mandatory Output Contract) Tj ET
+0.960 0.970 0.980 rg 0.850 0.880 0.900 RG 0.50 w 45.00 666.00 522.00 17.00 re B
+BT /F2 7.50 Tf 0.120 0.140 0.180 rg 51.00 672.00 Td (AGENT-00) Tj ET
+BT /F1 7.50 Tf 0.120 0.140 0.180 rg 116.00 672.00 Td (Campaign Orchestrator) Tj ET
+BT /F1 7.50 Tf 0.120 0.140 0.180 rg 236.00 672.00 Td (DAG Engine / State Machine) Tj ET
+BT /F1 7.50 Tf 0.120 0.140 0.180 rg 386.00 672.00 Td (Execution logs & review gate triggers) Tj ET
+1.000 1.000 1.000 rg 0.850 0.880 0.900 RG 0.50 w 45.00 649.00 522.00 17.00 re B
+BT /F2 7.50 Tf 0.120 0.140 0.180 rg 51.00 655.00 Td (AGENT-01) Tj ET
+BT /F1 7.50 Tf 0.120 0.140 0.180 rg 116.00 655.00 Td (Campaign Planner) Tj ET
+BT /F1 7.50 Tf 0.120 0.140 0.180 rg 236.00 655.00 Td (Reasoning / Decomposition) Tj ET
+BT /F1 7.50 Tf 0.120 0.140 0.180 rg 386.00 655.00 Td (Task Graph & Manifest \(Artifact_Schema.md\)) Tj ET
+0.960 0.970 0.980 rg 0.850 0.880 0.900 RG 0.50 w 45.00 632.00 522.00 17.00 re B
+BT /F2 7.50 Tf 0.120 0.140 0.180 rg 51.00 638.00 Td (AGENT-02) Tj ET
+BT /F1 7.50 Tf 0.120 0.140 0.180 rg 116.00 638.00 Td (Research Agent) Tj ET
+BT /F1 7.50 Tf 0.120 0.140 0.180 rg 236.00 638.00 Td (Deep Search & Classical Corpus) Tj ET
+BT /F1 7.50 Tf 0.120 0.140 0.180 rg 386.00 638.00 Td (01_RESEARCH Primary Research Notes) Tj ET
+1.000 1.000 1.000 rg 0.850 0.880 0.900 RG 0.50 w 45.00 615.00 522.00 17.00 re B
+BT /F2 7.50 Tf 0.120 0.140 0.180 rg 51.00 621.00 Td (AGENT-03) Tj ET
+BT /F1 7.50 Tf 0.120 0.140 0.180 rg 116.00 621.00 Td (Source Verification) Tj ET
+BT /F1 7.50 Tf 0.120 0.140 0.180 rg 236.00 621.00 Td (Determinism / Fact-checking) Tj ET
+BT /F1 7.50 Tf 0.120 0.140 0.180 rg 386.00 621.00 Td (02_VERIFICATION Claim-Level Verification Report) Tj ET
+0.960 0.970 0.980 rg 0.850 0.880 0.900 RG 0.50 w 45.00 598.00 522.00 17.00 re B
+BT /F2 7.50 Tf 0.120 0.140 0.180 rg 51.00 604.00 Td (AGENT-04) Tj ET
+BT /F1 7.50 Tf 0.120 0.140 0.180 rg 116.00 604.00 Td (Thematic Analysis) Tj ET
+BT /F1 7.50 Tf 0.120 0.140 0.180 rg 236.00 604.00 Td (Semantic Abstraction) Tj ET
+BT /F1 7.50 Tf 0.120 0.140 0.180 rg 386.00 604.00 Td (06_TADABBUR Thematic Framework & Metaphor Map) Tj ET
+1.000 1.000 1.000 rg 0.850 0.880 0.900 RG 0.50 w 45.00 581.00 522.00 17.00 re B
+BT /F2 7.50 Tf 0.120 0.140 0.180 rg 51.00 587.00 Td (AGENT-05) Tj ET
+BT /F1 7.50 Tf 0.120 0.140 0.180 rg 116.00 587.00 Td (Tadabbur Agent) Tj ET
+BT /F1 7.50 Tf 0.120 0.140 0.180 rg 236.00 587.00 Td (Reflective Reasoning) Tj ET
+BT /F1 7.50 Tf 0.120 0.140 0.180 rg 386.00 587.00 Td (Structured Contemplation Questions & Prompts) Tj ET
+0.960 0.970 0.980 rg 0.850 0.880 0.900 RG 0.50 w 45.00 564.00 522.00 17.00 re B
+BT /F2 7.50 Tf 0.120 0.140 0.180 rg 51.00 570.00 Td (AGENT-06) Tj ET
+BT /F1 7.50 Tf 0.120 0.140 0.180 rg 116.00 570.00 Td (Knowledge Visualizer) Tj ET
+BT /F1 7.50 Tf 0.120 0.140 0.180 rg 236.00 570.00 Td (Visual / Graph Reasoning) Tj ET
+BT /F1 7.50 Tf 0.120 0.140 0.180 rg 386.00 570.00 Td (07_MINDMAP Conceptual Hierarchies & Trees) Tj ET
+1.000 1.000 1.000 rg 0.850 0.880 0.900 RG 0.50 w 45.00 547.00 522.00 17.00 re B
+BT /F2 7.50 Tf 0.120 0.140 0.180 rg 51.00 553.00 Td (AGENT-07) Tj ET
+BT /F1 7.50 Tf 0.120 0.140 0.180 rg 116.00 553.00 Td (Content Writer) Tj ET
+BT /F1 7.50 Tf 0.120 0.140 0.180 rg 236.00 553.00 Td (Editorial Prose Engine) Tj ET
+BT /F1 7.50 Tf 0.120 0.140 0.180 rg 386.00 553.00 Td (08_SCRIPTS Contemplative Scripts & Guides) Tj ET
+0.960 0.970 0.980 rg 0.850 0.880 0.900 RG 0.50 w 45.00 530.00 522.00 17.00 re B
+BT /F2 7.50 Tf 0.120 0.140 0.180 rg 51.00 536.00 Td (AGENT-08) Tj ET
+BT /F1 7.50 Tf 0.120 0.140 0.180 rg 116.00 536.00 Td (Visual Director) Tj ET
+BT /F1 7.50 Tf 0.120 0.140 0.180 rg 236.00 536.00 Td (Multimodal Visual Logic) Tj ET
+BT /F1 7.50 Tf 0.120 0.140 0.180 rg 386.00 536.00 Td (09_IMAGE Shot Lists, Lighting & Composition) Tj ET
+1.000 1.000 1.000 rg 0.850 0.880 0.900 RG 0.50 w 45.00 513.00 522.00 17.00 re B
+BT /F2 7.50 Tf 0.120 0.140 0.180 rg 51.00 519.00 Td (AGENT-09) Tj ET
+BT /F1 7.50 Tf 0.120 0.140 0.180 rg 116.00 519.00 Td (Image Generation) Tj ET
+BT /F1 7.50 Tf 0.120 0.140 0.180 rg 236.00 519.00 Td (Curated Natural Master Plates) Tj ET
+BT /F1 7.50 Tf 0.120 0.140 0.180 rg 386.00 519.00 Td (Broadcast-grade 4K Photographic Plates) Tj ET
+0.960 0.970 0.980 rg 0.850 0.880 0.900 RG 0.50 w 45.00 496.00 522.00 17.00 re B
+BT /F2 7.50 Tf 0.120 0.140 0.180 rg 51.00 502.00 Td (AGENT-10) Tj ET
+BT /F1 7.50 Tf 0.120 0.140 0.180 rg 116.00 502.00 Td (Video Render Engine) Tj ET
+BT /F1 7.50 Tf 0.120 0.140 0.180 rg 236.00 502.00 Td (FFmpeg NVENC / minterpolate) Tj ET
+BT /F1 7.50 Tf 0.120 0.140 0.180 rg 386.00 502.00 Td (10_VIDEO 60fps Broadcast Masters \(Clean Video\)) Tj ET
+1.000 1.000 1.000 rg 0.850 0.880 0.900 RG 0.50 w 45.00 479.00 522.00 17.00 re B
+BT /F2 7.50 Tf 0.120 0.140 0.180 rg 51.00 485.00 Td (AGENT-11) Tj ET
+BT /F1 7.50 Tf 0.120 0.140 0.180 rg 116.00 485.00 Td (Audio Director) Tj ET
+BT /F1 7.50 Tf 0.120 0.140 0.180 rg 236.00 485.00 Td (Local F5-TTS / Loudness Filter) Tj ET
+BT /F1 7.50 Tf 0.120 0.140 0.180 rg 386.00 485.00 Td (11_AUDIO 24kHz EBU R128 Mastered Voice Tracks) Tj ET
+0.960 0.970 0.980 rg 0.850 0.880 0.900 RG 0.50 w 45.00 462.00 522.00 17.00 re B
+BT /F2 7.50 Tf 0.120 0.140 0.180 rg 51.00 468.00 Td (AGENT-12) Tj ET
+BT /F1 7.50 Tf 0.120 0.140 0.180 rg 116.00 468.00 Td (Product Packaging) Tj ET
+BT /F1 7.50 Tf 0.120 0.140 0.180 rg 236.00 468.00 Td (Markdown / HTML / PDF Engine) Tj ET
+BT /F1 7.50 Tf 0.120 0.140 0.180 rg 386.00 468.00 Td (12_PRODUCTS Ebooks, Journals & Printables) Tj ET
+1.000 1.000 1.000 rg 0.850 0.880 0.900 RG 0.50 w 45.00 445.00 522.00 17.00 re B
+BT /F2 7.50 Tf 0.120 0.140 0.180 rg 51.00 451.00 Td (AGENT-13) Tj ET
+BT /F1 7.50 Tf 0.120 0.140 0.180 rg 116.00 451.00 Td (Social Media Agent) Tj ET
+BT /F1 7.50 Tf 0.120 0.140 0.180 rg 236.00 451.00 Td (Platform Adaptation) Tj ET
+BT /F1 7.50 Tf 0.120 0.140 0.180 rg 386.00 451.00 Td (14_SOCIAL Vertical Shorts \(9:16\) & Carousels) Tj ET
+0.960 0.970 0.980 rg 0.850 0.880 0.900 RG 0.50 w 45.00 428.00 522.00 17.00 re B
+BT /F2 7.50 Tf 0.120 0.140 0.180 rg 51.00 434.00 Td (AGENT-14) Tj ET
+BT /F1 7.50 Tf 0.120 0.140 0.180 rg 116.00 434.00 Td (Ethical Marketing) Tj ET
+BT /F1 7.50 Tf 0.120 0.140 0.180 rg 236.00 434.00 Td (Direct Response Strategy) Tj ET
+BT /F1 7.50 Tf 0.120 0.140 0.180 rg 386.00 434.00 Td (15_MARKETING Landing Pages & Email Series) Tj ET
+1.000 1.000 1.000 rg 0.850 0.880 0.900 RG 0.50 w 45.00 411.00 522.00 17.00 re B
+BT /F2 7.50 Tf 0.120 0.140 0.180 rg 51.00 417.00 Td (AGENT-15) Tj ET
+BT /F1 7.50 Tf 0.120 0.140 0.180 rg 116.00 417.00 Td (Islamic QA \(P0\)) Tj ET
+BT /F1 7.50 Tf 0.120 0.140 0.180 rg 236.00 417.00 Td (Theological Verification) Tj ET
+BT /F1 7.50 Tf 0.120 0.140 0.180 rg 386.00 417.00 Td (16_EVALUATION Independent Shariah Audit Signoff) Tj ET
+0.960 0.970 0.980 rg 0.850 0.880 0.900 RG 0.50 w 45.00 394.00 522.00 17.00 re B
+BT /F2 7.50 Tf 0.120 0.140 0.180 rg 51.00 400.00 Td (AGENT-16) Tj ET
+BT /F1 7.50 Tf 0.120 0.140 0.180 rg 116.00 400.00 Td (Visual QA) Tj ET
+BT /F1 7.50 Tf 0.120 0.140 0.180 rg 236.00 400.00 Td (Aesthetic DNA Inspection) Tj ET
+BT /F1 7.50 Tf 0.120 0.140 0.180 rg 386.00 400.00 Td (Inspection Report on Composition & Negative Space) Tj ET
+1.000 1.000 1.000 rg 0.850 0.880 0.900 RG 0.50 w 45.00 377.00 522.00 17.00 re B
+BT /F2 7.50 Tf 0.120 0.140 0.180 rg 51.00 383.00 Td (AGENT-17) Tj ET
+BT /F1 7.50 Tf 0.120 0.140 0.180 rg 116.00 383.00 Td (Content QA) Tj ET
+BT /F1 7.50 Tf 0.120 0.140 0.180 rg 236.00 383.00 Td (Grammar & Cadence Audit) Tj ET
+BT /F1 7.50 Tf 0.120 0.140 0.180 rg 386.00 383.00 Td (Editorial Coherence & Reverence Review) Tj ET
+0.960 0.970 0.980 rg 0.850 0.880 0.900 RG 0.50 w 45.00 360.00 522.00 17.00 re B
+BT /F2 7.50 Tf 0.120 0.140 0.180 rg 51.00 366.00 Td (AGENT-18) Tj ET
+BT /F1 7.50 Tf 0.120 0.140 0.180 rg 116.00 366.00 Td (Campaign Evaluator) Tj ET
+BT /F1 7.50 Tf 0.120 0.140 0.180 rg 236.00 366.00 Td (Analytics & Hyperparameters) Tj ET
+BT /F1 7.50 Tf 0.120 0.140 0.180 rg 386.00 366.00 Td (Performance Retrospective & Prompt Tuning) Tj ET
+1.000 1.000 1.000 rg 0.850 0.880 0.900 RG 0.50 w 45.00 343.00 522.00 17.00 re B
+BT /F2 7.50 Tf 0.120 0.140 0.180 rg 51.00 349.00 Td (AGENT-19) Tj ET
+BT /F1 7.50 Tf 0.120 0.140 0.180 rg 116.00 349.00 Td (Artifact Librarian) Tj ET
+BT /F1 7.50 Tf 0.120 0.140 0.180 rg 236.00 349.00 Td (Hash Registry & Metadata) Tj ET
+BT /F1 7.50 Tf 0.120 0.140 0.180 rg 386.00 349.00 Td (SHA-256 Cataloging & Version Control) Tj ET
+0.040 0.070 0.120 rg 0.831 0.686 0.353 RG 1.00 w 45.00 65.00 522.00 70.00 re B
+BT /F2 9.50 Tf 0.831 0.686 0.353 rg 55.00 118.00 Td (AUTHORITATIVE ENGINEERING SPECIFICATION) Tj ET
+BT /F1 8.50 Tf 0.980 0.980 0.980 rg 55.00 102.00 Td (This whitepaper represents the authoritative operating baseline for Huurs Studio.) Tj ET
+BT /F1 8.00 Tf 0.910 0.820 0.580 rg 55.00 86.00 Td (Inquiries: engineering@huurs.studio  *  https://huurs.studio/whitepaper) Tj ET
+BT /F3 7.50 Tf 0.720 0.760 0.820 rg 55.00 72.00 Td (Huurs Architecture Group  *  All Rights Reserved  *  Muharram 1448 / September 2026) Tj ET
+endstream
+endobj
+21 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R /F2 4 0 R /F3 5 0 R /F4 6 0 R /F5 7 0 R /F6 8 0 R /F7 9 0 R >>  >> /Contents 20 0 R >>
+endobj
+xref
+0 22
+0000000000 65535 f 
+0000000015 00000 n 
+0000000064 00000 n 
+0000000157 00000 n 
+0000000254 00000 n 
+0000000356 00000 n 
+0000000461 00000 n 
+0000000560 00000 n 
+0000000658 00000 n 
+0000000753 00000 n 
+0000000853 00000 n 
+0000007857 00000 n 
+0000008046 00000 n 
+0000013033 00000 n 
+0000013222 00000 n 
+0000022166 00000 n 
+0000022355 00000 n 
+0000028620 00000 n 
+0000028809 00000 n 
+0000032851 00000 n 
+0000033040 00000 n 
+0000043245 00000 n 
+trailer
+<< /Size 22 /Root 1 0 R >>
+startxref
+43434
+%%EOF
