@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Free 11-Surah Taster Sanctuary | Huurs Studio</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cinzel:wght@500;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --bg-deep: #05080f;
+      --bg-surface: #0b1220;
+      --bg-card: #0f192d;
+      --bg-card-hover: #15223d;
+      
+      --gold: #d4af59;
+      --gold-light: #f7e7b4;
+      --gold-glow: rgba(212, 175, 89, 0.22);
+      --gold-border: rgba(212, 175, 89, 0.35);
+      
+      --emerald: #10b981;
+      --emerald-bg: rgba(16, 185, 129, 0.12);
+      
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
+      --text-dim: #64748b;
+      
+      --font-body: 'Plus Jakarta Sans', -apple-system, sans-serif;
+      --font-title: 'Cinzel', Georgia, serif;
+      --font-arabic: 'Amiri', serif;
+    }
+    
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    
+    body {
+      background-color: var(--bg-deep);
+      color: var(--text-main);
+      font-family: var(--font-body);
+      line-height: 1.6;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    /* Top Banner */
+    .top-strip {
+      background: linear-gradient(90deg, #0b1220, #14223d, #0b1220);
+      border-bottom: 1px solid var(--gold-border);
+      padding: 10px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.85rem;
+    }
+    .brand-tag {
+      color: var(--gold-light);
+      font-family: var(--font-title);
+      font-weight: 700;
+      letter-spacing: 2px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .creed {
+      color: var(--gold);
+      font-weight: 600;
+      letter-spacing: 1.5px;
+    }
+    .free-pill {
+      background: var(--emerald-bg);
+      color: var(--emerald);
+      border: 1px solid rgba(16, 185, 129, 0.4);
+      padding: 3px 10px;
+      border-radius: 20px;
+      font-weight: 600;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    
+    /* Hero Header */
+    .hero {
+      padding: 60px 24px 40px;
+      text-align: center;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .hero h1 {
+      font-family: var(--font-title);
+      font-size: 2.8rem;
+      color: #fff;
+      font-weight: 700;
+      letter-spacing: 1px;
+      margin-bottom: 16px;
+      background: linear-gradient(135deg, #ffffff 40%, var(--gold-light) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .hero p {
+      color: var(--text-muted);
+      font-size: 1.15rem;
+      line-height: 1.7;
+      margin-bottom: 24px;
+    }
+    .hero-stats {
+      display: flex;
+      justify-content: center;
+      gap: 32px;
+      margin-top: 24px;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .stat-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .stat-val {
+      font-family: var(--font-title);
+      font-size: 1.8rem;
+      color: var(--gold);
+      font-weight: 700;
+    }
+    .stat-lbl {
+      color: var(--text-dim);
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    
+    /* Grid Container */
+    .container {
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 20px 24px 80px;
+      width: 100%;
+    }
+    
+    .section-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 24px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .section-title {
+      font-family: var(--font-title);
+      font-size: 1.4rem;
+      color: var(--gold-light);
+    }
+    .search-box input {
+      background: #090e1a;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 8px;
+      padding: 8px 16px;
+      color: #fff;
+      font-size: 0.9rem;
+      width: 260px;
+      outline: none;
+      transition: border 0.3s;
+    }
+    .search-box input:focus {
+      border-color: var(--gold);
+    }
+    
+    /* Surah Cards Grid */
+    .surahs-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+      gap: 24px;
+    }
+    
+    .surah-card {
+      background: var(--bg-card);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 14px;
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    .surah-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--gold-border);
+      background: var(--bg-card-hover);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5), 0 0 20px var(--gold-glow);
+    }
+    .card-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 12px;
+    }
+    .surah-num-badge {
+      width: 38px;
+      height: 38px;
+      border-radius: 10px;
+      background: rgba(212, 175, 89, 0.12);
+      border: 1px solid var(--gold-border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-title);
+      font-weight: 700;
+      color: var(--gold);
+      font-size: 1.1rem;
+    }
+    .arabic-name {
+      font-family: var(--font-arabic);
+      font-size: 2rem;
+      color: var(--gold-light);
+      line-height: 1;
+    }
+    .card-title {
+      font-family: var(--font-title);
+      font-size: 1.25rem;
+      color: #fff;
+      margin-bottom: 4px;
+    }
+    .card-subtitle {
+      color: var(--gold);
+      font-size: 0.85rem;
+      font-weight: 500;
+      margin-bottom: 12px;
+    }
+    .card-meta {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 14px;
+      font-size: 0.78rem;
+      color: var(--text-dim);
+    }
+    .card-theme {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      line-height: 1.6;
+      margin-bottom: 20px;
+      flex-grow: 1;
+    }
+    .card-actions {
+      display: flex;
+      gap: 12px;
+      padding-top: 16px;
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
+    }
+    .btn {
+      padding: 8px 16px;
+      border-radius: 8px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .btn-primary {
+      background: var(--gold);
+      color: #05080f;
+      flex: 1;
+    }
+    .btn-primary:hover {
+      background: var(--gold-light);
+      transform: scale(1.02);
+    }
+    .btn-outline {
+      background: rgba(255, 255, 255, 0.05);
+      color: var(--text-secondary);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+    }
+    .btn-outline:hover {
+      background: rgba(255, 255, 255, 0.1);
+      color: #fff;
+    }
+    
+    /* Upgrade Pitch Banner */
+    .upgrade-banner {
+      background: linear-gradient(135deg, #0e192f 0%, #162648 50%, #0d1629 100%);
+      border: 1px solid var(--gold-border);
+      border-radius: 18px;
+      padding: 40px;
+      margin-top: 50px;
+      text-align: center;
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.6);
+    }
+    .upgrade-banner h2 {
+      font-family: var(--font-title);
+      font-size: 2rem;
+      color: #fff;
+      margin-bottom: 12px;
+    }
+    .upgrade-banner p {
+      color: var(--text-muted);
+      max-width: 720px;
+      margin: 0 auto 24px;
+      font-size: 1.05rem;
+    }
+    .upgrade-btn {
+      background: linear-gradient(135deg, var(--gold) 0%, #e6ca85 100%);
+      color: #05080f;
+      font-family: var(--font-title);
+      font-weight: 700;
+      font-size: 1rem;
+      padding: 14px 32px;
+      border-radius: 30px;
+      border: none;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      box-shadow: 0 4px 20px rgba(212, 175, 89, 0.35);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .upgrade-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px rgba(212, 175, 89, 0.5);
+    }
+    
+    footer {
+      margin-top: auto;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      padding: 24px;
+      text-align: center;
+      color: var(--text-dim);
+      font-size: 0.85rem;
+    }
+  </style>
+
+  <style id="huurs-card-click-css">
+    .surah-card { cursor: pointer; user-select: none; }
+    .surah-card:active { transform: scale(0.985); }
+  </style>
+  <script id="huurs-card-click-js">
+    document.addEventListener('DOMContentLoaded', () => {
+      document.querySelectorAll('.surah-card').forEach(card => {
+        card.addEventListener('click', (e) => {
+          if (e.target.closest('a') || e.target.closest('button')) return;
+          const openBtn = card.querySelector('a.btn-primary') || card.querySelector('a.btn-gold');
+          if (openBtn && openBtn.href) {
+            window.location.href = openBtn.href;
+          }
+        });
+      });
+    });
+  </script>
+
+</head>
+<body>
+
+  <!-- Top Strip -->
+  <div class="top-strip">
+    <div class="brand-tag">
+      <span>HUURS STUDIO</span>
+      <span class="free-pill">Free Taster Kit</span>
+    </div>
+    <div class="creed">READ. REFLECT. RETURN.</div>
+    <div>100% Offline Sanctuary</div>
+  </div>
+
+  <!-- Hero Header -->
+  <header class="hero">
+    <h1>The Free 11-Surah Sanctuary</h1>
+    <p>A curated contemplative taste of the 114-Surah Come Back to the Qur'an ecosystem. Explore classical Sunni exegesis, linguistic root analysis, and structured reflection frameworks for eleven of the most transformative Surahs in revelation.</p>
+    
+    <div class="hero-stats">
+      <div class="stat-item">
+        <span class="stat-val">11</span>
+        <span class="stat-lbl">Iconic Surahs</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-val">100%</span>
+        <span class="stat-lbl">Authentic Sunni Sources</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-val">$0.00</span>
+        <span class="stat-lbl">Waqf / Free Forever</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="container">
+    <div class="section-header">
+      <h2 class="section-title">Explore Your 11 Curated Chapters</h2>
+      <div class="search-box">
+        <input type="text" id="searchInput" placeholder="Search Surah by name or theme..." onkeyup="filterSurahs()">
+      </div>
+    </div>
+
+    <!-- Surahs Grid -->
+    <div class="surahs-grid" id="surahsGrid">
+      <!-- Populated dynamically via JavaScript -->
+    </div>
+
+    <!-- Upgrade Pitch -->
+    <div class="upgrade-banner">
+      <h2>Ready for the Complete 114-Surah Journey?</h2>
+      <p>This taster contains 11 of the 114 Surahs. The complete <strong>Come Back to the Qur'an Master Vault</strong> unlocks all 114 Surahs with comprehensive 1,000+ page compendiums, full 114-video cinematic theater, high-resolution vector mindmaps, and audio lecture transcripts.</p>
+      <a href="https://hur-studio.github.io/" target="_blank" class="upgrade-btn">
+        <span>✨ Explore the Full 114-Surah Master Vault</span>
+      </a>
+    </div>
+  </main>
+
+  <footer>
+    <p>Huurs Studio • Dedicated to Quiet Reflection, Authentic Exegesis, and Sacred Beauty.</p>
+    <p style="margin-top: 6px; font-size: 0.75rem;">All materials licensed under Sunni Islamic Waqf Principles. Zero human depictions, zero music, zero sensationalism.</p>
+  </footer>
+
+  <script>
+    const surahs = [
+  {
+    "ep": 1,
+    "name": "Al-Fatihah",
+    "arabic": "الفاتحة",
+    "title": "The Opening & The Mother of the Book",
+    "verses": 7,
+    "classification": "Makki",
+    "theme": "The foundational covenant, divine mercy, sovereign lordship, and the prayer for straight guidance.",
+    "suite_src": "SURAH_01_AL_FATIHAH_INTERACTIVE_SUITE.html",
+    "suite_target": "SURAH_01_AL_FATIHAH_SUITE.html",
+    "ebook_src": "QURAN-COMEBACK-EBOOK-001.md"
+  },
+  {
+    "ep": 18,
+    "name": "Al-Kahf",
+    "arabic": "الكهف",
+    "title": "The Cave & The Four Trials of Humanity",
+    "verses": 110,
+    "classification": "Makki",
+    "theme": "The Friday light: navigating the trials of faith (sleepers), wealth (gardens), knowledge (Khidr), and power (Dhul-Qarnayn).",
+    "suite_src": "SURAH_18_AL_KAHF_INTERACTIVE_SUITE.html",
+    "suite_target": "SURAH_18_AL_KAHF_SUITE.html",
+    "ebook_src": "QURAN-COMEBACK-EBOOK-018.md"
+  },
+  {
+    "ep": 36,
+    "name": "Ya-Sin",
+    "arabic": "يس",
+    "title": "The Heart of the Qur'an & The Resurrected Soul",
+    "verses": 83,
+    "classification": "Makki",
+    "theme": "Cosmic signs of revivification: the dead earth given life, celestial orbits in cosmic swim, and moral responsibility.",
+    "suite_src": "SURAH_36_AL_YA_SIN_INTERACTIVE_SUITE.html",
+    "suite_target": "SURAH_36_YA_SIN_SUITE.html",
+    "ebook_src": "QURAN-COMEBACK-EBOOK-036.md"
+  },
+  {
+    "ep": 55,
+    "name": "Ar-Rahman",
+    "arabic": "الرحمن",
+    "title": "The All-Merciful & The Refrain of Gratitude",
+    "verses": 78,
+    "classification": "Madani",
+    "theme": "Which of the favors of your Lord will you deny? Marine haloclines, soaring ships, cosmic expansion, and twin gardens.",
+    "suite_src": "SURAH_55_AL_AR_RAHMAN_INTERACTIVE_SUITE.html",
+    "suite_target": "SURAH_55_AR_RAHMAN_SUITE.html",
+    "ebook_src": "QURAN-COMEBACK-EBOOK-055.md"
+  },
+  {
+    "ep": 56,
+    "name": "Al-Waqi'ah",
+    "arabic": "الواقعة",
+    "title": "The Inevitable Reality & The Three Cosmic Ranks",
+    "verses": 96,
+    "classification": "Makki",
+    "theme": "The cosmic sorting of humanity: The Foremost (Sabiqoon), Companions of the Right (Ashab al-Yameen), and the Left.",
+    "suite_src": "SURAH_56_AL_WAQIAH_INTERACTIVE_SUITE.html",
+    "suite_target": "SURAH_56_AL_WAQIAH_SUITE.html",
+    "ebook_src": "QURAN-COMEBACK-EBOOK-056.md"
+  },
+  {
+    "ep": 67,
+    "name": "Al-Mulk",
+    "arabic": "الملك",
+    "title": "The Sovereignty & The Shield from the Grave",
+    "verses": 30,
+    "classification": "Makki",
+    "theme": "Flawless layered cosmos, soaring birds gliding on air thermals, subterranean artesian waters, and nightly protection.",
+    "suite_src": "SURAH_67_AL_MULK_INTERACTIVE_SUITE.html",
+    "suite_target": "SURAH_67_AL_MULK_SUITE.html",
+    "ebook_src": "QURAN-COMEBACK-EBOOK-067.md"
+  },
+  {
+    "ep": 78,
+    "name": "An-Naba",
+    "arabic": "النبأ",
+    "title": "The Great Tidings & The Gateway to Juz 'Amma",
+    "verses": 40,
+    "classification": "Makki",
+    "theme": "Mountains anchored as tectonic pegs, clouds squeezing torrents of rain, dense orchards, and the decisive Day of Sorting.",
+    "suite_src": "SURAH_78_AN_NABA_INTERACTIVE_SUITE.html",
+    "suite_target": "SURAH_78_AN_NABA_SUITE.html",
+    "ebook_src": "QURAN-COMEBACK-EBOOK-078.md"
+  },
+  {
+    "ep": 93,
+    "name": "Ad-Duha",
+    "arabic": "الضحى",
+    "title": "The Morning Solace & Divine Consolation",
+    "verses": 11,
+    "classification": "Makki",
+    "theme": "Your Lord has not forsaken you: finding refuge in trial, guidance in confusion, and proclaiming divine grace.",
+    "suite_src": "SURAH_93_AD_DUHA_INTERACTIVE_SUITE.html",
+    "suite_target": "SURAH_93_AD_DUHA_SUITE.html",
+    "ebook_src": "QURAN-COMEBACK-EBOOK-093.md"
+  },
+  {
+    "ep": 112,
+    "name": "Al-Ikhlas",
+    "arabic": "الإخلاص",
+    "title": "Pure Sincerity & The Bedrock of Tawhid",
+    "verses": 4,
+    "classification": "Makki",
+    "theme": "The supreme statement of pure monotheism: Allah is One, the Eternal Refuge, without partners, parent, or equal.",
+    "suite_src": "SURAH_112_AL_IKHLAS_INTERACTIVE_SUITE.html",
+    "suite_target": "SURAH_112_AL_IKHLAS_SUITE.html",
+    "ebook_src": "QURAN-COMEBACK-EBOOK-112.md"
+  },
+  {
+    "ep": 113,
+    "name": "Al-Falaq",
+    "arabic": "الفلق",
+    "title": "The Daybreak & The Cleaving of Darkness",
+    "verses": 5,
+    "classification": "Makki",
+    "theme": "Seeking refuge in the Lord of the Daybreak from external perils: settling darkness, occult malice, and destructive envy.",
+    "suite_src": "SURAH_113_AL_FALAQ_INTERACTIVE_SUITE.html",
+    "suite_target": "SURAH_113_AL_FALAQ_SUITE.html",
+    "ebook_src": "QURAN-COMEBACK-EBOOK-113.md"
+  },
+  {
+    "ep": 114,
+    "name": "An-Nas",
+    "arabic": "الناس",
+    "title": "The Lord of Mankind & The Final Sanctuary",
+    "verses": 6,
+    "classification": "Makki",
+    "theme": "Seeking refuge in the Sovereign King of mankind from internal whispers: the triumphant conclusion of the 114-Surah journey.",
+    "suite_src": "SURAH_114_AN_NAS_INTERACTIVE_SUITE.html",
+    "suite_target": "SURAH_114_AN_NAS_SUITE.html",
+    "ebook_src": "QURAN-COMEBACK-EBOOK-114.md"
+  }
+];
+
+    function renderSurahs(list) {
+      const grid = document.getElementById('surahsGrid');
+      grid.innerHTML = '';
+      
+      list.forEach(s => {
+        const card = document.createElement('div');
+        card.className = 'surah-card';
+        card.innerHTML = `
+          <div class="card-top">
+            <div class="surah-num-badge">${s.ep}</div>
+            <div class="arabic-name">${s.arabic}</div>
+          </div>
+          <h3 class="card-title">Surah ${s.name}</h3>
+          <div class="card-subtitle">${s.title}</div>
+          <div class="card-meta">
+            <span>${s.classification}</span> • <span>${s.verses} Verses</span>
+          </div>
+          <p class="card-theme">${s.theme}</p>
+          <div class="card-actions">
+            <a href="suites/${s.suite_target}" class="btn btn-primary">
+              <span>📖 Open Interactive Suite</span>
+            </a>
+            <a href="chapters/${s.ebook_src}" class="btn btn-outline" title="View Markdown Exegesis">
+              <span>Markdown</span>
+            </a>
+          </div>
+        `;
+        grid.appendChild(card);
+      });
+    }
+
+    function filterSurahs() {
+      const q = document.getElementById('searchInput').value.toLowerCase();
+      const filtered = surahs.filter(s => 
+        s.name.toLowerCase().includes(q) || 
+        s.title.toLowerCase().includes(q) || 
+        s.theme.toLowerCase().includes(q)
+      );
+      renderSurahs(filtered);
+    }
+
+    // Initial render
+    renderSurahs(surahs);
+  </script>
+</body>
+</html>

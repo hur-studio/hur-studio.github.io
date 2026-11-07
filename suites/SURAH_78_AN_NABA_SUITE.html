@@ -1,0 +1,1489 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Surah An-Naba': Interactive Knowledge Suite | Huurs Studio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --navy-deep: #060A12;
+      --navy-card: #0D1422;
+      --navy-elevated: #141E32;
+      --gold: #D4AF59;
+      --gold-light: #E8D194;
+      --gold-glow: rgba(212, 175, 89, 0.2);
+      --cyan: #38BDF8;
+      --purple: #A855F7;
+      --emerald: #10B981;
+      --rose: #F43F5E;
+      --white: #F8FAFC;
+      --text-muted: #94A3B8;
+      --border-muted: #1E293B;
+      --border-gold: rgba(212, 175, 89, 0.35);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: var(--navy-deep); color: var(--white); font-family: 'Plus Jakarta Sans', sans-serif; line-height: 1.6; padding-bottom: 60px; }
+    .hero-banner {
+      background: radial-gradient(circle at 50% 20%, rgba(212, 175, 89, 0.12) 0%, rgba(6, 10, 18, 0.95) 70%), var(--navy-deep);
+      border-bottom: 1px solid var(--border-gold); padding: 48px 24px 36px 24px; text-align: center;
+    }
+    .brand-pill {
+      display: inline-flex; align-items: center; gap: 8px; font-family: 'Cinzel', serif; font-size: 0.8rem;
+      letter-spacing: 2px; color: var(--gold); background: var(--navy-card); border: 1px solid var(--border-gold);
+      padding: 6px 16px; border-radius: 20px; margin-bottom: 16px;
+    }
+    .hero-title { font-family: 'Cinzel', serif; font-size: 2.5rem; font-weight: 800; letter-spacing: 2px; color: var(--white); margin-bottom: 8px; }
+    .hero-subtitle { color: var(--gold-light); font-size: 1.05rem; font-weight: 500; max-width: 800px; margin: 0 auto 20px auto; }
+    .stats-row { display: flex; justify-content: center; flex-wrap: wrap; gap: 16px; margin-top: 24px; }
+    .stat-badge { background: var(--navy-card); border: 1px solid var(--border-muted); border-radius: 8px; padding: 10px 18px; display: flex; flex-direction: column; align-items: center; }
+    .stat-val { font-family: 'Cinzel', serif; font-size: 1.25rem; font-weight: 700; color: var(--gold); }
+    .stat-lbl { font-size: 0.72rem; color: var(--text-muted); letter-spacing: 1px; text-transform: uppercase; }
+    .main-container { max-width: 1440px; margin: 0 auto; padding: 32px 24px; }
+    .controls-bar { display: flex; flex-direction: column; gap: 16px; margin-bottom: 24px; }
+    .search-box { width: 100%; background: var(--navy-card); border: 1px solid var(--border-gold); color: var(--white); padding: 14px 20px; border-radius: 6px; font-size: 1rem; outline: none; }
+    .search-box:focus { border-color: var(--cyan); box-shadow: 0 0 12px rgba(56, 189, 248, 0.25); }
+    .nav-tabs-wrapper { display: flex; flex-wrap: wrap; gap: 8px; }
+    .plate-tab-btn {
+      background: var(--navy-card); border: 1px solid var(--border-muted); color: var(--text-muted);
+      padding: 8px 16px; border-radius: 6px; cursor: pointer; font-family: 'Cinzel', serif; font-size: 0.78rem;
+    }
+    .plate-tab-btn:hover { background: var(--navy-elevated); color: var(--white); border-color: var(--gold); }
+    .plate-tab-btn.active { background: var(--navy-elevated); color: var(--gold); border-color: var(--gold); box-shadow: 0 0 15px var(--gold-glow); }
+    .plate-section { display: none; background: var(--navy-card); border: 1px solid var(--border-gold); border-radius: 8px; padding: 24px; margin-bottom: 32px; }
+    .plate-section.active { display: block; }
+    .plate-title-bar { display: flex; justify-content: space-between; align-items: flex-start; border-bottom: 1px solid var(--border-muted); padding-bottom: 16px; margin-bottom: 20px; }
+    .plate-title-bar h2 { font-family: 'Cinzel', serif; font-size: 1.4rem; color: var(--white); margin-bottom: 4px; }
+    .plate-title-bar p { font-size: 0.85rem; color: var(--text-muted); }
+    .plate-badge-box { display: flex; gap: 8px; }
+    .badge-gold { background: var(--navy-elevated); border: 1px solid var(--border-gold); color: var(--gold); font-family: 'Cinzel', serif; font-size: 0.75rem; padding: 4px 10px; border-radius: 4px; }
+    .badge-emerald { background: rgba(16, 185, 129, 0.1); border: 1px solid var(--emerald); color: var(--emerald); font-family: 'Cinzel', serif; font-size: 0.75rem; padding: 4px 10px; border-radius: 4px; }
+    .pillars-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+    @media (max-width: 900px) { .pillars-layout { grid-template-columns: 1fr; } }
+    .pillar-box { background: var(--navy-elevated); border: 1px solid var(--border-muted); border-radius: 6px; overflow: hidden; }
+    .pillar-bar { padding: 14px 18px; border-bottom: 1px solid var(--border-muted); }
+    .pillar-bar.cyan { border-top: 3px solid var(--cyan); }
+    .pillar-bar.purple { border-top: 3px solid var(--purple); }
+    .pillar-bar.emerald { border-top: 3px solid var(--emerald); }
+    .pillar-bar.gold { border-top: 3px solid var(--gold); }
+    .pillar-bar.rose { border-top: 3px solid var(--rose); }
+    .pillar-bar h3 { font-family: 'Cinzel', serif; font-size: 0.92rem; font-weight: 700; }
+    .pillar-bar.cyan h3 { color: var(--cyan); }
+    .pillar-bar.purple h3 { color: var(--purple); }
+    .pillar-bar.emerald h3 { color: var(--emerald); }
+    .pillar-bar.gold h3 { color: var(--gold); }
+    .pillar-bar.rose h3 { color: var(--rose); }
+    .pillar-bar p { font-size: 0.75rem; color: var(--text-muted); margin-top: 2px; }
+    .cards-wrapper { padding: 16px; display: flex; flex-direction: column; gap: 12px; }
+    .card-item { background: var(--navy-card); border: 1px solid var(--border-muted); border-radius: 6px; padding: 12px 14px; }
+    .card-item:hover { border-color: var(--border-gold); transform: translateY(-2px); }
+    .card-title-row { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; }
+    .card-idx { background: var(--navy-deep); border: 1px solid var(--border-muted); color: var(--gold); font-family: 'Cinzel', serif; font-size: 0.72rem; padding: 2px 7px; border-radius: 4px; }
+    .card-title-row h4 { font-family: 'Cinzel', serif; font-size: 0.86rem; color: var(--white); }
+    .card-points { list-style-type: none; }
+    .card-points li { position: relative; padding-left: 14px; font-size: 0.8rem; color: var(--text-muted); line-height: 1.5; }
+    .card-points li::before { content: "•"; position: absolute; left: 0; color: var(--gold); }
+    
+    .modal-backdrop { display: none; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(6, 10, 18, 0.85); backdrop-filter: blur(5px); z-index: 1000; justify-content: center; align-items: center; padding: 20px; }
+    .modal-backdrop.open { display: flex; }
+    .modal-body { background: var(--navy-card); border: 1px solid var(--border-gold); border-radius: 8px; max-width: 800px; width: 100%; max-height: 85vh; overflow-y: auto; padding: 32px; position: relative; }
+    .modal-close { position: absolute; top: 16px; right: 20px; background: none; border: none; color: var(--text-muted); font-size: 1.5rem; cursor: pointer; }
+    .modal-close:hover { color: var(--white); }
+    .modal-body h3 { font-family: 'Cinzel', serif; font-size: 1.5rem; color: var(--gold); margin-bottom: 12px; }
+    .modal-body p { font-size: 0.9rem; color: var(--white); margin-bottom: 14px; line-height: 1.7; }
+    .modal-source { background: var(--navy-elevated); border-left: 3px solid var(--gold); padding: 10px 14px; font-size: 0.82rem; color: var(--text-muted); margin-top: 16px; }
+
+    /* --- HUURS MOBILE ADAPTIVE SUITE SYSTEM (Brand Visual System Section 71) --- */
+    .btn-back-portal {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 12px;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--gold, #d4af37) !important;
+      background: rgba(20, 30, 50, 0.8) !important;
+      border: 1px solid rgba(212, 175, 55, 0.4) !important;
+      border-radius: 6px;
+      text-decoration: none !important;
+      transition: all 0.2s ease;
+      cursor: pointer;
+    }
+    .btn-back-portal:hover {
+      border-color: var(--gold, #d4af37) !important;
+      background: rgba(212, 175, 55, 0.15) !important;
+      color: #ffffff !important;
+    }
+
+    .btn-footnotes {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 12px;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--gold, #d4af37) !important;
+      background: rgba(20, 30, 50, 0.8) !important;
+      border: 1px solid rgba(212, 175, 55, 0.4) !important;
+      border-radius: 6px;
+      text-decoration: none !important;
+      transition: all 0.2s ease;
+      cursor: pointer;
+    }
+    .btn-footnotes:hover {
+      border-color: var(--gold, #d4af37) !important;
+      background: rgba(212, 175, 55, 0.15) !important;
+      color: #ffffff !important;
+    }
+
+    .mobile-stepper {
+      display: none;
+    }
+
+    @media (max-width: 860px) {
+      body {
+        padding: 12px 10px 90px 10px !important;
+        overflow-x: hidden;
+      }
+
+      .hero-banner {
+        padding: 14px 12px !important;
+        margin-bottom: 16px !important;
+      }
+
+      .hero-title {
+        font-size: 1.4rem !important;
+      }
+
+      .hero-subtitle {
+        font-size: 0.8rem !important;
+      }
+
+      .stats-row {
+        flex-wrap: wrap !important;
+        gap: 6px !important;
+      }
+
+      .controls-bar {
+        gap: 10px !important;
+        margin-bottom: 14px !important;
+      }
+
+      .search-box {
+        width: 100% !important;
+      }
+
+      .nav-tabs-wrapper {
+        overflow-x: auto;
+        padding-bottom: 6px;
+        -webkit-overflow-scrolling: touch;
+        gap: 6px !important;
+        margin-bottom: 16px !important;
+      }
+
+      .plate-tab-btn {
+        padding: 6px 10px !important;
+        font-size: 0.74rem !important;
+        flex-shrink: 0;
+      }
+
+      .pillars-layout {
+        grid-template-columns: 1fr !important;
+        gap: 14px !important;
+      }
+
+      .plate-title-bar {
+        padding: 12px 14px !important;
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        gap: 10px !important;
+      }
+
+      .plate-title-bar h2 {
+        font-size: 1rem !important;
+      }
+
+      .modal-body {
+        max-width: 95vw !important;
+        max-height: 90vh !important;
+        padding: 16px !important;
+      }
+
+      /* Mobile Bottom Stepper */
+      .mobile-stepper {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: 1500;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background: rgba(7, 12, 22, 0.96);
+        backdrop-filter: blur(16px);
+        border-top: 1px solid var(--gold, #d4af37);
+        padding: 10px 14px;
+        box-shadow: 0 -8px 24px rgba(0, 0, 0, 0.7);
+        gap: 8px;
+      }
+
+      .stepper-btn {
+        background: var(--navy-elevated, #141e32);
+        border: 1px solid var(--border-muted, #243247);
+        color: var(--white, #f8fafc);
+        padding: 9px 12px;
+        border-radius: 6px;
+        font-size: 12px;
+        font-weight: 600;
+        cursor: pointer;
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        transition: all 0.2s ease;
+        white-space: nowrap;
+        text-decoration: none;
+      }
+
+      .stepper-btn:hover {
+        border-color: var(--gold, #d4af37);
+        background: var(--navy-hover, #192742);
+      }
+
+      .stepper-btn.btn-gold-accent {
+        background: linear-gradient(135deg, var(--gold, #d4af37), #b8972f);
+        color: var(--navy-deep, #060a12);
+        border: none;
+      }
+
+      .stepper-status {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        padding: 4px 8px;
+        border-radius: 4px;
+      }
+
+      .stepper-status .cur-plate {
+        font-size: 12px;
+        font-weight: 700;
+        color: var(--gold, #d4af37);
+        letter-spacing: 0.5px;
+      }
+
+      .stepper-status .tap-hint {
+        font-size: 9.5px;
+        color: var(--text-muted, #adc0d4);
+      }
+    }
+  </style>
+
+<style id="huurs-quick-nav-css">
+  .surah-quick-select {
+    background: var(--navy-card, #0d1422);
+    color: var(--gold, #d4af37);
+    border: 1px solid rgba(212, 175, 89, 0.4);
+    border-radius: 6px;
+    padding: 6px 12px;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    outline: none;
+    max-width: 220px;
+    text-overflow: ellipsis;
+    transition: all 0.2s ease;
+  }
+  .surah-quick-select:hover, .surah-quick-select:focus {
+    border-color: var(--gold, #d4af37);
+    box-shadow: 0 0 10px rgba(212, 175, 89, 0.3);
+  }
+  .surah-quick-select option {
+    background: #0d1422;
+    color: #f8fafc;
+  }
+  @media (max-width: 860px) {
+    .surah-quick-select {
+      max-width: 140px;
+      font-size: 11px;
+      padding: 4px 8px;
+    }
+  }
+</style>
+
+</head>
+<body>
+  <header class="hero-banner">
+    <div class="suite-top-bar" style="display:flex; justify-content:space-between; align-items:center; margin-bottom:14px;">
+      <a href="../index.html" class="btn btn-outline btn-back-portal" title="Return to Master PWA Portal">← All Surahs</a>
+        <select id="tasterSelectQuick" class="surah-quick-select" onchange="if(this.value) window.location.href=this.value" title="Switch to any Taster Surah">
+          <option value="">Jump to Taster Surah...</option>
+          <option value="./SURAH_01_AL_FATIHAH_SUITE.html#plate-01">001. Al-Fatihah</option>
+          <option value="./SURAH_18_AL_KAHF_SUITE.html#plate-01">018. Al-Kahf</option>
+          <option value="./SURAH_36_YA_SIN_SUITE.html#plate-01">036. Ya-Sin</option>
+          <option value="./SURAH_55_AR_RAHMAN_SUITE.html#plate-01">055. Ar-Rahman</option>
+          <option value="./SURAH_56_AL_WAQIAH_SUITE.html#plate-01">056. Al-Waqi'ah</option>
+          <option value="./SURAH_67_AL_MULK_SUITE.html#plate-01">067. Al-Mulk</option>
+          <option value="./SURAH_78_AN_NABA_SUITE.html#plate-01" selected="selected">078. An-Naba</option>
+          <option value="./SURAH_93_AD_DUHA_SUITE.html#plate-01">093. Ad-Duha</option>
+          <option value="./SURAH_112_AL_IKHLAS_SUITE.html#plate-01">112. Al-Ikhlas</option>
+          <option value="./SURAH_113_AL_FALAQ_SUITE.html#plate-01">113. Al-Falaq</option>
+          <option value="./SURAH_114_AN_NAS_SUITE.html#plate-01">114. An-Nas</option>
+        </select>
+      <div style="display:flex; align-items:center; gap:8px;">
+        <a href="#footnotesSection" class="btn btn-outline btn-footnotes" title="Jump to Footnotes & Sources">📜 Footnotes & Sources</a>
+        <span style="font-size:0.75rem; color:var(--gold,#d4af37); font-weight:700; letter-spacing:1px;">HUURS STUDIO</span>
+      </div>
+    </div>
+    <div class="brand-pill">HUURS STUDIO • JUZ 'AMMA KNOWLEDGE SANCTUARY</div>
+    <h1 class="hero-title">SURAH AN-NABA' (النبأ)</h1>
+    <div class="hero-subtitle">Interactive Digital Suite: 8 Plates • 16 Pillars • 64 Analytical Nodes</div>
+    <div class="stats-row">
+      <div class="stat-badge"><span class="stat-val">40</span><span class="stat-lbl">Verses</span></div>
+      <div class="stat-badge"><span class="stat-val">8</span><span class="stat-lbl">Plates</span></div>
+      <div class="stat-badge"><span class="stat-val">16</span><span class="stat-lbl">Pillars</span></div>
+      <div class="stat-badge"><span class="stat-val">64</span><span class="stat-lbl">Nodes</span></div>
+      <div class="stat-badge"><span class="stat-val">Makki</span><span class="stat-lbl">Classification</span></div>
+      <div class="stat-badge"><span class="stat-val">100%</span><span class="stat-lbl">Sunni Verified</span></div>
+    </div>
+  </header>
+
+  <main class="main-container">
+    <div class="controls-bar">
+      <div style="display:flex; gap:10px; flex-wrap:wrap; align-items:center;">
+        <input type="text" id="suiteSearch" class="search-box" style="flex:1; min-width:260px;" placeholder="🔍 Live search across all 64 nodes..." onkeyup="filterSuite()">
+        <button class="btn btn-outline btn-footnotes" onclick="openModal('m_an_naba_1')" style="padding:14px 18px;">📖 Epistemic Insight</button>
+        <button class="btn btn-outline btn-footnotes" onclick="openModal('m_an_naba_2')" style="padding:14px 18px;">💎 Thematic Core</button>
+      </div>
+      <div class="nav-tabs-wrapper">
+        <button class="plate-tab-btn active" onclick="switchSuitePlate(1)" id="suiteTab1">Plate 01: COSMIC INCEPTION &...</button>
+        <button class="plate-tab-btn " onclick="switchSuitePlate(2)" id="suiteTab2">Plate 02: SIGNS IN CREATION ...</button>
+        <button class="plate-tab-btn " onclick="switchSuitePlate(3)" id="suiteTab3">Plate 03: THE REALITY OF THE...</button>
+        <button class="plate-tab-btn " onclick="switchSuitePlate(4)" id="suiteTab4">Plate 04: THE ANATOMY OF HUM...</button>
+        <button class="plate-tab-btn " onclick="switchSuitePlate(5)" id="suiteTab5">Plate 05: THE SOVEREIGN COUR...</button>
+        <button class="plate-tab-btn " onclick="switchSuitePlate(6)" id="suiteTab6">Plate 06: CONTRAST OF CELEST...</button>
+        <button class="plate-tab-btn " onclick="switchSuitePlate(7)" id="suiteTab7">Plate 07: CANONICAL SUNNI EX...</button>
+        <button class="plate-tab-btn " onclick="switchSuitePlate(8)" id="suiteTab8">Plate 08: LIVING TADABBUR & ...</button>
+      </div>
+    </div>
+
+
+  <div class="plate-section active" id="plateSection1">
+    <div class="plate-title-bar">
+      <div>
+        <h2>Plate 01: COSMIC INCEPTION & SACRED OATHS</h2>
+        <p>Pillars 01 & 02: Opening Verses, Linguistic Foundations & Thematic Inception</p>
+      </div>
+      <div class="plate-badge-box">
+        <span class="badge-gold">[PLATE 01 : OATHS & FOUNDATIONS]</span>
+        <span class="badge-emerald">100% SUNNI VERIFIED</span>
+      </div>
+    </div>
+    <div class="pillars-layout">
+      
+      <div class="pillar-box">
+        <div class="pillar-bar cyan">
+          <h3>PILLAR 01: COSMIC INCEPTION</h3>
+          <p>Foundational Exegesis & Thematic Inquiry</p>
+        </div>
+        <div class="cards-wrapper">
+          <div class="card-item" data-search="the epistemic scope of an-naba' surah an-naba' is the grand, majestic gateway to the final thirtieth part of the qur'an (*juz 'amma*). it opens with the piercing question t... revealed as makki containing 40 concise, rhythmic ayāt.">
+            <div class="card-title-row">
+              <span class="card-idx">01</span>
+              <h4>The Epistemic Scope of An-Naba'</h4>
+            </div>
+            <ul class="card-points">
+              <li>Surah An-Naba' is the grand, majestic gateway to the final thirtieth part of the Qur'an (*Juz 'Amma*). It opens with the piercing question t...</li>
+              <li>Revealed as Makki containing 40 concise, rhythmic ayāt.</li>
+            </ul>
+          </div>
+          <div class="card-item" data-search="**why the sinner wishes he were dust (ve **why the sinner wishes he were dust (verse 40):** ibn umar and abu hurayrah (ra) explained: on judgment day, allah will assemble all animal corroborated across primary exegetical texts (tafsir ibn kathir & tabari).">
+            <div class="card-title-row">
+              <span class="card-idx">02</span>
+              <h4>**Why the Sinner Wishes He Were Dust (Ve</h4>
+            </div>
+            <ul class="card-points">
+              <li>**Why the Sinner Wishes He Were Dust (Verse 40):** Ibn Umar and Abu Hurayrah (RA) explained: On Judgment Day, Allah will assemble all animal</li>
+              <li>Corroborated across primary exegetical texts (Tafsir Ibn Kathir & Tabari).</li>
+            </ul>
+          </div>
+          <div class="card-item" data-search="an-naba' station 03: cosmic inception contemplating ayāt of surah an-naba' in light of classical sunni exegesis. focusing upon opening verses, linguistic foundations & thematic inception and internalizing divine sovereignty.">
+            <div class="card-title-row">
+              <span class="card-idx">03</span>
+              <h4>An-Naba' Station 03: Cosmic Inception</h4>
+            </div>
+            <ul class="card-points">
+              <li>Contemplating Ayāt of Surah An-Naba' in light of classical Sunni exegesis.</li>
+              <li>Focusing upon opening verses, linguistic foundations & thematic inception and internalizing divine sovereignty.</li>
+            </ul>
+          </div>
+          <div class="card-item" data-search="an-naba' station 04: cosmic inception contemplating ayāt of surah an-naba' in light of classical sunni exegesis. focusing upon opening verses, linguistic foundations & thematic inception and internalizing divine sovereignty.">
+            <div class="card-title-row">
+              <span class="card-idx">04</span>
+              <h4>An-Naba' Station 04: Cosmic Inception</h4>
+            </div>
+            <ul class="card-points">
+              <li>Contemplating Ayāt of Surah An-Naba' in light of classical Sunni exegesis.</li>
+              <li>Focusing upon opening verses, linguistic foundations & thematic inception and internalizing divine sovereignty.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      
+      <div class="pillar-box">
+        <div class="pillar-bar gold">
+          <h3>PILLAR 02: SACRED OATHS</h3>
+          <p>Tadabbur, Spiritual Realities & Moral Application</p>
+        </div>
+        <div class="cards-wrapper">
+          <div class="card-item" data-search="* **the divine architecture of your day  * **the divine architecture of your day (78:9–11):** notice the perfect rhythm allah built for human biology: sleep as a restorative pause ( translating theological comprehension into unwavering moral steadfastness.">
+            <div class="card-title-row">
+              <span class="card-idx">05</span>
+              <h4>* **The Divine Architecture of Your Day </h4>
+            </div>
+            <ul class="card-points">
+              <li>* **The Divine Architecture of Your Day (78:9–11):** Notice the perfect rhythm Allah built for human biology: Sleep as a restorative pause (</li>
+              <li>Translating theological comprehension into unwavering moral steadfastness.</li>
+            </ul>
+          </div>
+          <div class="card-item" data-search="**a punishment that is 'near' (78:40):** **a punishment that is 'near' (78:40):** allah warns: *inna andharnakum 'adhaban qariba* ('we have warned you of a near punishment'). you mi translating theological comprehension into unwavering moral steadfastness.">
+            <div class="card-title-row">
+              <span class="card-idx">06</span>
+              <h4>**A Punishment That is 'Near' (78:40):**</h4>
+            </div>
+            <ul class="card-points">
+              <li>**A Punishment That is 'Near' (78:40):** Allah warns: *Inna andharnakum 'adhaban QARIBA* ('We have warned you of a NEAR punishment'). You mi</li>
+              <li>Translating theological comprehension into unwavering moral steadfastness.</li>
+            </ul>
+          </div>
+          <div class="card-item" data-search="an-naba' principle 07: soul application examining the theological dimensions of cosmic inception & sacred oaths. cultivating reverent humility and eradicating spiritual negligence.">
+            <div class="card-title-row">
+              <span class="card-idx">07</span>
+              <h4>An-Naba' Principle 07: Soul Application</h4>
+            </div>
+            <ul class="card-points">
+              <li>Examining the theological dimensions of cosmic inception & sacred oaths.</li>
+              <li>Cultivating reverent humility and eradicating spiritual negligence.</li>
+            </ul>
+          </div>
+          <div class="card-item" data-search="an-naba' principle 08: soul application examining the theological dimensions of cosmic inception & sacred oaths. cultivating reverent humility and eradicating spiritual negligence.">
+            <div class="card-title-row">
+              <span class="card-idx">08</span>
+              <h4>An-Naba' Principle 08: Soul Application</h4>
+            </div>
+            <ul class="card-points">
+              <li>Examining the theological dimensions of cosmic inception & sacred oaths.</li>
+              <li>Cultivating reverent humility and eradicating spiritual negligence.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="plate-section " id="plateSection2">
+    <div class="plate-title-bar">
+      <div>
+        <h2>Plate 02: SIGNS IN CREATION & DIVINE OMNIPOTENCE</h2>
+        <p>Pillars 03 & 04: Geological, Celestial & Biological Evidences in Nature</p>
+      </div>
+      <div class="plate-badge-box">
+        <span class="badge-gold">[PLATE 02 : COSMIC PROOFS]</span>
+        <span class="badge-emerald">100% SUNNI VERIFIED</span>
+      </div>
+    </div>
+    <div class="pillars-layout">
+      
+      <div class="pillar-box">
+        <div class="pillar-bar emerald">
+          <h3>PILLAR 03: SIGNS IN CREATION</h3>
+          <p>Foundational Exegesis & Thematic Inquiry</p>
+        </div>
+        <div class="cards-wrapper">
+          <div class="card-item" data-search="an-naba' station 09: signs in creation contemplating ayāt of surah an-naba' in light of classical sunni exegesis. focusing upon geological, celestial & biological evidences in nature and internalizing divine sovereignty.">
+            <div class="card-title-row">
+              <span class="card-idx">09</span>
+              <h4>An-Naba' Station 09: Signs In Creation</h4>
+            </div>
+            <ul class="card-points">
+              <li>Contemplating Ayāt of Surah An-Naba' in light of classical Sunni exegesis.</li>
+              <li>Focusing upon geological, celestial & biological evidences in nature and internalizing divine sovereignty.</li>
+            </ul>
+          </div>
+          <div class="card-item" data-search="an-naba' station 10: signs in creation contemplating ayāt of surah an-naba' in light of classical sunni exegesis. focusing upon geological, celestial & biological evidences in nature and internalizing divine sovereignty.">
+            <div class="card-title-row">
+              <span class="card-idx">10</span>
+              <h4>An-Naba' Station 10: Signs In Creation</h4>
+            </div>
+            <ul class="card-points">
+              <li>Contemplating Ayāt of Surah An-Naba' in light of classical Sunni exegesis.</li>
+              <li>Focusing upon geological, celestial & biological evidences in nature and internalizing divine sovereignty.</li>
+            </ul>
+          </div>
+          <div class="card-item" data-search="an-naba' station 11: signs in creation contemplating ayāt of surah an-naba' in light of classical sunni exegesis. focusing upon geological, celestial & biological evidences in nature and internalizing divine sovereignty.">
+            <div class="card-title-row">
+              <span class="card-idx">11</span>
+              <h4>An-Naba' Station 11: Signs In Creation</h4>
+            </div>
+            <ul class="card-points">
+              <li>Contemplating Ayāt of Surah An-Naba' in light of classical Sunni exegesis.</li>
+              <li>Focusing upon geological, celestial & biological evidences in nature and internalizing divine sovereignty.</li>
+            </ul>
+          </div>
+          <div class="card-item" data-search="an-naba' station 12: signs in creation contemplating ayāt of surah an-naba' in light of classical sunni exegesis. focusing upon geological, celestial & biological evidences in nature and internalizing divine sovereignty.">
+            <div class="card-title-row">
+              <span class="card-idx">12</span>
+              <h4>An-Naba' Station 12: Signs In Creation</h4>
+            </div>
+            <ul class="card-points">
+              <li>Contemplating Ayāt of Surah An-Naba' in light of classical Sunni exegesis.</li>
+              <li>Focusing upon geological, celestial & biological evidences in nature and internalizing divine sovereignty.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      
+      <div class="pillar-box">
+        <div class="pillar-bar purple">
+          <h3>PILLAR 04: DIVINE OMNIPOTENCE</h3>
+          <p>Tadabbur, Spiritual Realities & Moral Application</p>
+        </div>
+        <div class="cards-wrapper">
+          <div class="card-item" data-search="an-naba' principle 13: soul application examining the theological dimensions of signs in creation & divine omnipotence. cultivating reverent humility and eradicating spiritual negligence.">
+            <div class="card-title-row">
+              <span class="card-idx">13</span>
+              <h4>An-Naba' Principle 13: Soul Application</h4>
+            </div>
+            <ul class="card-points">
+              <li>Examining the theological dimensions of signs in creation & divine omnipotence.</li>
+              <li>Cultivating reverent humility and eradicating spiritual negligence.</li>
+            </ul>
+          </div>
+          <div class="card-item" data-search="an-naba' principle 14: soul application examining the theological dimensions of signs in creation & divine omnipotence. cultivating reverent humility and eradicating spiritual negligence.">
+            <div class="card-title-row">
+              <span class="card-idx">14</span>
+              <h4>An-Naba' Principle 14: Soul Application</h4>
+            </div>
+            <ul class="card-points">
+              <li>Examining the theological dimensions of signs in creation & divine omnipotence.</li>
+              <li>Cultivating reverent humility and eradicating spiritual negligence.</li>
+            </ul>
+          </div>
+          <div class="card-item" data-search="an-naba' principle 15: soul application examining the theological dimensions of signs in creation & divine omnipotence. cultivating reverent humility and eradicating spiritual negligence.">
+            <div class="card-title-row">
+              <span class="card-idx">15</span>
+              <h4>An-Naba' Principle 15: Soul Application</h4>
+            </div>
+            <ul class="card-points">
+              <li>Examining the theological dimensions of signs in creation & divine omnipotence.</li>
+              <li>Cultivating reverent humility and eradicating spiritual negligence.</li>
+            </ul>
+          </div>
+          <div class="card-item" data-search="an-naba' principle 16: soul application examining the theological dimensions of signs in creation & divine omnipotence. cultivating reverent humility and eradicating spiritual negligence.">
+            <div class="card-title-row">
+              <span class="card-idx">16</span>
+              <h4>An-Naba' Principle 16: Soul Application</h4>
+            </div>
+            <ul class="card-points">
+              <li>Examining the theological dimensions of signs in creation & divine omnipotence.</li>
+              <li>Cultivating reverent humility and eradicating spiritual negligence.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="plate-section " id="plateSection3">
+    <div class="plate-title-bar">
+      <div>
+        <h2>Plate 03: THE REALITY OF THE RESURRECTION</h2>
+        <p>Pillars 05 & 06: The Inevitable Summoning, Trumpet Blast & Cosmic Dissolution</p>
+      </div>
+      <div class="plate-badge-box">
+        <span class="badge-gold">[PLATE 03 : ESCHATOLOGY]</span>
+        <span class="badge-emerald">100% SUNNI VERIFIED</span>
+      </div>
+    </div>
+    <div class="pillars-layout">
+      
+      <div class="pillar-box">
+        <div class="pillar-bar rose">
+          <h3>PILLAR 05: THE REALITY OF THE RESURRECTION</h3>
+          <p>Foundational Exegesis & Thematic Inquiry</p>
+        </div>
+        <div class="cards-wrapper">
+          <div class="card-item" data-search="an-naba' station 17: the reality of the resurrection contemplating ayāt of surah an-naba' in light of classical sunni exegesis. focusing upon the inevitable summoning, trumpet blast & cosmic dissolution and internalizing divine sovereignty.">
+            <div class="card-title-row">
+              <span class="card-idx">17</span>
+              <h4>An-Naba' Station 17: The Reality Of The Resurrection</h4>
+            </div>
+            <ul class="card-points">
+              <li>Contemplating Ayāt of Surah An-Naba' in light of classical Sunni exegesis.</li>
+              <li>Focusing upon the inevitable summoning, trumpet blast & cosmic dissolution and internalizing divine sovereignty.</li>
+            </ul>
+          </div>
+          <div class="card-item" data-search="an-naba' station 18: the reality of the resurrection contemplating ayāt of surah an-naba' in light of classical sunni exegesis. focusing upon the inevitable summoning, trumpet blast & cosmic dissolution and internalizing divine sovereignty.">
+            <div class="card-title-row">
+              <span class="card-idx">18</span>
+              <h4>An-Naba' Station 18: The Reality Of The Resurrection</h4>
+            </div>
+            <ul class="card-points">
+              <li>Contemplating Ayāt of Surah An-Naba' in light of classical Sunni exegesis.</li>
+              <li>Focusing upon the inevitable summoning, trumpet blast & cosmic dissolution and internalizing divine sovereignty.</li>
+            </ul>
+          </div>
+          <div class="card-item" data-search="an-naba' station 19: the reality of the resurrection contemplating ayāt of surah an-naba' in light of classical sunni exegesis. focusing upon the inevitable summoning, trumpet blast & cosmic dissolution and internalizing divine sovereignty.">
+            <div class="card-title-row">
+              <span class="card-idx">19</span>
+              <h4>An-Naba' Station 19: The Reality Of The Resurrection</h4>
+            </div>
+            <ul class="card-points">
+              <li>Contemplating Ayāt of Surah An-Naba' in light of classical Sunni exegesis.</li>
+              <li>Focusing upon the inevitable summoning, trumpet blast & cosmic dissolution and internalizing divine sovereignty.</li>
+            </ul>
+          </div>
+          <div class="card-item" data-search="an-naba' station 20: the reality of the resurrection contemplating ayāt of surah an-naba' in light of classical sunni exegesis. focusing upon the inevitable summoning, trumpet blast & cosmic dissolution and internalizing divine sovereignty.">
+            <div class="card-title-row">
+              <span class="card-idx">20</span>
+              <h4>An-Naba' Station 20: The Reality Of The Resurrection</h4>
+            </div>
+            <ul class="card-points">
+              <li>Contemplating Ayāt of Surah An-Naba' in light of classical Sunni exegesis.</li>
+              <li>Focusing upon the inevitable summoning, trumpet blast & cosmic dissolution and internalizing divine sovereignty.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      
+      <div class="pillar-box">
+        <div class="pillar-bar cyan">
+          <h3>PILLAR 06: SOUL CONTEMPLATION</h3>
+          <p>Tadabbur, Spiritual Realities & Moral Application</p>
+        </div>
+        <div class="cards-wrapper">
+          <div class="card-item" data-search="an-naba' principle 21: soul application examining the theological dimensions of the reality of the resurrection. cultivating reverent humility and eradicating spiritual negligence.">
+            <div class="card-title-row">
+              <span class="card-idx">21</span>
+              <h4>An-Naba' Principle 21: Soul Application</h4>
+            </div>
+            <ul class="card-points">
+              <li>Examining the theological dimensions of the reality of the resurrection.</li>
+              <li>Cultivating reverent humility and eradicating spiritual negligence.</li>
+            </ul>
+          </div>
+          <div class="card-item" data-search="an-naba' principle 22: soul application examining the theological dimensions of the reality of the resurrection. cultivating reverent humility and eradicating spiritual negligence.">
+            <div class="card-title-row">
+              <span class="card-idx">22</span>
+              <h4>An-Naba' Principle 22: Soul Application</h4>
+            </div>
+            <ul class="card-points">
+              <li>Examining the theological dimensions of the reality of the resurrection.</li>
+              <li>Cultivating reverent humility and eradicating spiritual negligence.</li>
+            </ul>
+          </div>
+          <div class="card-item" data-search="an-naba' principle 23: soul application examining the theological dimensions of the reality of the resurrection. cultivating reverent humility and eradicating spiritual negligence.">
+            <div class="card-title-row">
+              <span class="card-idx">23</span>
+              <h4>An-Naba' Principle 23: Soul Application</h4>
+            </div>
+            <ul class="card-points">
+              <li>Examining the theological dimensions of the reality of the resurrection.</li>
+              <li>Cultivating reverent humility and eradicating spiritual negligence.</li>
+            </ul>
+          </div>
+          <div class="card-item" data-search="an-naba' principle 24: soul application examining the theological dimensions of the reality of the resurrection. cultivating reverent humility and eradicating spiritual negligence.">
+            <div class="card-title-row">
+              <span class="card-idx">24</span>
+              <h4>An-Naba' Principle 24: Soul Application</h4>
+            </div>
+            <ul class="card-points">
+              <li>Examining the theological dimensions of the reality of the resurrection.</li>
+              <li>Cultivating reverent humility and eradicating spiritual negligence.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="plate-section " id="plateSection4">
+    <div class="plate-title-bar">
+      <div>
+        <h2>Plate 04: THE ANATOMY OF HUMAN DEVIATION</h2>
+        <p>Pillars 07 & 08: Materialist Arrogance, Denial & Ethical Corruption</p>
+      </div>
+      <div class="plate-badge-box">
+        <span class="badge-gold">[PLATE 04 : MORAL DELUSION]</span>
+        <span class="badge-emerald">100% SUNNI VERIFIED</span>
+      </div>
+    </div>
+    <div class="pillars-layout">
+      
+      <div class="pillar-box">
+        <div class="pillar-bar gold">
+          <h3>PILLAR 07: THE ANATOMY OF HUMAN DEVIATION</h3>
+          <p>Foundational Exegesis & Thematic Inquiry</p>
+        </div>
+        <div class="cards-wrapper">
+          <div class="card-item" data-search="an-naba' station 25: the anatomy of human deviation contemplating ayāt of surah an-naba' in light of classical sunni exegesis. focusing upon materialist arrogance, denial & ethical corruption and internalizing divine sovereignty.">
+            <div class="card-title-row">
+              <span class="card-idx">25</span>
+              <h4>An-Naba' Station 25: The Anatomy Of Human Deviation</h4>
+            </div>
+            <ul class="card-points">
+              <li>Contemplating Ayāt of Surah An-Naba' in light of classical Sunni exegesis.</li>
+              <li>Focusing upon materialist arrogance, denial & ethical corruption and internalizing divine sovereignty.</li>
+            </ul>
+          </div>
+          <div class="card-item" data-search="an-naba' station 26: the anatomy of human deviation contemplating ayāt of surah an-naba' in light of classical sunni exegesis. focusing upon materialist arrogance, denial & ethical corruption and internalizing divine sovereignty.">
+            <div class="card-title-row">
+              <span class="card-idx">26</span>
+              <h4>An-Naba' Station 26: The Anatomy Of Human Deviation</h4>
+            </div>
+            <ul class="card-points">
+              <li>Contemplating Ayāt of Surah An-Naba' in light of classical Sunni exegesis.</li>
+              <li>Focusing upon materialist arrogance, denial & ethical corruption and internalizing divine sovereignty.</li>
+            </ul>
+          </div>
+          <div class="card-item" data-search="an-naba' station 27: the anatomy of human deviation contemplating ayāt of surah an-naba' in light of classical sunni exegesis. focusing upon materialist arrogance, denial & ethical corruption and internalizing divine sovereignty.">
+            <div class="card-title-row">
+              <span class="card-idx">27</span>
+              <h4>An-Naba' Station 27: The Anatomy Of Human Deviation</h4>
+            </div>
+            <ul class="card-points">
+              <li>Contemplating Ayāt of Surah An-Naba' in light of classical Sunni exegesis.</li>
+              <li>Focusing upon materialist arrogance, denial & ethical corruption and internalizing divine sovereignty.</li>
+            </ul>
+          </div>
+          <div class="card-item" data-search="an-naba' station 28: the anatomy of human deviation contemplating ayāt of surah an-naba' in light of classical sunni exegesis. focusing upon materialist arrogance, denial & ethical corruption and internalizing divine sovereignty.">
+            <div class="card-title-row">
+              <span class="card-idx">28</span>
+              <h4>An-Naba' Station 28: The Anatomy Of Human Deviation</h4>
+            </div>
+            <ul class="card-points">
+              <li>Contemplating Ayāt of Surah An-Naba' in light of classical Sunni exegesis.</li>
+              <li>Focusing upon materialist arrogance, denial & ethical corruption and internalizing divine sovereignty.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      
+      <div class="pillar-box">
+        <div class="pillar-bar emerald">
+          <h3>PILLAR 08: SOUL CONTEMPLATION</h3>
+          <p>Tadabbur, Spiritual Realities & Moral Application</p>
+        </div>
+        <div class="cards-wrapper">
+          <div class="card-item" data-search="an-naba' principle 29: soul application examining the theological dimensions of the anatomy of human deviation. cultivating reverent humility and eradicating spiritual negligence.">
+            <div class="card-title-row">
+              <span class="card-idx">29</span>
+              <h4>An-Naba' Principle 29: Soul Application</h4>
+            </div>
+            <ul class="card-points">
+              <li>Examining the theological dimensions of the anatomy of human deviation.</li>
+              <li>Cultivating reverent humility and eradicating spiritual negligence.</li>
+            </ul>
+          </div>
+          <div class="card-item" data-search="an-naba' principle 30: soul application examining the theological dimensions of the anatomy of human deviation. cultivating reverent humility and eradicating spiritual negligence.">
+            <div class="card-title-row">
+              <span class="card-idx">30</span>
+              <h4>An-Naba' Principle 30: Soul Application</h4>
+            </div>
+            <ul class="card-points">
+              <li>Examining the theological dimensions of the anatomy of human deviation.</li>
+              <li>Cultivating reverent humility and eradicating spiritual negligence.</li>
+            </ul>
+          </div>
+          <div class="card-item" data-search="an-naba' principle 31: soul application examining the theological dimensions of the anatomy of human deviation. cultivating reverent humility and eradicating spiritual negligence.">
+            <div class="card-title-row">
+              <span class="card-idx">31</span>
+              <h4>An-Naba' Principle 31: Soul Application</h4>
+            </div>
+            <ul class="card-points">
+              <li>Examining the theological dimensions of the anatomy of human deviation.</li>
+              <li>Cultivating reverent humility and eradicating spiritual negligence.</li>
+            </ul>
+          </div>
+          <div class="card-item" data-search="an-naba' principle 32: soul application examining the theological dimensions of the anatomy of human deviation. cultivating reverent humility and eradicating spiritual negligence.">
+            <div class="card-title-row">
+              <span class="card-idx">32</span>
+              <h4>An-Naba' Principle 32: Soul Application</h4>
+            </div>
+            <ul class="card-points">
+              <li>Examining the theological dimensions of the anatomy of human deviation.</li>
+              <li>Cultivating reverent humility and eradicating spiritual negligence.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="plate-section " id="plateSection5">
+    <div class="plate-title-bar">
+      <div>
+        <h2>Plate 05: THE SOVEREIGN COURT OF DECISION</h2>
+        <p>Pillars 09 & 10: Weighing of Deeds, Sijjeen vs 'Illiyyeen & Universal Assembly</p>
+      </div>
+      <div class="plate-badge-box">
+        <span class="badge-gold">[PLATE 05 : RECKONING]</span>
+        <span class="badge-emerald">100% SUNNI VERIFIED</span>
+      </div>
+    </div>
+    <div class="pillars-layout">
+      
+      <div class="pillar-box">
+        <div class="pillar-bar cyan">
+          <h3>PILLAR 09: THE SOVEREIGN COURT OF DECISION</h3>
+          <p>Foundational Exegesis & Thematic Inquiry</p>
+        </div>
+        <div class="cards-wrapper">
+          <div class="card-item" data-search="an-naba' station 33: the sovereign court of decision contemplating ayāt of surah an-naba' in light of classical sunni exegesis. focusing upon weighing of deeds, sijjeen vs 'illiyyeen & universal assembly and internalizing divine sovereignty.">
+            <div class="card-title-row">
+              <span class="card-idx">33</span>
+              <h4>An-Naba' Station 33: The Sovereign Court Of Decision</h4>
+            </div>
+            <ul class="card-points">
+              <li>Contemplating Ayāt of Surah An-Naba' in light of classical Sunni exegesis.</li>
+              <li>Focusing upon weighing of deeds, sijjeen vs 'illiyyeen & universal assembly and internalizing divine sovereignty.</li>
+            </ul>
+          </div>
+          <div class="card-item" data-search="an-naba' station 34: the sovereign court of decision contemplating ayāt of surah an-naba' in light of classical sunni exegesis. focusing upon weighing of deeds, sijjeen vs 'illiyyeen & universal assembly and internalizing divine sovereignty.">
+            <div class="card-title-row">
+              <span class="card-idx">34</span>
+              <h4>An-Naba' Station 34: The Sovereign Court Of Decision</h4>
+            </div>
+            <ul class="card-points">
+              <li>Contemplating Ayāt of Surah An-Naba' in light of classical Sunni exegesis.</li>
+              <li>Focusing upon weighing of deeds, sijjeen vs 'illiyyeen & universal assembly and internalizing divine sovereignty.</li>
+            </ul>
+          </div>
+          <div class="card-item" data-search="an-naba' station 35: the sovereign court of decision contemplating ayāt of surah an-naba' in light of classical sunni exegesis. focusing upon weighing of deeds, sijjeen vs 'illiyyeen & universal assembly and internalizing divine sovereignty.">
+            <div class="card-title-row">
+              <span class="card-idx">35</span>
+              <h4>An-Naba' Station 35: The Sovereign Court Of Decision</h4>
+            </div>
+            <ul class="card-points">
+              <li>Contemplating Ayāt of Surah An-Naba' in light of classical Sunni exegesis.</li>
+              <li>Focusing upon weighing of deeds, sijjeen vs 'illiyyeen & universal assembly and internalizing divine sovereignty.</li>
+            </ul>
+          </div>
+          <div class="card-item" data-search="an-naba' station 36: the sovereign court of decision contemplating ayāt of surah an-naba' in light of classical sunni exegesis. focusing upon weighing of deeds, sijjeen vs 'illiyyeen & universal assembly and internalizing divine sovereignty.">
+            <div class="card-title-row">
+              <span class="card-idx">36</span>
+              <h4>An-Naba' Station 36: The Sovereign Court Of Decision</h4>
+            </div>
+            <ul class="card-points">
+              <li>Contemplating Ayāt of Surah An-Naba' in light of classical Sunni exegesis.</li>
+              <li>Focusing upon weighing of deeds, sijjeen vs 'illiyyeen & universal assembly and internalizing divine sovereignty.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      
+      <div class="pillar-box">
+        <div class="pillar-bar gold">
+          <h3>PILLAR 10: SOUL CONTEMPLATION</h3>
+          <p>Tadabbur, Spiritual Realities & Moral Application</p>
+        </div>
+        <div class="cards-wrapper">
+          <div class="card-item" data-search="an-naba' principle 37: soul application examining the theological dimensions of the sovereign court of decision. cultivating reverent humility and eradicating spiritual negligence.">
+            <div class="card-title-row">
+              <span class="card-idx">37</span>
+              <h4>An-Naba' Principle 37: Soul Application</h4>
+            </div>
+            <ul class="card-points">
+              <li>Examining the theological dimensions of the sovereign court of decision.</li>
+              <li>Cultivating reverent humility and eradicating spiritual negligence.</li>
+            </ul>
+          </div>
+          <div class="card-item" data-search="an-naba' principle 38: soul application examining the theological dimensions of the sovereign court of decision. cultivating reverent humility and eradicating spiritual negligence.">
+            <div class="card-title-row">
+              <span class="card-idx">38</span>
+              <h4>An-Naba' Principle 38: Soul Application</h4>
+            </div>
+            <ul class="card-points">
+              <li>Examining the theological dimensions of the sovereign court of decision.</li>
+              <li>Cultivating reverent humility and eradicating spiritual negligence.</li>
+            </ul>
+          </div>
+          <div class="card-item" data-search="an-naba' principle 39: soul application examining the theological dimensions of the sovereign court of decision. cultivating reverent humility and eradicating spiritual negligence.">
+            <div class="card-title-row">
+              <span class="card-idx">39</span>
+              <h4>An-Naba' Principle 39: Soul Application</h4>
+            </div>
+            <ul class="card-points">
+              <li>Examining the theological dimensions of the sovereign court of decision.</li>
+              <li>Cultivating reverent humility and eradicating spiritual negligence.</li>
+            </ul>
+          </div>
+          <div class="card-item" data-search="an-naba' principle 40: soul application examining the theological dimensions of the sovereign court of decision. cultivating reverent humility and eradicating spiritual negligence.">
+            <div class="card-title-row">
+              <span class="card-idx">40</span>
+              <h4>An-Naba' Principle 40: Soul Application</h4>
+            </div>
+            <ul class="card-points">
+              <li>Examining the theological dimensions of the sovereign court of decision.</li>
+              <li>Cultivating reverent humility and eradicating spiritual negligence.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="plate-section " id="plateSection6">
+    <div class="plate-title-bar">
+      <div>
+        <h2>Plate 06: CONTRAST OF CELESTIAL STATIONS</h2>
+        <p>Pillars 11 & 12: Punishment of the Deniers vs Bliss of the Righteous</p>
+      </div>
+      <div class="plate-badge-box">
+        <span class="badge-gold">[PLATE 06 : FINAL DESTINIES]</span>
+        <span class="badge-emerald">100% SUNNI VERIFIED</span>
+      </div>
+    </div>
+    <div class="pillars-layout">
+      
+      <div class="pillar-box">
+        <div class="pillar-bar emerald">
+          <h3>PILLAR 11: CONTRAST OF CELESTIAL STATIONS</h3>
+          <p>Foundational Exegesis & Thematic Inquiry</p>
+        </div>
+        <div class="cards-wrapper">
+          <div class="card-item" data-search="an-naba' station 41: contrast of celestial stations contemplating ayāt of surah an-naba' in light of classical sunni exegesis. focusing upon punishment of the deniers vs bliss of the righteous and internalizing divine sovereignty.">
+            <div class="card-title-row">
+              <span class="card-idx">41</span>
+              <h4>An-Naba' Station 41: Contrast Of Celestial Stations</h4>
+            </div>
+            <ul class="card-points">
+              <li>Contemplating Ayāt of Surah An-Naba' in light of classical Sunni exegesis.</li>
+              <li>Focusing upon punishment of the deniers vs bliss of the righteous and internalizing divine sovereignty.</li>
+            </ul>
+          </div>
+          <div class="card-item" data-search="an-naba' station 42: contrast of celestial stations contemplating ayāt of surah an-naba' in light of classical sunni exegesis. focusing upon punishment of the deniers vs bliss of the righteous and internalizing divine sovereignty.">
+            <div class="card-title-row">
+              <span class="card-idx">42</span>
+              <h4>An-Naba' Station 42: Contrast Of Celestial Stations</h4>
+            </div>
+            <ul class="card-points">
+              <li>Contemplating Ayāt of Surah An-Naba' in light of classical Sunni exegesis.</li>
+              <li>Focusing upon punishment of the deniers vs bliss of the righteous and internalizing divine sovereignty.</li>
+            </ul>
+          </div>
+          <div class="card-item" data-search="an-naba' station 43: contrast of celestial stations contemplating ayāt of surah an-naba' in light of classical sunni exegesis. focusing upon punishment of the deniers vs bliss of the righteous and internalizing divine sovereignty.">
+            <div class="card-title-row">
+              <span class="card-idx">43</span>
+              <h4>An-Naba' Station 43: Contrast Of Celestial Stations</h4>
+            </div>
+            <ul class="card-points">
+              <li>Contemplating Ayāt of Surah An-Naba' in light of classical Sunni exegesis.</li>
+              <li>Focusing upon punishment of the deniers vs bliss of the righteous and internalizing divine sovereignty.</li>
+            </ul>
+          </div>
+          <div class="card-item" data-search="an-naba' station 44: contrast of celestial stations contemplating ayāt of surah an-naba' in light of classical sunni exegesis. focusing upon punishment of the deniers vs bliss of the righteous and internalizing divine sovereignty.">
+            <div class="card-title-row">
+              <span class="card-idx">44</span>
+              <h4>An-Naba' Station 44: Contrast Of Celestial Stations</h4>
+            </div>
+            <ul class="card-points">
+              <li>Contemplating Ayāt of Surah An-Naba' in light of classical Sunni exegesis.</li>
+              <li>Focusing upon punishment of the deniers vs bliss of the righteous and internalizing divine sovereignty.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      
+      <div class="pillar-box">
+        <div class="pillar-bar purple">
+          <h3>PILLAR 12: SOUL CONTEMPLATION</h3>
+          <p>Tadabbur, Spiritual Realities & Moral Application</p>
+        </div>
+        <div class="cards-wrapper">
+          <div class="card-item" data-search="an-naba' principle 45: soul application examining the theological dimensions of contrast of celestial stations. cultivating reverent humility and eradicating spiritual negligence.">
+            <div class="card-title-row">
+              <span class="card-idx">45</span>
+              <h4>An-Naba' Principle 45: Soul Application</h4>
+            </div>
+            <ul class="card-points">
+              <li>Examining the theological dimensions of contrast of celestial stations.</li>
+              <li>Cultivating reverent humility and eradicating spiritual negligence.</li>
+            </ul>
+          </div>
+          <div class="card-item" data-search="an-naba' principle 46: soul application examining the theological dimensions of contrast of celestial stations. cultivating reverent humility and eradicating spiritual negligence.">
+            <div class="card-title-row">
+              <span class="card-idx">46</span>
+              <h4>An-Naba' Principle 46: Soul Application</h4>
+            </div>
+            <ul class="card-points">
+              <li>Examining the theological dimensions of contrast of celestial stations.</li>
+              <li>Cultivating reverent humility and eradicating spiritual negligence.</li>
+            </ul>
+          </div>
+          <div class="card-item" data-search="an-naba' principle 47: soul application examining the theological dimensions of contrast of celestial stations. cultivating reverent humility and eradicating spiritual negligence.">
+            <div class="card-title-row">
+              <span class="card-idx">47</span>
+              <h4>An-Naba' Principle 47: Soul Application</h4>
+            </div>
+            <ul class="card-points">
+              <li>Examining the theological dimensions of contrast of celestial stations.</li>
+              <li>Cultivating reverent humility and eradicating spiritual negligence.</li>
+            </ul>
+          </div>
+          <div class="card-item" data-search="an-naba' principle 48: soul application examining the theological dimensions of contrast of celestial stations. cultivating reverent humility and eradicating spiritual negligence.">
+            <div class="card-title-row">
+              <span class="card-idx">48</span>
+              <h4>An-Naba' Principle 48: Soul Application</h4>
+            </div>
+            <ul class="card-points">
+              <li>Examining the theological dimensions of contrast of celestial stations.</li>
+              <li>Cultivating reverent humility and eradicating spiritual negligence.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="plate-section " id="plateSection7">
+    <div class="plate-title-bar">
+      <div>
+        <h2>Plate 07: CANONICAL SUNNI EXEGESIS & TAFSIR</h2>
+        <p>Pillars 13 & 14: Harmonization from Ibn Kathir, At-Tabari, and Al-Qurtubi</p>
+      </div>
+      <div class="plate-badge-box">
+        <span class="badge-gold">[PLATE 07 : SCHOLARLY HERMENEUTICS]</span>
+        <span class="badge-emerald">100% SUNNI VERIFIED</span>
+      </div>
+    </div>
+    <div class="pillars-layout">
+      
+      <div class="pillar-box">
+        <div class="pillar-bar rose">
+          <h3>PILLAR 13: CANONICAL SUNNI EXEGESIS</h3>
+          <p>Foundational Exegesis & Thematic Inquiry</p>
+        </div>
+        <div class="cards-wrapper">
+          <div class="card-item" data-search="an-naba' station 49: canonical sunni exegesis contemplating ayāt of surah an-naba' in light of classical sunni exegesis. focusing upon harmonization from ibn kathir, at-tabari, and al-qurtubi and internalizing divine sovereignty.">
+            <div class="card-title-row">
+              <span class="card-idx">49</span>
+              <h4>An-Naba' Station 49: Canonical Sunni Exegesis</h4>
+            </div>
+            <ul class="card-points">
+              <li>Contemplating Ayāt of Surah An-Naba' in light of classical Sunni exegesis.</li>
+              <li>Focusing upon harmonization from ibn kathir, at-tabari, and al-qurtubi and internalizing divine sovereignty.</li>
+            </ul>
+          </div>
+          <div class="card-item" data-search="an-naba' station 50: canonical sunni exegesis contemplating ayāt of surah an-naba' in light of classical sunni exegesis. focusing upon harmonization from ibn kathir, at-tabari, and al-qurtubi and internalizing divine sovereignty.">
+            <div class="card-title-row">
+              <span class="card-idx">50</span>
+              <h4>An-Naba' Station 50: Canonical Sunni Exegesis</h4>
+            </div>
+            <ul class="card-points">
+              <li>Contemplating Ayāt of Surah An-Naba' in light of classical Sunni exegesis.</li>
+              <li>Focusing upon harmonization from ibn kathir, at-tabari, and al-qurtubi and internalizing divine sovereignty.</li>
+            </ul>
+          </div>
+          <div class="card-item" data-search="an-naba' station 51: canonical sunni exegesis contemplating ayāt of surah an-naba' in light of classical sunni exegesis. focusing upon harmonization from ibn kathir, at-tabari, and al-qurtubi and internalizing divine sovereignty.">
+            <div class="card-title-row">
+              <span class="card-idx">51</span>
+              <h4>An-Naba' Station 51: Canonical Sunni Exegesis</h4>
+            </div>
+            <ul class="card-points">
+              <li>Contemplating Ayāt of Surah An-Naba' in light of classical Sunni exegesis.</li>
+              <li>Focusing upon harmonization from ibn kathir, at-tabari, and al-qurtubi and internalizing divine sovereignty.</li>
+            </ul>
+          </div>
+          <div class="card-item" data-search="an-naba' station 52: canonical sunni exegesis contemplating ayāt of surah an-naba' in light of classical sunni exegesis. focusing upon harmonization from ibn kathir, at-tabari, and al-qurtubi and internalizing divine sovereignty.">
+            <div class="card-title-row">
+              <span class="card-idx">52</span>
+              <h4>An-Naba' Station 52: Canonical Sunni Exegesis</h4>
+            </div>
+            <ul class="card-points">
+              <li>Contemplating Ayāt of Surah An-Naba' in light of classical Sunni exegesis.</li>
+              <li>Focusing upon harmonization from ibn kathir, at-tabari, and al-qurtubi and internalizing divine sovereignty.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      
+      <div class="pillar-box">
+        <div class="pillar-bar cyan">
+          <h3>PILLAR 14: TAFSIR</h3>
+          <p>Tadabbur, Spiritual Realities & Moral Application</p>
+        </div>
+        <div class="cards-wrapper">
+          <div class="card-item" data-search="an-naba' principle 53: soul application examining the theological dimensions of canonical sunni exegesis & tafsir. cultivating reverent humility and eradicating spiritual negligence.">
+            <div class="card-title-row">
+              <span class="card-idx">53</span>
+              <h4>An-Naba' Principle 53: Soul Application</h4>
+            </div>
+            <ul class="card-points">
+              <li>Examining the theological dimensions of canonical sunni exegesis & tafsir.</li>
+              <li>Cultivating reverent humility and eradicating spiritual negligence.</li>
+            </ul>
+          </div>
+          <div class="card-item" data-search="an-naba' principle 54: soul application examining the theological dimensions of canonical sunni exegesis & tafsir. cultivating reverent humility and eradicating spiritual negligence.">
+            <div class="card-title-row">
+              <span class="card-idx">54</span>
+              <h4>An-Naba' Principle 54: Soul Application</h4>
+            </div>
+            <ul class="card-points">
+              <li>Examining the theological dimensions of canonical sunni exegesis & tafsir.</li>
+              <li>Cultivating reverent humility and eradicating spiritual negligence.</li>
+            </ul>
+          </div>
+          <div class="card-item" data-search="an-naba' principle 55: soul application examining the theological dimensions of canonical sunni exegesis & tafsir. cultivating reverent humility and eradicating spiritual negligence.">
+            <div class="card-title-row">
+              <span class="card-idx">55</span>
+              <h4>An-Naba' Principle 55: Soul Application</h4>
+            </div>
+            <ul class="card-points">
+              <li>Examining the theological dimensions of canonical sunni exegesis & tafsir.</li>
+              <li>Cultivating reverent humility and eradicating spiritual negligence.</li>
+            </ul>
+          </div>
+          <div class="card-item" data-search="an-naba' principle 56: soul application examining the theological dimensions of canonical sunni exegesis & tafsir. cultivating reverent humility and eradicating spiritual negligence.">
+            <div class="card-title-row">
+              <span class="card-idx">56</span>
+              <h4>An-Naba' Principle 56: Soul Application</h4>
+            </div>
+            <ul class="card-points">
+              <li>Examining the theological dimensions of canonical sunni exegesis & tafsir.</li>
+              <li>Cultivating reverent humility and eradicating spiritual negligence.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="plate-section " id="plateSection8">
+    <div class="plate-title-bar">
+      <div>
+        <h2>Plate 08: LIVING TADABBUR & SOUL REALIZATION</h2>
+        <p>Pillars 15 & 16: Practical Spiritual Protocols, Daily Adab & Soul Return</p>
+      </div>
+      <div class="plate-badge-box">
+        <span class="badge-gold">[PLATE 08 : CONTEMPLATION & RETURN]</span>
+        <span class="badge-emerald">100% SUNNI VERIFIED</span>
+      </div>
+    </div>
+    <div class="pillars-layout">
+      
+      <div class="pillar-box">
+        <div class="pillar-bar gold">
+          <h3>PILLAR 15: LIVING TADABBUR</h3>
+          <p>Foundational Exegesis & Thematic Inquiry</p>
+        </div>
+        <div class="cards-wrapper">
+          <div class="card-item" data-search="an-naba' station 57: living tadabbur contemplating ayāt of surah an-naba' in light of classical sunni exegesis. focusing upon practical spiritual protocols, daily adab & soul return and internalizing divine sovereignty.">
+            <div class="card-title-row">
+              <span class="card-idx">57</span>
+              <h4>An-Naba' Station 57: Living Tadabbur</h4>
+            </div>
+            <ul class="card-points">
+              <li>Contemplating Ayāt of Surah An-Naba' in light of classical Sunni exegesis.</li>
+              <li>Focusing upon practical spiritual protocols, daily adab & soul return and internalizing divine sovereignty.</li>
+            </ul>
+          </div>
+          <div class="card-item" data-search="an-naba' station 58: living tadabbur contemplating ayāt of surah an-naba' in light of classical sunni exegesis. focusing upon practical spiritual protocols, daily adab & soul return and internalizing divine sovereignty.">
+            <div class="card-title-row">
+              <span class="card-idx">58</span>
+              <h4>An-Naba' Station 58: Living Tadabbur</h4>
+            </div>
+            <ul class="card-points">
+              <li>Contemplating Ayāt of Surah An-Naba' in light of classical Sunni exegesis.</li>
+              <li>Focusing upon practical spiritual protocols, daily adab & soul return and internalizing divine sovereignty.</li>
+            </ul>
+          </div>
+          <div class="card-item" data-search="an-naba' station 59: living tadabbur contemplating ayāt of surah an-naba' in light of classical sunni exegesis. focusing upon practical spiritual protocols, daily adab & soul return and internalizing divine sovereignty.">
+            <div class="card-title-row">
+              <span class="card-idx">59</span>
+              <h4>An-Naba' Station 59: Living Tadabbur</h4>
+            </div>
+            <ul class="card-points">
+              <li>Contemplating Ayāt of Surah An-Naba' in light of classical Sunni exegesis.</li>
+              <li>Focusing upon practical spiritual protocols, daily adab & soul return and internalizing divine sovereignty.</li>
+            </ul>
+          </div>
+          <div class="card-item" data-search="the practical sunnah protocol **align tonight's sleep with the sunnah:**  
+honor verse 78:9 (*wa ja'alna nawmakum subata*): turn off all screens and bright lights by 10:3... engaging in continuous dhikr, sincere repentance, and contemplative recitation.">
+            <div class="card-title-row">
+              <span class="card-idx">60</span>
+              <h4>The Practical Sunnah Protocol</h4>
+            </div>
+            <ul class="card-points">
+              <li>**Align Tonight's Sleep with the Sunnah:**  
+Honor verse 78:9 (*Wa ja'alna nawmakum subata*): Turn off all screens and bright lights by 10:3...</li>
+              <li>Engaging in continuous Dhikr, sincere repentance, and contemplative recitation.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      
+      <div class="pillar-box">
+        <div class="pillar-bar emerald">
+          <h3>PILLAR 16: SOUL REALIZATION</h3>
+          <p>Tadabbur, Spiritual Realities & Moral Application</p>
+        </div>
+        <div class="cards-wrapper">
+          <div class="card-item" data-search="an-naba' principle 61: soul application examining the theological dimensions of living tadabbur & soul realization. cultivating reverent humility and eradicating spiritual negligence.">
+            <div class="card-title-row">
+              <span class="card-idx">61</span>
+              <h4>An-Naba' Principle 61: Soul Application</h4>
+            </div>
+            <ul class="card-points">
+              <li>Examining the theological dimensions of living tadabbur & soul realization.</li>
+              <li>Cultivating reverent humility and eradicating spiritual negligence.</li>
+            </ul>
+          </div>
+          <div class="card-item" data-search="an-naba' principle 62: soul application examining the theological dimensions of living tadabbur & soul realization. cultivating reverent humility and eradicating spiritual negligence.">
+            <div class="card-title-row">
+              <span class="card-idx">62</span>
+              <h4>An-Naba' Principle 62: Soul Application</h4>
+            </div>
+            <ul class="card-points">
+              <li>Examining the theological dimensions of living tadabbur & soul realization.</li>
+              <li>Cultivating reverent humility and eradicating spiritual negligence.</li>
+            </ul>
+          </div>
+          <div class="card-item" data-search="an-naba' principle 63: soul application examining the theological dimensions of living tadabbur & soul realization. cultivating reverent humility and eradicating spiritual negligence.">
+            <div class="card-title-row">
+              <span class="card-idx">63</span>
+              <h4>An-Naba' Principle 63: Soul Application</h4>
+            </div>
+            <ul class="card-points">
+              <li>Examining the theological dimensions of living tadabbur & soul realization.</li>
+              <li>Cultivating reverent humility and eradicating spiritual negligence.</li>
+            </ul>
+          </div>
+          <div class="card-item" data-search="an-naba' principle 64: soul application examining the theological dimensions of living tadabbur & soul realization. cultivating reverent humility and eradicating spiritual negligence.">
+            <div class="card-title-row">
+              <span class="card-idx">64</span>
+              <h4>An-Naba' Principle 64: Soul Application</h4>
+            </div>
+            <ul class="card-points">
+              <li>Examining the theological dimensions of living tadabbur & soul realization.</li>
+              <li>Cultivating reverent humility and eradicating spiritual negligence.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <!-- Footnotes & Scholarly References Section -->
+    <section class="footnotes-section" id="footnotesSection" style="margin-top: 48px; margin-bottom: 40px; background: var(--navy-card); border: 1px solid var(--border-gold); border-radius: 12px; padding: 28px 32px; box-shadow: 0 8px 24px rgba(0,0,0,0.4);">
+      <div style="border-bottom: 1px solid var(--border-muted); padding-bottom: 16px; margin-bottom: 24px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px;">
+        <div>
+          <span class="brand-badge" style="margin-bottom: 6px; display: inline-block; font-family:'Cinzel',serif; font-size:12px; color:var(--gold);">DOCUMENTATION & PROVENANCE</span>
+          <h2 style="font-family: 'Cinzel', serif; font-size: 22px; color: var(--white); letter-spacing: 0.5px;">Footnotes & Scholarly References: Surah An-Naba'</h2>
+        </div>
+        <div style="font-size: 12px; color: var(--gold); border: 1px solid var(--border-gold); padding: 5px 14px; border-radius: 6px; background: var(--gold-glow); font-family: 'Cinzel', serif; letter-spacing: 1px;">
+          Verified Tier-1 Sunni Consensus
+        </div>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px;">
+        <div style="background: var(--navy-elevated); border: 1px solid var(--border-muted); border-top: 3px solid var(--gold); border-radius: 8px; padding: 20px;">
+          <h3 style="font-family: 'Cinzel', serif; font-size: 15px; color: var(--gold-light); margin-bottom: 14px; display: flex; align-items: center; gap: 8px;">
+            <span>📖</span> Classical Exegesis (Tafsir)
+          </h3>
+          <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 12px;">
+              <li style="font-size: 13px; color: var(--text-muted); line-height: 1.5; border-bottom: 1px dashed rgba(255,255,255,0.06); padding-bottom: 8px;"><strong style="color: var(--white);">Tafsir Ibn Kathir (An-Naba'):</strong> Complete cross-Qur'anic contextualization, authentic Prophetic traditions, and Salaf consensus on theological themes.</li>
+              <li style="font-size: 13px; color: var(--text-muted); line-height: 1.5; border-bottom: 1px dashed rgba(255,255,255,0.06); padding-bottom: 8px;"><strong style="color: var(--white);">Jami' al-Bayan (At-Tabari):</strong> Linguistic morphology, variant readings, and transmitted Companion narrations establishing bedrock meaning.</li>
+              <li style="font-size: 13px; color: var(--text-muted); line-height: 1.5; border-bottom: 1px dashed rgba(255,255,255,0.06); padding-bottom: 8px;"><strong style="color: var(--white);">Al-Jami' li-Ahkam al-Qur'an (Al-Qurtubi):</strong> Ethical implications, jurisprudential obligations, and behavioral mandates derived from the text.</li>
+              <li style="font-size: 13px; color: var(--text-muted); line-height: 1.5; border-bottom: 1px dashed rgba(255,255,255,0.06); padding-bottom: 8px;"><strong style="color: var(--white);">Taysir al-Karim ar-Rahman (As-Sa'di):</strong> Lucid contemporary exposition connecting spiritual reflections to human heart states.</li>
+          </ul>
+        </div>
+        <div style="background: var(--navy-elevated); border: 1px solid var(--border-muted); border-top: 3px solid var(--cyan); border-radius: 8px; padding: 20px;">
+          <h3 style="font-family: 'Cinzel', serif; font-size: 15px; color: var(--cyan); margin-bottom: 14px; display: flex; align-items: center; gap: 8px;">
+            <span>📜</span> Canonical Hadith Citations
+          </h3>
+          <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 12px;">
+              <li style="font-size: 13px; color: var(--text-muted); line-height: 1.5; border-bottom: 1px dashed rgba(255,255,255,0.06); padding-bottom: 8px;"><strong style="color: var(--white);">Canonical Sahih Corpus:</strong> Authentic virtues, liturgical recitation occasions, and Prophetic practices connected to Surah An-Naba'.</li>
+              <li style="font-size: 13px; color: var(--text-muted); line-height: 1.5; border-bottom: 1px dashed rgba(255,255,255,0.06); padding-bottom: 8px;"><strong style="color: var(--white);">Sunan Compendia (Abu Dawud, An-Nasa'i, At-Tirmidhi):</strong> Corroborated chains documenting the recitation of Juz 'Amma in daily obligatory and voluntary prayers.</li>
+          </ul>
+        </div>
+        <div style="background: var(--navy-elevated); border: 1px solid var(--border-muted); border-top: 3px solid var(--emerald); border-radius: 8px; padding: 20px;">
+          <h3 style="font-family: 'Cinzel', serif; font-size: 15px; color: var(--emerald); margin-bottom: 14px; display: flex; align-items: center; gap: 8px;">
+            <span>🌱</span> Contemplation & Soul Return (Tadabbur)
+          </h3>
+          <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 12px;">
+              <li style="font-size: 13px; color: var(--text-muted); line-height: 1.5; border-bottom: 1px dashed rgba(255,255,255,0.06); padding-bottom: 8px;"><strong style="color: var(--white);">Station 01 (Soul Awakeness):</strong> Contemplative inquiry into how Surah An-Naba' shatters materialist complacency and restores existential awe.</li>
+              <li style="font-size: 13px; color: var(--text-muted); line-height: 1.5; border-bottom: 1px dashed rgba(255,255,255,0.06); padding-bottom: 8px;"><strong style="color: var(--white);">Station 02 (Accountability & Hope):</strong> Internalizing the divine balance between reverent awe of accountability and profound trust in divine mercy.</li>
+              <li style="font-size: 13px; color: var(--text-muted); line-height: 1.5; border-bottom: 1px dashed rgba(255,255,255,0.06); padding-bottom: 8px;"><strong style="color: var(--white);">Station 03 (Moral Rectitude):</strong> Translating recitation into ethical conduct, protecting weak members of society, and guarding speech.</li>
+              <li style="font-size: 13px; color: var(--text-muted); line-height: 1.5; border-bottom: 1px dashed rgba(255,255,255,0.06); padding-bottom: 8px;"><strong style="color: var(--white);">Station 04 (Living Liturgy):</strong> Daily practice of reciting Surah An-Naba' with presence of heart, seeking eternal sanctuary in Allah.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+
+  <!-- EXEGESIS MODALS -->
+  <div class="modal-backdrop" id="modal-m_an_naba_1">
+    <div class="modal-body">
+      <button class="modal-close" onclick="closeModal('m_an_naba_1')">&times;</button>
+      <h3>The Epistemic Foundation of Surah An-Naba' (النبأ)</h3>
+      <p>Surah An-Naba' is the grand, majestic gateway to the final thirtieth part of the Qur'an (*Juz 'Amma*). It opens with the piercing question that echoes across the streets of Makkah: 'About what are they asking one another? About the great news—that over which they are in disagreement' (*'Anin-naba'il-'adhim*). It guides human reason through nine breathtaking exhibits of divine engineering: the earth as a bed, the mountains as pegs, sleep for rest, the night as a cloak, the sun as a blazing lamp, and rainclouds pouring torrential water. It contrasts the horrifying ambush of Hell (*Mirsada*) with the triumphant success of the righteous (*Inna lil-muttaqina mafaza*), ending with the disbeliever's agonizing cry of regret: 'Oh, I wish that I were dust!' (*Ya laytani kuntu turaba*).</p>
+      <div class="modal-source">Authorities: Tafsir Ibn Kathir, Jami' al-Bayan (At-Tabari), Al-Jami' li-Ahkam al-Qur'an (Al-Qurtubi)</div>
+    </div>
+  </div>
+
+  <div class="modal-backdrop" id="modal-m_an_naba_2">
+    <div class="modal-body">
+      <button class="modal-close" onclick="closeModal('m_an_naba_2')">&times;</button>
+      <h3>Thematic Synthesis & Classical Exegesis</h3>
+      <p>The Great Tiding of Resurrection (*An-Naba' al-'Adhim*), Nine Cosmic Proofs of Divine Power, the Ambush of Hell, and the Cry of Regret.</p>
+      <div class="modal-source">Authorities: Tafsir as-Sa'di, Mafatih al-Ghayb (Fakhr ad-Din ar-Razi)</div>
+    </div>
+  </div>
+
+
+  <!-- MOBILE STICKY BOTTOM STEPPER (Brand Visual System Section 71) -->
+  <nav class="mobile-stepper" id="mobileStepper">
+    <button class="stepper-btn" id="stepperPrevBtn" onclick="stepSuitePlate(-1)">
+      <span>←</span>
+      <span id="stepperPrevLabel">← Al-Mursalat</span>
+    </button>
+    <div class="stepper-status" id="stepperStatus" onclick="stepperStatusClick()">
+      <span class="cur-plate" id="stepperCurrentText">Plate 01 of 08</span>
+      <span class="tap-hint">Tap to jump plates ▴</span>
+    </div>
+    <button class="stepper-btn btn-gold-accent" id="stepperNextBtn" onclick="stepSuitePlate(1)">
+      <span id="stepperNextLabel">Plate 02</span>
+      <span>→</span>
+    </button>
+  </nav>
+
+  <script>
+    function switchSuitePlate(page) {
+      document.querySelectorAll('.plate-tab-btn').forEach(btn => btn.classList.remove('active'));
+      document.querySelectorAll('.plate-section').forEach(sec => sec.classList.remove('active'));
+      const tab = document.getElementById('suiteTab' + page);
+      const sec = document.getElementById('plateSection' + page);
+      if (tab) tab.classList.add('active');
+      if (sec) sec.classList.add('active');
+    }
+
+    function filterSuite() {
+      const q = document.getElementById('suiteSearch').value.toLowerCase().trim();
+      const allCards = document.querySelectorAll('.card-item');
+      if (!q) { allCards.forEach(c => c.style.display = 'block'); return; }
+      allCards.forEach(c => {
+        const text = c.getAttribute('data-search') || '';
+        if (text.includes(q)) c.style.display = 'block';
+        else c.style.display = 'none';
+      });
+    }
+
+    function openModal(id) {
+      const m = document.getElementById('modal-' + id);
+      if (m) m.classList.add('open');
+    }
+
+    function closeModal(id) {
+      const m = document.getElementById('modal-' + id);
+      if (m) m.classList.remove('open');
+    }
+
+    window.onclick = function(event) {
+      if (event.target.classList.contains('modal-backdrop')) {
+        event.target.classList.remove('open');
+      }
+    }
+
+    // --- HUURS MOBILE ADAPTIVE ENGINE (Brand Visual System Section 71) ---
+    const TOTAL_PLATES = 8;
+    const SURAH_NUM = 78;
+    const PREV_SURAH_URL = "./SURAH_67_AL_MULK_SUITE.html#plate-01";
+    const NEXT_SURAH_URL = "./SURAH_93_AD_DUHA_SUITE.html#plate-01";
+    const PREV_SURAH_NAME = "Al-Mulk";const NEXT_SURAH_NAME = "An-Nazi'at";let currentActivePlate = 1;
+
+    function stepperStatusClick() {
+      const tabs = document.querySelector('.nav-tabs-wrapper');
+      if (tabs) tabs.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }
+
+    function stepSuitePlate(dir) {
+      const target = currentActivePlate + dir;
+      if (dir === -1 && currentActivePlate === 1) {
+        window.location.href = PREV_SURAH_URL;
+        return;
+      }
+      if (dir === 1 && currentActivePlate === TOTAL_PLATES) {
+        window.location.href = NEXT_SURAH_URL;
+        return;
+      }
+      if (target >= 1 && target <= TOTAL_PLATES) {
+        navigateToPlate(target);
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    }
+
+    function updateSuiteStepper() {
+      const prevLabel = document.getElementById('stepperPrevLabel');
+      const nextLabel = document.getElementById('stepperNextLabel');
+      const curText = document.getElementById('stepperCurrentText');
+      const nextBtn = document.getElementById('stepperNextBtn');
+      if (!curText || !prevLabel || !nextLabel || !nextBtn) return;
+
+      curText.textContent = `Plate ${String(currentActivePlate).padStart(2, '0')} of ${String(TOTAL_PLATES).padStart(2, '0')}`;
+
+      if (currentActivePlate === 1) {
+        prevLabel.textContent = PREV_SURAH_NAME ? `← ${PREV_SURAH_NAME}` : '← All Surahs';
+      } else {
+        prevLabel.textContent = `Plate ${String(currentActivePlate - 1).padStart(2, '0')}`;
+      }
+
+      if (currentActivePlate === TOTAL_PLATES) {
+        nextLabel.textContent = NEXT_SURAH_NAME ? `Next: ${NEXT_SURAH_NAME} →` : 'All Surahs →';
+        nextBtn.classList.add('btn-gold-accent');
+      } else {
+        nextLabel.textContent = `Plate ${String(currentActivePlate + 1).padStart(2, '0')}`;
+        nextBtn.classList.remove('btn-gold-accent');
+      }
+    }
+
+    function onPlateSelected(num) {
+      currentActivePlate = num;
+      updateSuiteStepper();
+      const hash = `#plate-${String(num).padStart(2, '0')}`;
+      if (window.location.hash !== hash) {
+        history.replaceState(null, '', hash);
+      }
+    }
+
+    function navigateToPlate(num) {
+      switchSuitePlate(num);
+      onPlateSelected(num);
+    }
+
+    function handleSuiteHash() {
+      const hash = window.location.hash.toLowerCase();
+      const match = hash.match(/plate-([0-9]+)/);
+      if (match) {
+        const p = parseInt(match[1], 10);
+        if (p >= 1 && p <= TOTAL_PLATES) {
+          navigateToPlate(p);
+          return true;
+        }
+      }
+      return false;
+    }
+
+    const _origSwitchPlate = switchSuitePlate;
+    switchSuitePlate = function(arg) {
+      _origSwitchPlate(arg);
+      onPlateSelected(parseInt(arg, 10));
+    };
+
+    window.addEventListener('hashchange', handleSuiteHash);
+    if (document.readyState === 'loading') {
+      window.addEventListener('DOMContentLoaded', () => {
+        updateSuiteStepper();
+        handleSuiteHash();
+      });
+    } else {
+      updateSuiteStepper();
+      handleSuiteHash();
+    }
+  </script>
+</body>
+</html>
