@@ -14,8 +14,8 @@
 This suite contains the complete, publication-ready **Strategic Investment & Partnership Portfolio** for the *Come Back to the Qur'an* project.
 
 It has been engineered to present a solid investment proposition to prospective venture philanthropists, angel investors, Waqf trustees, and institutional partners. It combines:
-1. **The Technological Moat:** Autonomous multi-agent DAG architecture, local GPU CUDA F5-TTS, optical flow motion interpolation, and **$0.00 marginal compute costs**.
-2. **The Dunya Dividend (This World):** High-margin digital publishing (90%+ net margins), global Amazon KDP print-on-demand, and B2B curriculum licensing.
+1. **The Technological Moat:** Autonomous multi-agent DAG architecture, local GPU CUDA F5-TTS, and optical flow motion interpolation.
+2. **The Dunya Dividend (This World):** Sustainable digital publishing, global Amazon KDP print-on-demand, and B2B curriculum licensing.
 3. **The Akhirah Dividend (The Hereafter):** Perpetual **Sadaqah Jariyah** (ongoing charity), spreading beneficial knowledge (**'Ilm Yuntafa'u Bih**), and reviving distracted hearts.
 
 ---
