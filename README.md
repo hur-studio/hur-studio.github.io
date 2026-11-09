@@ -4,16 +4,17 @@
 **Flagship Initiative:** Come Back to the Qur'an (Multi-Season Cinema Series)  
 **Core Operating Creed:** **READ. REFLECT. RETURN.**  
 **Document Class:** Master Portfolio Directory Index & Execution Handbook  
-**Release Date:** September 2026 / Muharram 1448  
+**Interactive Suite:** [hur-studio.github.io/portfolio.html](https://hur-studio.github.io/portfolio.html)  
+**Web Documentation:** [README.html](README.html)  
 
 ---
 
 ## 1. Portfolio Overview
 
-This directory (`/mnt/AI/ag/Campaign/Portfolio/`, also accessible via alias `Portolio/`) contains the complete, professional, publication-ready **Strategic Investment & Partnership Portfolio** for the *Come Back to the Qur'an* project.
+This suite contains the complete, publication-ready **Strategic Investment & Partnership Portfolio** for the *Come Back to the Qur'an* project.
 
-It has been engineered to present a firm, solid, and high-converting investment proposition to prospective venture philanthropists, angel investors, Waqf trustees, and institutional partners. It combines:
-1. **The Technological Moat:** Autonomous 20-agent DAG architecture, local GPU CUDA F5-TTS, optical flow motion interpolation, and **$0.00 marginal compute costs**.
+It has been engineered to present a solid investment proposition to prospective venture philanthropists, angel investors, Waqf trustees, and institutional partners. It combines:
+1. **The Technological Moat:** Autonomous multi-agent DAG architecture, local GPU CUDA F5-TTS, optical flow motion interpolation, and **$0.00 marginal compute costs**.
 2. **The Dunya Dividend (This World):** High-margin digital publishing (90%+ net margins), global Amazon KDP print-on-demand, and B2B curriculum licensing.
 3. **The Akhirah Dividend (The Hereafter):** Perpetual **Sadaqah Jariyah** (ongoing charity), spreading beneficial knowledge (**'Ilm Yuntafa'u Bih**), and reviving distracted hearts.
 
@@ -22,9 +23,11 @@ It has been engineered to present a firm, solid, and high-converting investment 
 ## 2. Directory Structure & Asset Map
 
 ```
-Portfolio/
-├── index.html                           # Master Interactive Web Portal (Central Hub)
-├── README.md                            # Master Portfolio Documentation & Execution Guide
+hur-studio.github.io/
+├── index.html                           # Free 11-Surah Mindmap Sanctuary PWA Gateway
+├── portfolio.html                       # Master Interactive Web Portal (Central Hub)
+├── README.html                          # Master Portfolio Documentation (HTML)
+├── README.md                            # Markdown Documentation Index
 ├── assets/                              # High-resolution photographic visual DNA plates
 │   ├── night_galaxy.jpg                 # Hero desert night sky plate
 │   ├── hero_oasis.jpg                   # Contemplative desk & Qur'an oasis plate
@@ -32,62 +35,51 @@ Portfolio/
 │   ├── olive_tree.jpg                   # Mountain olive tree plate
 │   ├── stream_source.jpg                # Pristine freshwater stream plate
 │   ├── two_seas.jpg                     # Barrier between two seas plate
-│   ├── waterfall_birds.jpg              # Waterfall & songbirds plate
-│   └── ...
-├── previews/                            # Rendered visual audit previews of generated PDFs
-├── scripts/                             # Pure Python PDF compilation engine
-│   ├── pdf_engine.py                    # Modular PDF 1.4 vector & typography builder
-│   └── build_all_portfolio_pdfs.py      # Master compiler script for all 5 portfolio PDFs
+│   └── waterfall_birds.jpg              # Waterfall & songbirds plate
+├── previews/                            # Rendered visual audit previews of generated assets
 │
 ├── 01_PRESENTATION/                     # Pillar 1: Cinematic Pitch Presentation
 │   ├── index.html                       # 10-slide interactive cinematic web deck
 │   ├── presentation_deck.pdf            # 10-slide 16:9 landscape broadcast PDF deck (2.9 MB)
-│   └── PRESENTATION_NOTES.md            # Speaker notes, 60s elevator pitch & Investor Q&A
+│   └── PRESENTATION_NOTES.html          # Speaker notes, 60s elevator pitch & Investor Q&A (HTML)
 │
 ├── 02_EXECUTIVE_SUMMARY/                # Pillar 2: Executive Investment Proposal
-│   ├── Huurs_Studio_Executive_Proposal.md   # Complete 10-section investment memorandum
+│   ├── Huurs_Studio_Executive_Proposal.html # Complete 10-section investment memorandum (HTML)
 │   └── Huurs_Studio_Executive_Proposal.pdf  # 5-page executive formal PDF proposal (1.8 MB)
 │
 ├── 03_LEAFLET/                          # Pillar 3: Marketing Leaflet / Trifold Brochure
 │   ├── trifold_brochure.html            # Interactive 6-panel trifold HTML with print styles
 │   ├── trifold_brochure.pdf             # 2-spread print-ready Letter landscape PDF (2.6 MB)
-│   └── LEAFLET_COPY.md                  # Comprehensive marketing and distribution copy
+│   └── LEAFLET_COPY.html                # Comprehensive marketing and distribution copy (HTML)
 │
-├── 04_BUSINESS_CARDS/                   # Pillar 4: Executive Business & Anchor Cards
-│   ├── business_cards.html              # HTML gang sheet layout with crop marks
-│   ├── business_cards.pdf               # 2-page print gang sheet PDF (front & back)
-│   └── CARD_SPECIFICATIONS.md           # Print finish specs (450gsm silk, gold foil, velvet)
-│
-└── 05_TECHNICAL_WHITEPAPER/             # Pillar 5: Technical Pipeline & Feasibility Whitepaper
-    ├── pipeline_architecture_whitepaper.md  # Comprehensive engineering architecture doc
-    └── pipeline_architecture_whitepaper.pdf # 6-page formal technical PDF whitepaper
+└── 04_BUSINESS_CARDS/                   # Pillar 4: Executive Business & Anchor Cards
+    ├── business_cards.html              # HTML gang sheet layout with crop marks
+    ├── business_cards.pdf               # 2-page print gang sheet PDF (front & back)
+    └── CARD_SPECIFICATIONS.html         # Print finish specs (450gsm silk, gold foil, velvet)
 ```
 
 ---
 
-## 3. The 5 Core Portfolio Pillars
+## 3. The 4 Core Portfolio Pillars
 
 ### Pillar 1: Pitch Presentation Deck (`01_PRESENTATION/`)
-* **Interactive Web Deck:** Open [`01_PRESENTATION/index.html`](file:///mnt/AI/ag/Campaign/Portfolio/01_PRESENTATION/index.html) in any modern browser. Supports keyboard navigation (Left/Right arrows, Spacebar), fullscreen toggle, and real visual assets.
-* **Broadcast PDF Deck:** [`01_PRESENTATION/presentation_deck.pdf`](file:///mnt/AI/ag/Campaign/Portfolio/01_PRESENTATION/presentation_deck.pdf) — 10 widescreen slides (792 x 446 pts) formatted with dark navy luxury background, gold typography, metric cards, and photographic visuals.
-* **Speaker Script:** [`01_PRESENTATION/PRESENTATION_NOTES.md`](file:///mnt/AI/ag/Campaign/Portfolio/01_PRESENTATION/PRESENTATION_NOTES.md) provides word-for-word talking points, timing cues, and answers to challenging investor questions.
+* **Interactive Web Deck:** Open [`01_PRESENTATION/index.html`](01_PRESENTATION/index.html) in any modern browser. Supports keyboard navigation (Left/Right arrows, Spacebar), fullscreen toggle, and visual assets.
+* **Broadcast PDF Deck:** [`01_PRESENTATION/presentation_deck.pdf`](01_PRESENTATION/presentation_deck.pdf) — 10 widescreen slides formatted with dark navy luxury background, gold typography, metric cards, and photographic visuals.
+* **Speaker Script:** [`01_PRESENTATION/PRESENTATION_NOTES.html`](01_PRESENTATION/PRESENTATION_NOTES.html) provides talking points, timing cues, and answers to investor questions.
 
 ### Pillar 2: Executive Investment Proposal (`02_EXECUTIVE_SUMMARY/`)
-* **Markdown Memorandum:** [`02_EXECUTIVE_SUMMARY/Huurs_Studio_Executive_Proposal.md`](file:///mnt/AI/ag/Campaign/Portfolio/02_EXECUTIVE_SUMMARY/Huurs_Studio_Executive_Proposal.md).
-* **Formal Executive PDF:** [`02_EXECUTIVE_SUMMARY/Huurs_Studio_Executive_Proposal.pdf`](file:///mnt/AI/ag/Campaign/Portfolio/02_EXECUTIVE_SUMMARY/Huurs_Studio_Executive_Proposal.pdf) — 5-page formal proposal detailing the problem, solution, multi-agent technology moat, proven traction (Seasons 1 & 2), financial model, theological governance, $150k seed budget, and signature block.
+* **HTML Memorandum:** [`02_EXECUTIVE_SUMMARY/Huurs_Studio_Executive_Proposal.html`](02_EXECUTIVE_SUMMARY/Huurs_Studio_Executive_Proposal.html).
+* **Formal Executive PDF:** [`02_EXECUTIVE_SUMMARY/Huurs_Studio_Executive_Proposal.pdf`](02_EXECUTIVE_SUMMARY/Huurs_Studio_Executive_Proposal.pdf) — 5-page formal proposal detailing the problem, solution, multi-agent technology moat, proven traction (Seasons 1 & 2), financial model, theological governance, and $150k seed budget.
 
 ### Pillar 3: Marketing Leaflet / Trifold Brochure (`03_LEAFLET/`)
-* **Interactive HTML Brochure:** [`03_LEAFLET/trifold_brochure.html`](file:///mnt/AI/ag/Campaign/Portfolio/03_LEAFLET/trifold_brochure.html) featuring 6-panel layout (Letter landscape) with print-to-PDF styles.
-* **Print-Ready PDF Brochure:** [`03_LEAFLET/trifold_brochure.pdf`](file:///mnt/AI/ag/Campaign/Portfolio/03_LEAFLET/trifold_brochure.pdf) — 2-spread document (Outside Spread: Panels 5, 6, 1; Inside Spread: Panels 2, 3, 4) with dotted folding guides.
+* **Interactive HTML Brochure:** [`03_LEAFLET/trifold_brochure.html`](03_LEAFLET/trifold_brochure.html) featuring 6-panel layout (Letter landscape) with print-to-PDF styles.
+* **Print-Ready PDF Brochure:** [`03_LEAFLET/trifold_brochure.pdf`](03_LEAFLET/trifold_brochure.pdf) — 2-spread document with dotted folding guides.
+* **Brochure Copy (HTML):** [`03_LEAFLET/LEAFLET_COPY.html`](03_LEAFLET/LEAFLET_COPY.html).
 
 ### Pillar 4: Executive Business Cards & Anchor Cards (`04_BUSINESS_CARDS/`)
-* **Interactive HTML Cards:** [`04_BUSINESS_CARDS/business_cards.html`](file:///mnt/AI/ag/Campaign/Portfolio/04_BUSINESS_CARDS/business_cards.html).
-* **Print Gang Sheet PDF:** [`04_BUSINESS_CARDS/business_cards.pdf`](file:///mnt/AI/ag/Campaign/Portfolio/04_BUSINESS_CARDS/business_cards.pdf) — 8-up gang sheet (3.5" x 2") featuring Executive Founder Card, Contemplation Anchor Card (Surah Ar-Ra'd 13:28), Investor Privileged Access Card, and Waqf Liaison Card, complete with crop marks and duplex alignment.
-* **Print Specifications:** [`04_BUSINESS_CARDS/CARD_SPECIFICATIONS.md`](file:///mnt/AI/ag/Campaign/Portfolio/04_BUSINESS_CARDS/CARD_SPECIFICATIONS.md) detailing 450gsm silk matte paper, soft-touch velvet lamination, and hot-stamped gold foil.
-
-### Pillar 5: Technical Architecture Whitepaper (`05_TECHNICAL_WHITEPAPER/`)
-* **Markdown Whitepaper:** [`05_TECHNICAL_WHITEPAPER/pipeline_architecture_whitepaper.md`](file:///mnt/AI/ag/Campaign/Portfolio/05_TECHNICAL_WHITEPAPER/pipeline_architecture_whitepaper.md).
-* **Formal Engineering PDF:** [`05_TECHNICAL_WHITEPAPER/pipeline_architecture_whitepaper.pdf`](file:///mnt/AI/ag/Campaign/Portfolio/05_TECHNICAL_WHITEPAPER/pipeline_architecture_whitepaper.pdf) — 6-page technical report detailing the 20-agent DAG hierarchy, local CUDA F5-TTS neural speech synthesis, optical flow motion vector formulas, cryptographic scene collision prevention, and the $86k vs $0.00 economic comparison.
+* **Interactive HTML Cards:** [`04_BUSINESS_CARDS/business_cards.html`](04_BUSINESS_CARDS/business_cards.html).
+* **Print Gang Sheet PDF:** [`04_BUSINESS_CARDS/business_cards.pdf`](04_BUSINESS_CARDS/business_cards.pdf) — 8-up gang sheet (3.5" x 2") featuring Executive Founder Card, Contemplation Anchor Card (Surah Ar-Ra'd 13:28), Investor Privileged Access Card, and Waqf Liaison Card.
+* **Print Specifications (HTML):** [`04_BUSINESS_CARDS/CARD_SPECIFICATIONS.html`](04_BUSINESS_CARDS/CARD_SPECIFICATIONS.html) detailing 450gsm silk matte paper, soft-touch velvet lamination, and hot-stamped gold foil.
 
 ---
 
@@ -117,20 +109,4 @@ Portfolio/
 | **Waqf Benefactor** | **$50,000+** | Permanent endowment naming, institutional global translation rights | Endow entire Surah arc in perpetuity (generational Waqf) |
 
 ---
-
-## 6. How to Run & Recompile Assets
-
-All PDF deliverables are 100% self-contained and reproducible using the built-in Python compiler:
-
-```bash
-# Recompile all 5 portfolio PDFs in one command:
-python3 /mnt/AI/ag/Campaign/Portfolio/scripts/build_all_portfolio_pdfs.py
-
-# Launch the interactive portfolio hub in browser:
-google-chrome /mnt/AI/ag/Campaign/Portfolio/index.html
-# Or open in default browser:
-xdg-open /mnt/AI/ag/Campaign/Portfolio/index.html
-```
-
----
-*Huurs Studio Architecture Group — Authoritative Portfolio Specification — September 2026*
+*Huurs Studio Architecture Group — Authoritative Portfolio Specification*

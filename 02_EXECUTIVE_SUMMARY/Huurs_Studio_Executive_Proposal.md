@@ -216,5 +216,4 @@ Invest with us. Build with us. Stand with us at the forefront of the contemplati
 
 **Executive Contact:**  
 *Huurs Studio Management & Orchestration*  
-*Email:* `partner@huurs.com` / `invest@huurs.com`  
-*Repository:* `/mnt/AI/ag/Campaign/Portfolio`  
+*Studio Portal:* [hur-studio.github.io/portfolio.html](https://hur-studio.github.io/portfolio.html)  

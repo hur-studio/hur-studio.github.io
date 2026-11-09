@@ -32,10 +32,8 @@
   * 20 Vertical Contemplation Shorts
   * 114 Surah Study Ebooks & Interactive Web Reader
   * The 30-Day Guided Reflection Journal
-* **Direct Contact:**
-  * **Email:** `partner@huurs.com` / `invest@huurs.com`
-  * **Official Hub:** `https://huurs.com/portfolio`
-  * **Studio Location:** `/mnt/AI/ag/Campaign/Portfolio`
+* **Direct Access:**
+  * **Studio Portal:** `https://hur-studio.github.io/portfolio.html`
 
 ---
 

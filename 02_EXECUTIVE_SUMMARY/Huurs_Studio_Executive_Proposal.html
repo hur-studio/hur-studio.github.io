@@ -1,0 +1,816 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Executive Investment & Strategic Partnership Memorandum - Huur Studio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-deep: #070c15;
+      --bg-surface: #0e1624;
+      --bg-surface-elevated: #152033;
+      --gold: #d4af59;
+      --gold-light: #e6cb85;
+      --gold-muted: rgba(212, 175, 89, 0.18);
+      --emerald: #10b981;
+      --emerald-muted: rgba(16, 185, 129, 0.15);
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
+      --border-light: rgba(212, 175, 89, 0.25);
+      --border-card: rgba(255, 255, 255, 0.08);
+      --radius-sm: 8px;
+      --radius-md: 14px;
+      --radius-lg: 20px;
+      --shadow-lux: 0 20px 40px -15px rgba(0, 0, 0, 0.7);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background-color: var(--bg-deep);
+      color: var(--text-main);
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      line-height: 1.7;
+      padding: 0 0 90px 0;
+      overflow-x: hidden;
+    }
+
+    /* Top Sticky Header */
+    header {
+      background: rgba(7, 12, 21, 0.88);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border-light);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      padding: 16px 36px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .brand-logo {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      text-decoration: none;
+    }
+    .brand-crest {
+      width: 36px;
+      height: 36px;
+      border: 1.5px solid var(--gold);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Cinzel', serif;
+      font-weight: 700;
+      color: var(--gold);
+      border-radius: 6px;
+      background: var(--bg-surface);
+    }
+    .brand-title {
+      font-family: 'Cinzel', serif;
+      font-size: 1.15rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      color: var(--gold);
+    }
+    .brand-subtitle {
+      font-size: 0.7rem;
+      color: var(--text-muted);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+    .nav-actions {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+    }
+    .btn {
+      padding: 9px 18px;
+      border-radius: var(--radius-sm);
+      font-size: 0.82rem;
+      font-weight: 600;
+      text-decoration: none;
+      cursor: pointer;
+      transition: all 0.25s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .btn-gold {
+      background: linear-gradient(135deg, var(--gold) 0%, #b8933b 100%);
+      color: var(--bg-deep);
+      border: none;
+      box-shadow: 0 4px 15px rgba(212, 175, 89, 0.3);
+    }
+    .btn-gold:hover {
+      background: linear-gradient(135deg, var(--gold-light) 0%, var(--gold) 100%);
+      transform: translateY(-2px);
+    }
+    .btn-outline {
+      background: transparent;
+      color: var(--gold-light);
+      border: 1px solid var(--border-light);
+    }
+    .btn-outline:hover {
+      background: var(--bg-surface-elevated);
+      border-color: var(--gold);
+    }
+
+    /* Container */
+    .container {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 50px 24px 0;
+    }
+
+    /* Document Header */
+    .doc-hero {
+      border-bottom: 1px solid var(--border-card);
+      padding-bottom: 36px;
+      margin-bottom: 44px;
+    }
+    .doc-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 5px 14px;
+      border-radius: 999px;
+      background: var(--bg-surface-elevated);
+      border: 1px solid var(--border-light);
+      color: var(--gold);
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 18px;
+    }
+    .doc-title {
+      font-family: 'Cinzel', serif;
+      font-size: 2.5rem;
+      font-weight: 700;
+      line-height: 1.25;
+      color: var(--text-main);
+      margin-bottom: 18px;
+    }
+    .doc-title span {
+      background: linear-gradient(135deg, var(--gold-light) 0%, var(--gold) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .metadata-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px 24px;
+      background: var(--bg-surface);
+      border: 1px solid var(--border-card);
+      border-radius: var(--radius-md);
+      padding: 20px 24px;
+      margin-top: 24px;
+      font-size: 0.85rem;
+    }
+    .metadata-item strong {
+      color: var(--gold);
+      font-weight: 600;
+    }
+
+    /* Typography & Sections */
+    section {
+      margin-bottom: 48px;
+    }
+    h2 {
+      font-family: 'Cinzel', serif;
+      font-size: 1.85rem;
+      color: var(--gold-light);
+      margin-bottom: 18px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid var(--border-light);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    h3 {
+      font-family: 'Cinzel', serif;
+      font-size: 1.25rem;
+      color: var(--text-main);
+      margin: 24px 0 12px;
+    }
+    p {
+      color: #cbd5e1;
+      margin-bottom: 16px;
+      font-size: 1rem;
+      line-height: 1.75;
+    }
+    ul, ol {
+      margin: 0 0 20px 24px;
+      color: #cbd5e1;
+    }
+    li {
+      margin-bottom: 8px;
+      line-height: 1.65;
+    }
+    strong {
+      color: #ffffff;
+    }
+
+    /* Callout Boxes */
+    .callout {
+      background: var(--bg-surface);
+      border-left: 4px solid var(--gold);
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+      padding: 20px 24px;
+      margin: 24px 0;
+      border-top: 1px solid var(--border-card);
+      border-right: 1px solid var(--border-card);
+      border-bottom: 1px solid var(--border-card);
+    }
+    .callout.emerald {
+      border-left-color: var(--emerald);
+      background: rgba(16, 185, 129, 0.06);
+    }
+    .callout-title {
+      font-family: 'Cinzel', serif;
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--gold);
+      margin-bottom: 8px;
+    }
+    .callout.emerald .callout-title {
+      color: #34d399;
+    }
+
+    /* Visual Equation Box */
+    .equation-box {
+      background: linear-gradient(135deg, rgba(212, 175, 89, 0.12) 0%, rgba(14, 22, 36, 0.8) 100%);
+      border: 1px solid var(--gold);
+      border-radius: var(--radius-md);
+      padding: 24px;
+      text-align: center;
+      margin: 28px 0;
+      font-family: 'Cinzel', serif;
+      font-size: 1.1rem;
+      color: var(--gold-light);
+      letter-spacing: 0.08em;
+    }
+
+    /* Dual Dividend Cards */
+    .dividend-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      margin: 24px 0;
+    }
+    .dividend-box {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-card);
+      border-radius: var(--radius-md);
+      padding: 24px;
+      transition: transform 0.2s ease, border-color 0.2s ease;
+    }
+    .dividend-box:hover {
+      border-color: var(--gold);
+      transform: translateY(-2px);
+    }
+    .dividend-box h4 {
+      font-family: 'Cinzel', serif;
+      font-size: 1.2rem;
+      color: var(--gold);
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    /* Data Tables */
+    .table-wrapper {
+      overflow-x: auto;
+      margin: 24px 0 32px;
+      border: 1px solid var(--border-card);
+      border-radius: var(--radius-md);
+      background: var(--bg-surface);
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+      font-size: 0.9rem;
+    }
+    th {
+      background: var(--bg-surface-elevated);
+      color: var(--gold);
+      font-family: 'Cinzel', serif;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      padding: 14px 18px;
+      border-bottom: 1px solid var(--border-light);
+    }
+    td {
+      padding: 14px 18px;
+      border-bottom: 1px solid var(--border-card);
+      color: #cbd5e1;
+    }
+    tr:last-child td {
+      border-bottom: none;
+    }
+    tr:hover td {
+      background: rgba(255, 255, 255, 0.02);
+    }
+
+    /* Pipeline Diagram */
+    pre.ascii-diagram {
+      background: #040810;
+      border: 1px solid var(--border-card);
+      border-left: 3px solid var(--gold);
+      border-radius: var(--radius-sm);
+      padding: 20px;
+      color: var(--gold-light);
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 0.82rem;
+      line-height: 1.5;
+      overflow-x: auto;
+      margin: 20px 0;
+    }
+
+    /* Tier Cards */
+    .tier-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+      margin: 24px 0;
+    }
+    .tier-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-card);
+      border-radius: var(--radius-md);
+      padding: 24px;
+      position: relative;
+    }
+    .tier-card.featured {
+      border-color: var(--gold);
+      background: linear-gradient(135deg, rgba(212, 175, 89, 0.08) 0%, var(--bg-surface) 100%);
+    }
+    .tier-tag {
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      font-weight: 700;
+      color: var(--gold);
+      letter-spacing: 0.1em;
+      margin-bottom: 6px;
+    }
+    .tier-price {
+      font-family: 'Cinzel', serif;
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: #ffffff;
+      margin-bottom: 12px;
+    }
+
+    /* Footer */
+    footer {
+      border-top: 1px solid var(--border-card);
+      padding-top: 40px;
+      margin-top: 60px;
+      text-align: center;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+    footer a {
+      color: var(--gold);
+      text-decoration: none;
+    }
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    /* Mobile Responsive */
+    @media (max-width: 768px) {
+      header {
+        padding: 12px 18px;
+        flex-direction: column;
+        gap: 12px;
+        align-items: stretch;
+      }
+      .brand-logo {
+        align-self: flex-start;
+      }
+      .nav-actions {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+      }
+      .nav-actions .btn {
+        justify-content: center;
+      }
+      .container {
+        padding: 24px 16px 0;
+      }
+      .doc-title {
+        font-size: 1.85rem;
+      }
+      .metadata-grid {
+        grid-template-columns: 1fr;
+      }
+      .dividend-container, .tier-grid {
+        grid-template-columns: 1fr;
+      }
+      h2 {
+        font-size: 1.45rem;
+      }
+    }
+
+    @media print {
+      header, .nav-actions, footer { display: none !important; }
+      body { background: #ffffff !important; color: #000000 !important; }
+      .container { max-width: 100% !important; padding: 0 !important; }
+      .doc-title span { color: #000 !important; -webkit-text-fill-color: initial !important; }
+      h2, h3, th, strong { color: #000 !important; }
+      p, li, td { color: #222 !important; }
+      .dividend-box, .tier-card, .table-wrapper { border-color: #ccc !important; background: transparent !important; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Sticky Top Header -->
+  <header>
+    <a href="../portfolio.html" class="brand-logo">
+      <div class="brand-crest">H</div>
+      <div>
+        <div class="brand-title">HUR STUDIO</div>
+        <div class="brand-subtitle">Autonomous Sacred Media & Cartography</div>
+      </div>
+    </a>
+    <div class="nav-actions">
+      <a href="../portfolio.html" class="btn btn-outline">
+        <span>← Back to Portfolio</span>
+      </a>
+      <a href="Huurs_Studio_Executive_Proposal.pdf" target="_blank" class="btn btn-gold">
+        <span>Download PDF</span>
+      </a>
+    </div>
+  </header>
+
+  <div class="container">
+
+    <!-- Document Hero -->
+    <div class="doc-hero">
+      <div class="doc-badge">Confidential Executive Briefing • Strategic Partnership Memorandum</div>
+      <h1 class="doc-title">Come Back to the Qur'an<br><span>Executive Investment Memorandum</span></h1>
+      
+      <div class="metadata-grid">
+        <div class="metadata-item"><strong>Document Class:</strong> Confidential Executive Briefing</div>
+        <div class="metadata-item"><strong>Entity:</strong> Huurs / Huur Studio (Media & Digital Publishing)</div>
+        <div class="metadata-item"><strong>Project:</strong> Come Back to the Qur'an — Multi-Season Flagship</div>
+        <div class="metadata-item"><strong>Motto:</strong> READ. REFLECT. RETURN.</div>
+        <div class="metadata-item"><strong>Orchestration:</strong> Antigravity Multi-Agent Pipeline</div>
+        <div class="metadata-item"><strong>Status:</strong> Approved for External Distribution to Qualified Partners</div>
+      </div>
+    </div>
+
+    <!-- Section 1 -->
+    <section>
+      <h2>01. Executive Summary</h2>
+      <p>
+        Huurs Studio represents a paradigm shift in Islamic media and digital publishing. We are building the world’s premier <strong>contemplative Quranic media ecosystem</strong>, engineered to solve the silent crisis of spiritual alienation in the modern digital age.
+      </p>
+      <p>
+        While legacy media companies struggle with exorbitant production costs ($15,000–$25,000 per video) and contemporary social media channels resort to frantic, hyper-stimulating clickbait, Huurs Studio has designed, validated, and deployed a <strong>fully autonomous, local AI-agent production pipeline</strong>.
+      </p>
+      <p>
+        This proprietary infrastructure allows us to generate broadcast-grade, contemplative Quranic documentaries, companion study guides, audio albums, and interactive web readers at <strong>$0.00 marginal production cost</strong>, with <strong>zero reliance on commercial API credits</strong> once deployed.
+      </p>
+      <p>
+        With <strong>Season 1 (Episodes 1–10) and Season 2 (Episodes 11–20) 100% produced, mastered, and verified</strong>, we are inviting forward-thinking strategic partners, Waqf trustees, and philanthropic investors to scale this infrastructure across the entire 114-Surah Quranic canon.
+      </p>
+
+      <div class="dividend-container">
+        <div class="dividend-box">
+          <h4>✦ The Dunya Dividend</h4>
+          <p style="font-size: 0.9rem;"><strong>This World:</strong> A high-margin, scalable digital publishing and educational enterprise with 90%+ gross margins across direct-to-consumer (D2C) storefronts, Amazon KDP print-on-demand, and institutional curriculum licensing.</p>
+        </div>
+        <div class="dividend-box">
+          <h4>✦ The Akhirah Dividend</h4>
+          <p style="font-size: 0.9rem;"><strong>The Hereafter:</strong> An enduring, self-sustaining stream of ongoing charity (<strong>Sadaqah Jariyah</strong>) and beneficial knowledge (<strong>'Ilm Yuntafa'u Bih</strong>), turning distracted souls back to the Book of Allah for generations.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 2 -->
+    <section>
+      <h2>02. The Problem: The Modern Crisis of Spiritual Attention</h2>
+      <p>
+        The global Muslim population stands at <strong>1.9 billion</strong>, representing one of the youngest, fastest-growing, and most digitally connected demographics on earth. However, this demographic faces an unprecedented spiritual emergency:
+      </p>
+      <ul>
+        <li><strong>Digital Fragmentation:</strong> The average smartphone user unlocks their device 144 times a day, with attention spans shrinking below 8 seconds. Constant cognitive fragmentation makes deep reflection nearly impossible.</li>
+        <li><strong>The Guilt-Distance Trap:</strong> Sincere believers often feel distant from the Qur'an. When they attempt to re-engage, traditional 2-hour theological lectures feel intimidating, and the realization of past neglect induces spiritual shame rather than tranquility.</li>
+        <li><strong>Hyper-Stimulation in Islamic Media:</strong> 90%+ of contemporary Islamic content attempts to compete with secular algorithms by utilizing loud cinematic strings, rapid 3-second cuts, sensationalized titles, and emotional manipulation. Instead of calming the soul, it agitates the nervous system.</li>
+      </ul>
+      <div class="callout">
+        <div class="callout-title">The Market Void</div>
+        <p style="margin-bottom: 0;">There is an acute, worldwide shortage of <strong>unhurried, aesthetically sublime, rigorously verified, and contemplative</strong> Islamic media designed specifically for the weary modern soul.</p>
+      </div>
+    </section>
+
+    <!-- Section 3 -->
+    <section>
+      <h2>03. The Solution & Philosophy: READ. REFLECT. RETURN.</h2>
+      <p>
+        Huurs Studio was established to serve as the antidote to digital noise. We operate under a foundational visual and theological equation:
+      </p>
+
+      <div class="equation-box">
+        NATURE + KNOWLEDGE + REFLECTION + TRANQUILITY = HUUR VISUAL LANGUAGE
+      </div>
+
+      <p>Every product, video, and audio reflection adheres to three immutable pillars:</p>
+      <ol>
+        <li>
+          <strong>READ (Iqra' — Source Authenticity):</strong><br>
+          Every reflection begins with pristine Qur'anic ayah text and rigorous Sunni source discipline. We extract insights exclusively from primary classical exegeses (Tafsir at-Tabari, Tafsir Ibn Kathir, Tafsir as-Sa'di, Tafsir al-Qurtubi). Beauty never outranks theological truth.
+        </li>
+        <li>
+          <strong>REFLECT (Tadabbur — Emotional Intimacy):</strong><br>
+          Tadabbur is strictly distinguished from speculative tafsir. We ask: <em>What does this verse demand of my heart today?</em> We address modern alienation, loneliness, grief, and parental duty through the timeless lens of revelation.
+        </li>
+        <li>
+          <strong>RETURN (Inabah — The Practical Anchor):</strong><br>
+          Every piece of content concludes with an actionable, friction-free spiritual anchor (e.g., waking 10 minutes before Fajr, whispering grief into the dust, or calling aging parents with zero worldly agenda).
+        </li>
+      </ol>
+    </section>
+
+    <!-- Section 4 -->
+    <section>
+      <h2>04. The Technology Moat: Multi-Agent Architecture</h2>
+      <p>
+        Our technological competitive advantage lies in our <strong>Antigravity Multi-Agent Orchestration System</strong> (Level 0–2 Agent DAG), deployed on local high-performance hardware (CUDA RTX Cluster).
+      </p>
+
+      <pre class="ascii-diagram">
+CAMPAIGN BRIEF
+       ↓
+[T-01] Campaign Planning (AGENT-01)
+       ↓
+[T-02] Source Research & Classical Tafsir Discovery (AGENT-02)
+       ↓
+[T-03] Claim-Level Verification & Scholarly Guardrails (AGENT-03)
+       ↓
+[T-04] Thematic Synthesis & Metaphor Mapping (AGENT-04)
+       ↓
+       ├── [T-05] Tadabbur Frameworks (AGENT-05)
+       ├── [T-07] Longform & Shortform Editorial Scripts (AGENT-07)
+       ├── [T-08] Visual Storyboarding & Living Creation DNA (AGENT-08)
+       ├── [T-11] F5-TTS Contemplative Voiceover Synthesis (AGENT-11)
+       └── [T-10] Continuous Motion-Interpolated Render Engine (AGENT-10)
+       ↓
+[T-12] QA Audit Layer (AGENT-15 Islamic QA + AGENT-16 Visual QA + AGENT-17 Content QA)
+       ↓
+[T-13] Multi-Format Packaging & Publishing Engine (AGENT-12 / AGENT-19)
+      </pre>
+
+      <h3>Key Technical Innovations</h3>
+      <ul>
+        <li><strong>$0.00 Marginal Production Cost:</strong> By running open-source zero-shot voice cloning (F5-TTS) and ffmpeg motion-interpolation locally on dedicated CUDA hardware, our per-episode variable cost is effectively zero.</li>
+        <li><strong>Platform Duplicate Prevention:</strong> Automated cryptographic scene verification guarantees <strong>0% visual collision between adjacent episodes</strong>, shielding distribution channels from automated duplicate-content penalties.</li>
+        <li><strong>Permanent Zero Burned-In Subtitles Mandate:</strong> By eliminating burned subtitles and relying on sidecar closed captions (.srt), we preserve an immaculate visual canvas and eliminate audio-visual desync.</li>
+        <li><strong>Broadcast Audio Mastering:</strong> Automated EBU R128 loudness normalization (-14.0 LUFS ±0.5 LUFS) with true peak limiting and strict <strong>Zero-Music Policy</strong>.</li>
+      </ul>
+    </section>
+
+    <!-- Section 5 -->
+    <section>
+      <h2>05. Proven Track Record: Season 1 & Season 2</h2>
+      <p>
+        Huurs Studio has already completed full production and rigorous auditing of <strong>20 flagship episodes</strong>:
+      </p>
+      <ul>
+        <li><strong>Season 1 (Episodes 1 to 10):</strong> <em>The Foundations of Return</em> (Surah Al-Fatihah through Surah Yunus).</li>
+        <li><strong>Season 2 (Episodes 11 to 20):</strong> <em>The Prophetic Trials & Inner Sanctuary</em> (Surah Hud through Surah Ta-Ha).</li>
+      </ul>
+
+      <div class="callout emerald">
+        <div class="callout-title">Master Deliverables Vault</div>
+        <ul>
+          <li><strong>20 Full 16:9 Landscape Masters (720p HD @ 24fps):</strong> 72 minutes of contemplative broadcast footage.</li>
+          <li><strong>20 Vertical 9:16 Shorts (720x1280 @ 24fps):</strong> 13 minutes of mobile-native hooks for YouTube Shorts, Reels, and TikTok.</li>
+          <li><strong>114-Surah Master Digital Ebook & EPUB:</strong> Comprehensive exegesis and reflection guide compiled and ready for international distribution.</li>
+          <li><strong>30-Day Guided Reflection Journal:</strong> Fillable interactive PDF and print-ready files.</li>
+          <li><strong>Offline Broadcast Audio Album:</strong> 20 studio-mastered voiceover tracks with Zero-Music policy.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Section 6 -->
+    <section>
+      <h2>06. The Dual-World Dividend: Dunya & Akhirah ROI</h2>
+      
+      <h3>A. The Dunya Dividend (Commercial Viability)</h3>
+      <p>
+        The global Islamic economy represents a <strong>$3.2 Trillion market</strong>. The demand for high-aesthetic English-language Islamic digital content is surging across North America, Europe, the GCC, Southeast Asia, and Australasia.
+      </p>
+
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>Revenue Channel</th>
+              <th>Product / Asset</th>
+              <th>Target Price Point</th>
+              <th>Gross Margin</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Direct-to-Consumer (D2C)</strong></td>
+              <td>Season Study Bundles (Ebook + Journal + MP3 Audio)</td>
+              <td>$27.00 – $35.00</td>
+              <td><strong>92%</strong></td>
+            </tr>
+            <tr>
+              <td><strong>Print-on-Demand (POD)</strong></td>
+              <td>Physical Heirloom Hardcover Journals (Amazon KDP)</td>
+              <td>$24.99 – $29.99</td>
+              <td><strong>45%</strong></td>
+            </tr>
+            <tr>
+              <td><strong>Digital Library / Web Reader</strong></td>
+              <td>Self-Hosted Web Reader & Complete 114-Surah EPUB</td>
+              <td>$19.00</td>
+              <td><strong>95%</strong></td>
+            </tr>
+            <tr>
+              <td><strong>Institutional Curriculum</strong></td>
+              <td>Annual Licensing for Islamic Schools, Madaris, & MSAs</td>
+              <td>$499 – $1,500 / yr</td>
+              <td><strong>90%</strong></td>
+            </tr>
+            <tr>
+              <td><strong>Streaming & Media Royalties</strong></td>
+              <td>Monetized Views (AdSense & Premium Distribution)</td>
+              <td>$3.50 – $7.00 RPM</td>
+              <td><strong>100%</strong></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>B. The Akhirah Dividend (Eternal Spiritual Wealth)</h3>
+      <div class="callout">
+        <p style="font-style: italic; margin-bottom: 8px;">
+          "Whoever guides someone to goodness will have a reward like one who did it."<br>
+          <strong style="color: var(--gold);">— Sahih Muslim (1893)</strong>
+        </p>
+        <p style="font-style: italic; margin-bottom: 0;">
+          "When a human being dies, their deeds come to an end except for three: ongoing charity (Sadaqah Jariyah), beneficial knowledge ('Ilm yuntafa'u bih), or a righteous child who prays for them."<br>
+          <strong style="color: var(--gold);">— Sahih Muslim (1631)</strong>
+        </p>
+      </div>
+      <p>
+        Every time a broken believer wakes up for Tahajjud because of Episode 17, every time someone chooses patience over despair because of Episode 12 (Surah Yusuf), every prostration inspired by this media directly credits the eternal scales of our partners.
+      </p>
+    </section>
+
+    <!-- Section 7 -->
+    <section>
+      <h2>07. Strategic Growth Plan & Capital Allocation</h2>
+      <p>
+        We are seeking <strong>$150,000 in strategic growth capital and philanthropic endowments</strong> to execute our 3-year master vision across the 114-Surah canon:
+      </p>
+
+      <pre class="ascii-diagram">
+[YEAR 1: FOUNDATION & CANON ACCELERATION]
+├── Produce Seasons 3, 4, 5, and 6 (Surah 21 Al-Anbiya to Surah 60 Al-Mumtahanah)
+├── Expand Local GPU Hardware: Deploy dual NVIDIA RTX cluster for 4K rendering
+└── Launch Amazon KDP Print-on-Demand physical distribution for the 30-Day Journal
+
+[YEAR 2: GLOBAL TRANSLATION & DISTRIBUTION GUILD]
+├── Complete Remaining Seasons (Surah 61 Al-Saff to Surah 114 An-Nas)
+├── Multi-Lingual Expansion: Localized voiceover models in Arabic, Urdu, Bahasa Indonesia, & French
+└── Mobile App Launch: Dedicated offline contemplation reader and audio app (iOS / Android)
+
+[YEAR 3: THE ENDOWED ISLAMIC MEDIA WAQF]
+├── Transition Huurs Studio into an autonomous perpetual Waqf
+├── Free distribution of physical study guides to 500+ Islamic university campus libraries
+└── Open-source the Contemplative Media Pipeline for verified Islamic creators worldwide
+      </pre>
+
+      <h3>Capital Allocation Breakdown ($150,000 Round)</h3>
+      <ul>
+        <li><strong>40% ($60,000) — Scholarly & Linguistic Review Guild:</strong> Retaining accredited Sunni scholars and native linguists to audit every ayah, root word, and hadith citation across upcoming seasons.</li>
+        <li><strong>30% ($45,000) — Hardware & Cloud Scale:</strong> High-memory GPU clusters, dedicated storage arrays, and redundant global CDN infrastructure.</li>
+        <li><strong>20% ($30,000) — Multi-Lingual Audio Voiceover Models:</strong> Training authenticated regional voice profiles for global non-English Muslim demographics.</li>
+        <li><strong>10% ($15,000) — Legal, Waqf Structuring & Trademark Protection:</strong> Establishing formal international Waqf governance.</li>
+      </ul>
+    </section>
+
+    <!-- Section 8 -->
+    <section>
+      <h2>08. Partnership & Investment Tiers</h2>
+
+      <div class="tier-grid">
+        <div class="tier-card featured">
+          <div class="tier-tag">Top-Tier Endowment</div>
+          <div class="tier-price">$50,000+</div>
+          <h4 style="font-family: 'Cinzel', serif; color: var(--gold); margin-bottom: 8px;">Tier 1: Founding Waqf Patron</h4>
+          <ul style="font-size: 0.88rem; margin-left: 18px;">
+            <li>Permanent named attribution as a Founding Patron in the opening credits of the entire 114-Surah digital canon.</li>
+            <li>Seat on the Executive Advisory Board.</li>
+            <li>Full lifetime enterprise access to all digital publishing assets.</li>
+            <li>Perpetual status as a core benefactor in our annual Sadaqah Jariyah audit.</li>
+          </ul>
+        </div>
+
+        <div class="tier-card">
+          <div class="tier-tag">Season Arc</div>
+          <div class="tier-price">$15,000</div>
+          <h4 style="font-family: 'Cinzel', serif; color: var(--gold); margin-bottom: 8px;">Tier 2: Season Sponsor</h4>
+          <ul style="font-size: 0.88rem; margin-left: 18px;">
+            <li>Exclusive executive sponsorship of one entire upcoming Season (10 broadcast masters + 10 vertical shorts).</li>
+            <li>Attribution in episode end-frames and companion study ebooks.</li>
+            <li>Co-distribution rights for local community masajid and regional Islamic centers.</li>
+          </ul>
+        </div>
+
+        <div class="tier-card">
+          <div class="tier-tag">Production Guild</div>
+          <div class="tier-price">$5,000</div>
+          <h4 style="font-family: 'Cinzel', serif; color: var(--gold); margin-bottom: 8px;">Tier 3: Guild Member</h4>
+          <ul style="font-size: 0.88rem; margin-left: 18px;">
+            <li>Underwrites the complete production of two flagship episodes and their derivative product families.</li>
+            <li>Full access to raw research repositories, print-ready vector files, and master audio stems.</li>
+          </ul>
+        </div>
+
+        <div class="tier-card">
+          <div class="tier-tag">Advisory & Service</div>
+          <div class="tier-price">Talent / Time</div>
+          <h4 style="font-family: 'Cinzel', serif; color: var(--gold); margin-bottom: 8px;">Tier 4: Talent Guild</h4>
+          <ul style="font-size: 0.88rem; margin-left: 18px;">
+            <li>Open to qualified Islamic scholars, certified translators, audio mastering engineers, and distribution partners who commit verified time and expertise.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 9 -->
+    <section>
+      <h2>09. Governance & Scholarly Guardrails</h2>
+      <p>
+        To safeguard theological purity and organizational ethics, Huurs Studio operates under three mandatory governance covenants:
+      </p>
+      <ol>
+        <li><strong>The Sunni Source Covenant:</strong> All content must strictly reflect mainstream Sunni exegesis. Speculative theology, fringe sectarian narratives, and modern revisionism are permanently banned.</li>
+        <li><strong>The Zero Exploitation Covenant:</strong> No clickbait, no manipulative psychological pressure, no false spiritual promises (e.g. "guaranteed wealth or healing"), and no commercial exploitation of sacred texts.</li>
+        <li><strong>The Financial Transparency Covenant:</strong> Annual publication of production accounts, impact reach, and Waqf reserve balances for all founding patrons.</li>
+      </ol>
+    </section>
+
+    <!-- Section 10 -->
+    <section>
+      <h2>10. Conclusion: An Invitation to Eternal Value</h2>
+      <p>
+        Worldly startups rise and fall. Trends emerge and vanish. But the words of Allah remain supreme, enduring, and unchanged across eternity:
+      </p>
+
+      <div class="callout" style="text-align: center; border-left: none; border-top: 2px solid var(--gold); border-bottom: 2px solid var(--gold); padding: 28px;">
+        <p style="font-family: 'Cinzel', serif; font-size: 1.15rem; color: var(--gold-light); line-height: 1.8; margin-bottom: 12px;">
+          "The example of those who spend their wealth in the way of Allah is like a seed of grain which grows seven spikes; in each spike is a hundred grains. And Allah multiplies [His reward] for whom He wills. And Allah is all-Encompassing and Knowing."
+        </p>
+        <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 0;">
+          — <strong>Surah Al-Baqarah (2:261)</strong>
+        </p>
+      </div>
+
+      <p style="margin-top: 24px;">
+        Huurs Studio offers you a rare, historic opportunity: to leverage state-of-the-art technological automation in service of the greatest Book ever revealed. 
+      </p>
+      <p>
+        Invest with us. Build with us. Stand with us at the forefront of the contemplative Islamic media renaissance.
+      </p>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <p style="font-family: 'Cinzel', serif; font-size: 1.1rem; color: var(--gold); letter-spacing: 0.1em; margin-bottom: 6px;">
+        HUURS STUDIO • COME BACK TO THE QUR'AN
+      </p>
+      <p style="color: var(--text-muted); margin-bottom: 16px;">
+        Autonomous Sacred Media • Strict Sunni Source Discipline • Sovereign Publishing Systems
+      </p>
+      <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-bottom: 20px;">
+        <a href="../portfolio.html">Return to Master Portfolio</a>
+        <a href="../index.html">Free 11-Surah Mindmap Sanctuary PWA</a>
+        <a href="https://hur-studio.github.io/quran-camp/" target="_blank">Quran Study Portal</a>
+      </div>
+      <p style="font-size: 0.75rem; color: #64748b;">
+        Huur Studio • Autonomous Sacred Media & Cartography • Independent Digital Studio
+      </p>
+    </footer>
+
+  </div>
+
+</body>
+</html>

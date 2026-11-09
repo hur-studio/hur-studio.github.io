@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calling Cards & Anchor Cards Specifications - Huur Studio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-deep: #070c15;
+      --bg-surface: #0e1624;
+      --bg-surface-elevated: #152033;
+      --gold: #d4af59;
+      --gold-light: #e6cb85;
+      --emerald: #10b981;
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
+      --border-light: rgba(212, 175, 89, 0.25);
+      --border-card: rgba(255, 255, 255, 0.08);
+      --radius-sm: 8px;
+      --radius-md: 14px;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background-color: var(--bg-deep);
+      color: var(--text-main);
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      line-height: 1.7;
+      padding: 0 0 90px 0;
+    }
+    header {
+      background: rgba(7, 12, 21, 0.88);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border-light);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      padding: 16px 36px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .brand-logo { display: flex; align-items: center; gap: 14px; text-decoration: none; }
+    .brand-crest {
+      width: 36px; height: 36px; border: 1.5px solid var(--gold);
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Cinzel', serif; font-weight: 700; color: var(--gold);
+      border-radius: 6px; background: var(--bg-surface);
+    }
+    .brand-title { font-family: 'Cinzel', serif; font-size: 1.15rem; font-weight: 700; color: var(--gold); }
+    .btn {
+      padding: 9px 18px; border-radius: var(--radius-sm); font-size: 0.82rem;
+      font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 8px;
+    }
+    .btn-gold { background: linear-gradient(135deg, var(--gold) 0%, #b8933b 100%); color: var(--bg-deep); border: none; }
+    .btn-outline { background: transparent; color: var(--gold-light); border: 1px solid var(--border-light); }
+    .container { max-width: 960px; margin: 0 auto; padding: 50px 24px 0; }
+    .doc-hero { border-bottom: 1px solid var(--border-card); padding-bottom: 30px; margin-bottom: 40px; }
+    .doc-badge {
+      display: inline-flex; align-items: center; padding: 5px 14px; border-radius: 999px;
+      background: var(--bg-surface-elevated); border: 1px solid var(--border-light);
+      color: var(--gold); font-size: 0.75rem; font-weight: 700; text-transform: uppercase; margin-bottom: 18px;
+    }
+    .doc-title { font-family: 'Cinzel', serif; font-size: 2.3rem; font-weight: 700; color: var(--text-main); margin-bottom: 14px; }
+    h2 {
+      font-family: 'Cinzel', serif; font-size: 1.6rem; color: var(--gold-light);
+      margin: 36px 0 16px; padding-bottom: 8px; border-bottom: 1px solid var(--border-light);
+    }
+    h3 { font-family: 'Cinzel', serif; font-size: 1.15rem; color: var(--text-main); margin: 20px 0 10px; }
+    p { color: #cbd5e1; margin-bottom: 14px; }
+    ul { margin: 0 0 18px 24px; color: #cbd5e1; }
+    li { margin-bottom: 6px; }
+    .spec-card {
+      background: var(--bg-surface); border: 1px solid var(--border-card);
+      border-radius: var(--radius-md); padding: 22px 26px; margin-bottom: 20px;
+    }
+    footer {
+      border-top: 1px solid var(--border-card); padding-top: 40px; margin-top: 60px;
+      text-align: center; font-size: 0.85rem; color: var(--text-muted);
+    }
+    footer a { color: var(--gold); text-decoration: none; }
+  </style>
+</head>
+<body>
+
+  <header>
+    <a href="../portfolio.html" class="brand-logo">
+      <div class="brand-crest">H</div>
+      <div><div class="brand-title">HUR STUDIO</div></div>
+    </a>
+    <div style="display: flex; gap: 10px;">
+      <a href="business_cards.html" class="btn btn-gold">Card Sheet (HTML)</a>
+      <a href="../portfolio.html" class="btn btn-outline">← Back to Portfolio</a>
+    </div>
+  </header>
+
+  <div class="container">
+    <div class="doc-hero">
+      <div class="doc-badge">Production Print Specifications</div>
+      <h1 class="doc-title">Calling Cards &amp; <span>Contemplation Anchors</span></h1>
+      <p style="color: var(--text-muted);">
+        Item Type: Executive Calling Cards & Pocket Contemplation Anchors • Minimalist Islamic Luxury • Tactile Reverence
+      </p>
+    </div>
+
+    <section>
+      <h2>01. Executive Business Card (3.5" × 2.0" / 89mm × 51mm)</h2>
+
+      <div class="spec-card">
+        <h3>Dimensions & Bleed</h3>
+        <ul>
+          <li><strong>Trim Size:</strong> 3.5 in × 2.0 in (88.9 mm × 50.8 mm)</li>
+          <li><strong>Bleed Size:</strong> 3.75 in × 2.25 in (95.25 mm × 57.15 mm — 0.125 in bleed on all 4 sides)</li>
+          <li><strong>Safe Zone:</strong> 3.25 in × 1.75 in (Keep all critical text and icons within this boundary)</li>
+        </ul>
+      </div>
+
+      <div class="spec-card">
+        <h3>Paper Stock & Finishing Specifications</h3>
+        <ul>
+          <li><strong>Stock:</strong> 450 gsm (32 pt) Ultra-Heavyweight Silk Matte Cover Stock</li>
+          <li><strong>Finish:</strong> Double-sided Soft-Touch Velvet Lamination (subtle tactile warmth, anti-fingerprint)</li>
+          <li><strong>Foil Stamping:</strong> Hot-Stamped Satin Antique Gold Foil on the primary wordmark and motto (READ. REFLECT. RETURN.)</li>
+          <li><strong>Spot Finish:</strong> Blind Debossing on the geometric archway emblem (subtle indented relief)</li>
+          <li><strong>Edges:</strong> Optional Gilded Antique Gold Foil Edge-Gilding for executive founder sets</li>
+        </ul>
+      </div>
+
+      <div class="spec-card">
+        <h3>Typography & Palette</h3>
+        <ul>
+          <li><strong>Primary Display:</strong> Cinzel (Semibold 10pt / Kerning +180)</li>
+          <li><strong>Body & Metadata:</strong> Inter / Plus Jakarta Sans (Regular & Light 7.5pt / Kerning +40)</li>
+          <li><strong>Scripture Quote:</strong> Cormorant Garamond (Italic 9pt)</li>
+          <li><strong>Color Palette:</strong>
+            <ul>
+              <li>Obsidian Navy: #0a0d13 (Rich Dark Surface)</li>
+              <li>Metallic Antique Gold: #d4af59 (Foil Stamp & Accents)</li>
+              <li>Muted Sand White: #e2e8f0 (High-Contrast Text)</li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <h2>02. Pocket Contemplation Anchor Card</h2>
+      <div class="spec-card">
+        <h3>Concept & Purpose</h3>
+        <p>A tactile reminder card distributed to partners, event attendees, and major patrons. It serves as a pocket sanctuary during moments of worldly stress or decision-making.</p>
+        <p><strong>Front Design:</strong> Visual motif of mountain stream rippling over pebbles in dawn light. Scripture: <em>"My Lord, expand for me my chest, and ease for me my task."</em> (Surah Ta-Ha 20:25–26). Action: <em>"Take three deep breaths. Disconnect from worldly panic. Return to your Creator."</em></p>
+        <p><strong>Back Design:</strong> Discrete QR code leading directly to the offline audio reflection stream and portfolio portal.</p>
+      </div>
+    </section>
+
+    <footer>
+      <p style="font-family: 'Cinzel', serif; font-size: 1.1rem; color: var(--gold); letter-spacing: 0.1em; margin-bottom: 6px;">
+        HUURS STUDIO • COME BACK TO THE QUR'AN
+      </p>
+      <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-bottom: 16px;">
+        <a href="business_cards.html">View Card Sheet Layout</a>
+        <a href="../portfolio.html">Return to Master Portfolio</a>
+      </div>
+      <p style="font-size: 0.75rem; color: #64748b;">
+        Huur Studio • Autonomous Sacred Media & Cartography • Independent Digital Studio
+      </p>
+    </footer>
+  </div>
+
+</body>
+</html>

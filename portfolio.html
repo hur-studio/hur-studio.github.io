@@ -262,9 +262,18 @@
     /* Deliverables Grid */
     .deliverables-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(6, 1fr);
       gap: 28px;
       margin-bottom: 70px;
+    }
+    .deliv-card:nth-child(1),
+    .deliv-card:nth-child(2),
+    .deliv-card:nth-child(3) {
+      grid-column: span 2;
+    }
+    .deliv-card:nth-child(4),
+    .deliv-card:nth-child(5) {
+      grid-column: span 3;
     }
     .deliv-card {
       background: var(--bg-surface);
@@ -514,6 +523,15 @@
         grid-template-columns: repeat(2, 1fr);
         gap: 20px;
       }
+      .deliv-card:nth-child(1),
+      .deliv-card:nth-child(2),
+      .deliv-card:nth-child(3),
+      .deliv-card:nth-child(4) {
+        grid-column: span 1;
+      }
+      .deliv-card:nth-child(5) {
+        grid-column: span 2;
+      }
     }
 
     @media (max-width: 768px) {
@@ -699,6 +717,9 @@
         gap: 18px;
         margin-bottom: 40px;
       }
+      .deliv-card:nth-child(n) {
+        grid-column: span 1 !important;
+      }
       .deliv-thumb {
         height: 170px;
       }
@@ -807,7 +828,7 @@
         <div class="hero-btns">
           <a href="https://hur-studio.github.io/quran-camp/" target="_blank" class="btn btn-portal">Explore Quran Campaign & Store ➔</a>
           <a href="01_PRESENTATION/index.html" target="_blank" class="btn btn-gold">Open Interactive Deck</a>
-          <a href="05_TECHNICAL_WHITEPAPER/pipeline_architecture_whitepaper.pdf" target="_blank" class="btn btn-outline">Read Tech Whitepaper</a>
+          <a href="02_EXECUTIVE_SUMMARY/Huurs_Studio_Executive_Proposal.html" target="_blank" class="btn btn-outline">Executive Proposal (HTML)</a>
         </div>
       </div>
       <div class="hero-visual-card">
@@ -929,7 +950,7 @@
           <h3 class="deliv-title">02. Executive Proposal</h3>
           <p class="deliv-desc">Comprehensive architectural memorandum detailing problem statement, technology moat, financial economics, and sovereign digital publishing model.</p>
           <div class="deliv-footer">
-            <a href="02_EXECUTIVE_SUMMARY/Huurs_Studio_Executive_Proposal.md" target="_blank" class="btn btn-outline">Read MD</a>
+            <a href="02_EXECUTIVE_SUMMARY/Huurs_Studio_Executive_Proposal.html" target="_blank" class="btn btn-outline">HTML View</a>
             <a href="02_EXECUTIVE_SUMMARY/Huurs_Studio_Executive_Proposal.pdf" target="_blank" class="btn btn-gold">Proposal PDF</a>
           </div>
         </div>
@@ -967,33 +988,17 @@
         </div>
       </div>
 
-      <!-- Card 5: Technical Whitepaper -->
-      <div class="deliv-card">
-        <div class="deliv-thumb">
-          <img src="previews/whitepaper_p1_fixed-1.png" alt="Whitepaper Preview">
-          <span class="deliv-tag">6-Page Specification</span>
-        </div>
-        <div class="deliv-body">
-          <h3 class="deliv-title">05. Technical Whitepaper</h3>
-          <p class="deliv-desc">Deep engineering specification covering multi-agent DAG hierarchy, local CUDA F5-TTS, optical flow motion math, and duplicate scene hashing.</p>
-          <div class="deliv-footer">
-            <a href="05_TECHNICAL_WHITEPAPER/pipeline_architecture_whitepaper.md" target="_blank" class="btn btn-outline">Read MD</a>
-            <a href="05_TECHNICAL_WHITEPAPER/pipeline_architecture_whitepaper.pdf" target="_blank" class="btn btn-gold">Whitepaper PDF</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Card 6: Central Portfolio Hub -->
+      <!-- Card 5: Central Documentation Hub -->
       <div class="deliv-card">
         <div class="deliv-thumb">
           <img src="assets/masjid_nabawi.jpg" alt="Masjid Nabawi">
           <span class="deliv-tag">Master Index</span>
         </div>
         <div class="deliv-body">
-          <h3 class="deliv-title">06. Master README & Index</h3>
+          <h3 class="deliv-title">05. Master Documentation & Index</h3>
           <p class="deliv-desc">Full documentation index, printing instructions, asset catalog, and brand design specifications.</p>
           <div class="deliv-footer">
-            <a href="README.md" target="_blank" class="btn btn-gold" style="width: 100%;">View Master README.md</a>
+            <a href="README.html" target="_blank" class="btn btn-gold" style="width: 100%;">View Documentation (HTML)</a>
           </div>
         </div>
       </div>
@@ -1008,9 +1013,10 @@
         <a href="https://hur-studio.github.io/quran-camp/" target="_blank" style="color: var(--gold); text-decoration: none; margin: 0 12px; font-weight: 600;">Quran Study Portal</a> •
         <a href="https://hur-studio.github.io/quran-camp/12_PRODUCTS/" target="_blank" style="color: var(--gold); text-decoration: none; margin: 0 12px; font-weight: 600;">77-Surah Storefront</a> •
         <a href="01_PRESENTATION/index.html" target="_blank" style="color: var(--gold); text-decoration: none; margin: 0 12px; font-weight: 600;">Pitch Deck</a> •
-        <a href="05_TECHNICAL_WHITEPAPER/pipeline_architecture_whitepaper.pdf" target="_blank" style="color: var(--gold); text-decoration: none; margin: 0 12px; font-weight: 600;">Tech Whitepaper</a>
+        <a href="02_EXECUTIVE_SUMMARY/Huurs_Studio_Executive_Proposal.html" target="_blank" style="color: var(--gold); text-decoration: none; margin: 0 12px; font-weight: 600;">Executive Proposal (HTML)</a> •
+        <a href="README.html" target="_blank" style="color: var(--gold); text-decoration: none; margin: 0 12px; font-weight: 600;">Master Documentation</a>
       </p>
-      <p style="font-size: 0.75rem; color: #64748b; margin-top: 14px;">Contact & Inquiries: salam@hur-studio.com  •  Independent Digital Studio</p>
+      <p style="font-size: 0.75rem; color: #64748b; margin-top: 14px;">Huur Studio  •  Autonomous Sacred Media & Cartography  •  Independent Digital Studio</p>
     </footer>
 
   </div>

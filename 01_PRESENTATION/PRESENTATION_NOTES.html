@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Presentation Notes & Strategic Speaker Guide - Huur Studio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-deep: #070c15;
+      --bg-surface: #0e1624;
+      --bg-surface-elevated: #152033;
+      --gold: #d4af59;
+      --gold-light: #e6cb85;
+      --emerald: #10b981;
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
+      --border-light: rgba(212, 175, 89, 0.25);
+      --border-card: rgba(255, 255, 255, 0.08);
+      --radius-sm: 8px;
+      --radius-md: 14px;
+      --radius-lg: 20px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background-color: var(--bg-deep);
+      color: var(--text-main);
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      line-height: 1.7;
+      padding: 0 0 90px 0;
+      overflow-x: hidden;
+    }
+
+    /* Header */
+    header {
+      background: rgba(7, 12, 21, 0.88);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border-light);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      padding: 16px 36px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .brand-logo {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      text-decoration: none;
+    }
+    .brand-crest {
+      width: 36px;
+      height: 36px;
+      border: 1.5px solid var(--gold);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Cinzel', serif;
+      font-weight: 700;
+      color: var(--gold);
+      border-radius: 6px;
+      background: var(--bg-surface);
+    }
+    .brand-title {
+      font-family: 'Cinzel', serif;
+      font-size: 1.15rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      color: var(--gold);
+    }
+    .nav-actions {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+    }
+    .btn {
+      padding: 9px 18px;
+      border-radius: var(--radius-sm);
+      font-size: 0.82rem;
+      font-weight: 600;
+      text-decoration: none;
+      cursor: pointer;
+      transition: all 0.25s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .btn-gold {
+      background: linear-gradient(135deg, var(--gold) 0%, #b8933b 100%);
+      color: var(--bg-deep);
+      border: none;
+    }
+    .btn-gold:hover {
+      background: linear-gradient(135deg, var(--gold-light) 0%, var(--gold) 100%);
+    }
+    .btn-outline {
+      background: transparent;
+      color: var(--gold-light);
+      border: 1px solid var(--border-light);
+    }
+
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 50px 24px 0;
+    }
+
+    .doc-hero {
+      border-bottom: 1px solid var(--border-card);
+      padding-bottom: 30px;
+      margin-bottom: 40px;
+    }
+    .doc-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 5px 14px;
+      border-radius: 999px;
+      background: var(--bg-surface-elevated);
+      border: 1px solid var(--border-light);
+      color: var(--gold);
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 18px;
+    }
+    .doc-title {
+      font-family: 'Cinzel', serif;
+      font-size: 2.3rem;
+      font-weight: 700;
+      color: var(--text-main);
+      margin-bottom: 14px;
+    }
+    .doc-title span {
+      color: var(--gold);
+    }
+
+    h2 {
+      font-family: 'Cinzel', serif;
+      font-size: 1.6rem;
+      color: var(--gold-light);
+      margin: 36px 0 16px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--border-light);
+    }
+    h3 {
+      font-family: 'Cinzel', serif;
+      font-size: 1.15rem;
+      color: var(--text-main);
+      margin: 22px 0 10px;
+    }
+    p {
+      color: #cbd5e1;
+      margin-bottom: 14px;
+    }
+    ul {
+      margin: 0 0 18px 24px;
+      color: #cbd5e1;
+    }
+    li {
+      margin-bottom: 6px;
+    }
+
+    .callout {
+      background: var(--bg-surface);
+      border-left: 4px solid var(--gold);
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+      padding: 18px 22px;
+      margin: 20px 0;
+      border-top: 1px solid var(--border-card);
+      border-right: 1px solid var(--border-card);
+      border-bottom: 1px solid var(--border-card);
+      font-style: italic;
+    }
+
+    .slide-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-card);
+      border-radius: var(--radius-md);
+      padding: 20px 24px;
+      margin-bottom: 18px;
+    }
+    .slide-tag {
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--gold);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 6px;
+    }
+
+    footer {
+      border-top: 1px solid var(--border-card);
+      padding-top: 40px;
+      margin-top: 60px;
+      text-align: center;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+    footer a { color: var(--gold); text-decoration: none; }
+
+    @media (max-width: 768px) {
+      header { padding: 12px 18px; flex-direction: column; gap: 10px; }
+      .container { padding: 24px 16px 0; }
+      .doc-title { font-size: 1.8rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <a href="../portfolio.html" class="brand-logo">
+      <div class="brand-crest">H</div>
+      <div>
+        <div class="brand-title">HUR STUDIO</div>
+      </div>
+    </a>
+    <div class="nav-actions">
+      <a href="index.html" class="btn btn-gold">Interactive Deck</a>
+      <a href="../portfolio.html" class="btn btn-outline">← Back to Portfolio</a>
+    </div>
+  </header>
+
+  <div class="container">
+    <div class="doc-hero">
+      <div class="doc-badge">Speaker Companion & Investor Q&A</div>
+      <h1 class="doc-title">Presentation Deck: <span>Speaker Notes</span></h1>
+      <p style="color: var(--text-muted);">
+        Project: Come Back to the Qur'an • Motto: READ. REFLECT. RETURN. • Audience: Qualified Partners & Philanthropic Trustees
+      </p>
+    </div>
+
+    <section>
+      <h2>Executive Overview: The 60-Second Pitch</h2>
+      <div class="callout">
+        "The Muslim world is in the midst of a silent attention crisis. Every day, 1.9 billion Muslims are bombarded with algorithmic hyper-stimulation, 15-second rage-bait, and digital noise that fractures inner peace and alienates the soul from the Book of Allah.<br><br>
+        Most Islamic content today either copies the frantic pacing of secular social media or delivers guilt-heavy lectures that make the weary believer feel disqualified.<br><br>
+        <strong>Huurs Studio is the counter-cultural antidote.</strong><br>
+        We have built the world’s first contemplative Islamic media studio powered by autonomous AI agent orchestration and verified Sunni scholarship. We produce cinema-grade, unhurried reflections that combine authentic living creation, verified tafsir, and broadcast-mastered voiceover with zero burned-in subtitles and zero music.<br><br>
+        We have already proven this pipeline: <strong>Season 1 and Season 2 (20 full broadcast masters + 20 vertical shorts + 114 companion ebooks) are 100% complete at $0.00 marginal cost.</strong><br><br>
+        We invite partners and investors who seek dual-world returns: a sustainable, high-margin digital media enterprise in this life (<strong>Dunya</strong>), and an unending stream of ongoing charity (<strong>Sadaqah Jariyah</strong>) in the Hereafter (<strong>Akhirah</strong>)."
+      </div>
+    </section>
+
+    <section>
+      <h2>Slide-by-Slide Delivery Guide</h2>
+
+      <div class="slide-card">
+        <div class="slide-tag">Slide 01</div>
+        <h3 style="margin-top: 0;">Title Slide — The Renaissance of Contemplative Quranic Media</h3>
+        <ul>
+          <li><strong>Visual Theme:</strong> Solitary dawn over desert dunes and starfield; gold serif typography.</li>
+          <li><strong>Key Talking Point:</strong> Introduce Huurs Studio not merely as a channel, but as an enduring sacred publishing institution.</li>
+          <li><strong>Tone:</strong> Grounded, noble, serene, unhurried.</li>
+        </ul>
+      </div>
+
+      <div class="slide-card">
+        <div class="slide-tag">Slide 02</div>
+        <h3 style="margin-top: 0;">The Modern Crisis — Digital Noise & Spiritual Alienation</h3>
+        <ul>
+          <li><strong>Data Point:</strong> Average smartphone user checks their device 144 times a day; attention spans have contracted to 8 seconds.</li>
+          <li><strong>The Spiritual Wound:</strong> Believers want to connect with the Qur'an, but opening it feels intimidating or evokes guilt.</li>
+          <li><strong>Market Void:</strong> Ultra-slow, high-aesthetic, scholarly-verified spiritual content tailored for the burnt-out modern mind is missing.</li>
+        </ul>
+      </div>
+
+      <div class="slide-card">
+        <div class="slide-tag">Slide 03</div>
+        <h3 style="margin-top: 0;">The Mission — READ. REFLECT. RETURN.</h3>
+        <ul>
+          <li><strong>READ:</strong> Grounded in authenticated Qur'anic ayah text and classical Sunni exegesis (Tabari, Ibn Kathir, Sa'di).</li>
+          <li><strong>REFLECT (Tadabbur):</strong> Emotional intimacy—asking <em>"What does this mean for my heart today?"</em></li>
+          <li><strong>RETURN:</strong> A concrete, friction-free practical anchor to bring the believer back into prostration and peace.</li>
+        </ul>
+      </div>
+
+      <div class="slide-card">
+        <div class="slide-tag">Slide 04</div>
+        <h3 style="margin-top: 0;">The Proprietary Moat — Multi-Agent Architecture</h3>
+        <ul>
+          <li>Traditional studios require 15–20 personnel costing <strong>$15,000 to $25,000 per episode</strong>.</li>
+          <li>Huurs Studio operates via multi-agent DAG orchestration executing research, claim verification, scriptwriting, slow-motion rendering, and audio mastering at <strong>$0.00 marginal compute cost</strong>.</li>
+        </ul>
+      </div>
+
+      <div class="slide-card">
+        <div class="slide-tag">Slide 05</div>
+        <h3 style="margin-top: 0;">The Content Engine — Multimodal Product Family</h3>
+        <ul>
+          <li>One verified 4-minute episode spawns: 1 Full 16:9 Landscape Master, 1 Vertical 9:16 Short, 1 In-depth Companion Study eBook, 1 Studio Audio Master (-14 LUFS, Zero Music), and fillable journal prompts.</li>
+        </ul>
+      </div>
+
+      <div class="slide-card">
+        <div class="slide-tag">Slide 06</div>
+        <h3 style="margin-top: 0;">Authenticity Over Beauty — Sacred Source Discipline</h3>
+        <ul>
+          <li>Non-negotiable policy: Beauty never outranks theological truth.</li>
+          <li>Zero human depictions of prophets or companions, zero distorted AI fantasy mosques, zero burned subtitles, zero background music.</li>
+        </ul>
+      </div>
+
+      <div class="slide-card">
+        <div class="slide-tag">Slide 07</div>
+        <h3 style="margin-top: 0;">Profits of This World (Dunya) — Sustainable Economics</h3>
+        <ul>
+          <li>Global Islamic Economy exceeds $3.2 Trillion; digital publishing yields 90%+ gross margins across D2C, print-on-demand journals, and institutional curriculum licensing.</li>
+        </ul>
+      </div>
+
+      <div class="slide-card">
+        <div class="slide-tag">Slide 08</div>
+        <h3 style="margin-top: 0;">Profits of the Hereafter (Akhirah) — Eternal ROI</h3>
+        <ul>
+          <li>Perpetual Sadaqah Jariyah: Every prostration, every verse contemplated, every returned heart credits the eternal scale of our partners.</li>
+        </ul>
+      </div>
+
+      <div class="slide-card">
+        <div class="slide-tag">Slide 09</div>
+        <h3 style="margin-top: 0;">Proven Execution — Season 1 & Season 2 Complete</h3>
+        <ul>
+          <li>20 Full Masters fully produced and audited; 20 Vertical Shorts ready; 114 Surah Master eBook compiled and converted to EPUB.</li>
+        </ul>
+      </div>
+
+      <div class="slide-card">
+        <div class="slide-tag">Slide 10</div>
+        <h3 style="margin-top: 0;">The Partnership Guild — How to Participate</h3>
+        <ul>
+          <li>Waqf Patron ($50,000+), Season Sponsor ($15,000), Community Guild Partner ($5,000), and Talent & Advisory Guild.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <h2>Anticipated Partner FAQ</h2>
+      <div class="slide-card">
+        <h4 style="color: var(--gold); margin-bottom: 6px;">Q1: "Why do you use AI, and is AI-generated Islamic content safe?"</h4>
+        <p><strong>Answer:</strong> AI at Huurs Studio is strictly production machinery, never an authoritative theologian. All theological claims, ayah texts, and hadith gradings pass through rigorous verification agents referencing primary Sunni sources (Tabari, Ibn Kathir, Sa'di, Nawawi) and remain subject to human review gates. Beauty and automation serve verified truth, not hallucinations.</p>
+      </div>
+
+      <div class="slide-card">
+        <h4 style="color: var(--gold); margin-bottom: 6px;">Q2: "Why do you enforce a strict Zero-Music policy?"</h4>
+        <p><strong>Answer:</strong> While musical opinions vary among contemporary thinkers, classical Sunni jurisprudence strongly cautions against musical instruments. By adhering to a strict Zero-Music policy with natural ambient sounds (wind, rain, mountain streams) and human vocal cadence, our content is 100% halal-compliant across all four Sunni madhahib and acceptable in every masjid, home, and school globally.</p>
+      </div>
+
+      <div class="slide-card">
+        <h4 style="color: var(--gold); margin-bottom: 6px;">Q3: "What makes your videos immune to duplicate content flags?"</h4>
+        <p><strong>Answer:</strong> Unlike automated spam channels that loop 5-second stock videos with synthetic robotic voices, our pipeline uses continuous motion interpolation, zero repeating scenes within any episode, 0% adjacent scene collision, custom human vocal timbre, and zero burned subtitles. Every video is a distinct work of art with a unique cryptographic scene hash.</p>
+      </div>
+    </section>
+
+    <footer>
+      <p style="font-family: 'Cinzel', serif; font-size: 1.1rem; color: var(--gold); letter-spacing: 0.1em; margin-bottom: 6px;">
+        HUURS STUDIO • COME BACK TO THE QUR'AN
+      </p>
+      <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-bottom: 16px;">
+        <a href="index.html">Open Interactive Pitch Deck</a>
+        <a href="../portfolio.html">Return to Master Portfolio</a>
+      </div>
+      <p style="font-size: 0.75rem; color: #64748b;">
+        Huur Studio • Autonomous Sacred Media & Cartography • Independent Digital Studio
+      </p>
+    </footer>
+  </div>
+
+</body>
+</html>
