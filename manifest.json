@@ -1,7 +1,7 @@
 {
-  "name": "Huurs Studio 11-Surah Taster Sanctuary",
-  "short_name": "11 Surahs Free",
-  "description": "Free 11-Surah Interactive Visual Mindmap & Contemplation Sanctuary.",
+  "name": "The Visual Quran Atlas (Student Edition 03)",
+  "short_name": "Quran Atlas 03",
+  "description": "The Visual Quran Atlas (Student Edition 03): Surah Al-Fatihah, Surah Al-Baqarah & Bonus Ayat al-Kursi.",
   "start_url": "./index.html",
   "scope": "./",
   "display": "standalone",

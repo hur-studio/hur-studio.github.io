@@ -1,0 +1,236 @@
+[
+  {
+    "page": 1,
+    "img": "previews_review03/review03_page-01.png",
+    "cat": "prelim",
+    "section": "Preliminaries",
+    "badge": "Cover",
+    "title": "The Visual Quran Atlas (Student Edition 03)",
+    "desc": "Volume I: Surah Al-Fatihah, Surah Al-Baqarah & Bonus Ayat al-Kursi. High-definition vector edition."
+  },
+  {
+    "page": 2,
+    "img": "previews_review03/review03_page-02.png",
+    "cat": "prelim",
+    "section": "Preliminaries",
+    "badge": "Guide",
+    "title": "Why This Atlas Exists & The 4 Editorial Labels",
+    "desc": "Explaining the student companion philosophy and the 4 visual distinctions: [QURAN], [HADITH], [TAFSIR], [REFLECTION]."
+  },
+  {
+    "page": 3,
+    "img": "previews_review03/review03_page-03.png",
+    "cat": "prelim",
+    "section": "Preliminaries",
+    "badge": "Index",
+    "title": "Table of Contents & 26-Plate Architecture Matrix",
+    "desc": "Full architectural road-map: 14 thematic plates, 3 visual relationship maps, source registries, and glossary."
+  },
+  {
+    "page": 4,
+    "img": "previews_review03/review03_page-04.png",
+    "cat": "fatihah",
+    "section": "Surah 01: Al-Fatihah",
+    "badge": "Plate 01 / 04",
+    "title": "The Celestial Prologue & Absolute Praise (1:1\u20132)",
+    "desc": "Pillars 1 & 2: Divine self-introduction, universal Rabb, and the ontological foundations of Hamd."
+  },
+  {
+    "page": 5,
+    "img": "previews_review03/review03_page-05.png",
+    "cat": "fatihah",
+    "section": "Surah 01: Al-Fatihah",
+    "badge": "Plate 02 / 04",
+    "title": "Oceans of Mercy & Sovereign Accountability (1:3\u20134)",
+    "desc": "Pillars 3 & 4: The pairing of Ar-Rahman and Ar-Rahim balanced against the sovereign authority of Yawm ad-Din."
+  },
+  {
+    "page": 6,
+    "img": "previews_review03/review03_page-06.png",
+    "cat": "fatihah",
+    "section": "Surah 01: Al-Fatihah",
+    "badge": "Plate 03 / 04",
+    "title": "The Master Covenant & Highway of Guidance (1:5\u20136)",
+    "desc": "Pillars 5 & 6: The exclusive covenant of worship (Iyyaka Na'bud) and the universal plea for Sirat al-Mustaqim."
+  },
+  {
+    "page": 7,
+    "img": "previews_review03/review03_page-07.png",
+    "cat": "fatihah",
+    "section": "Surah 01: Al-Fatihah",
+    "badge": "Plate 04 / 04",
+    "title": "The Three Human Destinies & Ring Transition (1:7)",
+    "desc": "Pillars 7 & 8: Historical models of guidance, passive adab of wrath, and the architectural ring seed of the Quran."
+  },
+  {
+    "page": 8,
+    "img": "previews_review03/review03_page-08.png",
+    "cat": "fatihah",
+    "section": "Surah 01: Al-Fatihah",
+    "badge": "Mindmap 01",
+    "title": "Visual Relationship Map: Al-Fatihah & Bridge to Al-Baqarah",
+    "desc": "Complete relational mindmap mapping the concentric ring structure of Al-Fatihah directly into Al-Baqarah."
+  },
+  {
+    "page": 9,
+    "img": "previews_review03/review03_page-09.png",
+    "cat": "fatihah",
+    "section": "Surah 01: Al-Fatihah",
+    "badge": "References",
+    "title": "Surah 01 Source Registry: Classical Tafsir, Hadith & Lexicology",
+    "desc": "Primary scholarly provenance across Ibn Kathir, Al-Tabari, Al-Qurtubi, Al-Razi, As-Sa'di, and Sahih hadith."
+  },
+  {
+    "page": 10,
+    "img": "previews_review03/review03_page-10.png",
+    "cat": "baqarah",
+    "section": "Surah 02: Al-Baqarah",
+    "badge": "Plate 01 / 08",
+    "title": "Epistemology of Revelation & Five Marks of Taqwa (2:1\u201320)",
+    "desc": "Pillars 1 & 2: Divine certainty of the Book, unseen belief, and the internal psychology of pious orientation."
+  },
+  {
+    "page": 11,
+    "img": "previews_review03/review03_page-11.png",
+    "cat": "baqarah",
+    "section": "Surah 02: Al-Baqarah",
+    "badge": "Plate 02 / 08",
+    "title": "Sealed Faculties & The Psychology of Hypocrisy (2:6\u201320)",
+    "desc": "Pillars 3 & 4: Comparative study of overt rejection vs covert hypocrisy, dual parables of fire and rainstorm."
+  },
+  {
+    "page": 12,
+    "img": "previews_review03/review03_page-12.png",
+    "cat": "baqarah",
+    "section": "Surah 02: Al-Baqarah",
+    "badge": "Plate 03 / 08",
+    "title": "Universal Call, Adam's Caliphate & Primordial Drama (2:21\u201339)",
+    "desc": "Pillars 5 & 6: The first universal call to humanity, angelic dialogue, Adam taught all names, and repentance."
+  },
+  {
+    "page": 13,
+    "img": "previews_review03/review03_page-13.png",
+    "cat": "baqarah",
+    "section": "Surah 02: Al-Baqarah",
+    "badge": "Plate 04 / 08",
+    "title": "Banu Isra'il, The Covenant of the Heifer & Hard Hearts (2:40\u2013123)",
+    "desc": "Pillars 7 & 8: Historical covenant accountability, the parable of the yellow cow, and the metaphor of tumbling stones."
+  },
+  {
+    "page": 14,
+    "img": "previews_review03/review03_page-14.png",
+    "cat": "baqarah",
+    "section": "Surah 02: Al-Baqarah",
+    "badge": "Plate 05 / 08",
+    "title": "The Abrahamic Standard & Sacred Qiblah Pivot (2:124\u2013177)",
+    "desc": "Pillars 9 & 10: Building the Ka'bah, the prophetic prayer for Mecca, the shift of spiritual axis, and Birr (righteousness)."
+  },
+  {
+    "page": 15,
+    "img": "previews_review03/review03_page-15.png",
+    "cat": "baqarah",
+    "section": "Surah 02: Al-Baqarah",
+    "badge": "Plate 06 / 08",
+    "title": "The Medina Constitution & Community Architecture (2:178\u2013242)",
+    "desc": "Pillars 11 & 12: Sacred calendar, Ramadan fasting, defensive war ethics, and the jurisprudence of family equity."
+  },
+  {
+    "page": 16,
+    "img": "previews_review03/review03_page-16.png",
+    "cat": "baqarah",
+    "section": "Surah 02: Al-Baqarah",
+    "badge": "Plate 07 / 08",
+    "title": "Dedications: Ayat al-Kursi & The Triad of Proofs (2:243\u2013260)",
+    "desc": "Pillars 13 & 14: Kingship, struggle, Talut & Jalut, the Throne Verse, and empirical proofs of resurrection."
+  },
+  {
+    "page": 17,
+    "img": "previews_review03/review03_page-17.png",
+    "cat": "baqarah",
+    "section": "Surah 02: Al-Baqarah",
+    "badge": "Plate 08 / 08",
+    "title": "The Ethical Economy & The Believers' Supplication (2:261\u2013286)",
+    "desc": "Pillars 15 & 16: Sacred spending (Infaq), eliminating usury (Riba), commercial contracts, and closing Amanar-Rasul."
+  },
+  {
+    "page": 18,
+    "img": "previews_review03/review03_page-18.png",
+    "cat": "baqarah",
+    "section": "Surah 02: Al-Baqarah",
+    "badge": "Mindmap 02",
+    "title": "Visual Relationship Map: Surah Al-Baqarah Architecture",
+    "desc": "Macrostructural architectural diagram mapping the 16 thematic pillars and structural symmetry of the 286 verses."
+  },
+  {
+    "page": 19,
+    "img": "previews_review03/review03_page-19.png",
+    "cat": "baqarah",
+    "section": "Surah 02: Al-Baqarah",
+    "badge": "References I",
+    "title": "Surah 02 Source Registry: Classical Tafsir & Hadith",
+    "desc": "Attribution matrix linking each thematic section to classical scholarly commentary and verified hadith."
+  },
+  {
+    "page": 20,
+    "img": "previews_review03/review03_page-20.png",
+    "cat": "baqarah",
+    "section": "Surah 02: Al-Baqarah",
+    "badge": "References II",
+    "title": "Surah 02 Arabic Root Lexicology & Thematic Munasabah Map",
+    "desc": "Key Arabic root words (Mufradat) and structural transitions linking Surah Al-Baqarah forward into Ali 'Imran."
+  },
+  {
+    "page": 21,
+    "img": "previews_review03/review03_page-21.png",
+    "cat": "kursi",
+    "section": "Bonus: Ayat al-Kursi",
+    "badge": "Bonus Plate 01 / 02",
+    "title": "The 10 Clauses & Concentric Ring Structure (Ayat al-Kursi, 2:255)",
+    "desc": "The supreme Throne Verse: Ontological foundations, boundless knowledge, absolute sovereignty, and symmetric chiasmus."
+  },
+  {
+    "page": 22,
+    "img": "previews_review03/review03_page-22.png",
+    "cat": "kursi",
+    "section": "Bonus: Ayat al-Kursi",
+    "badge": "Bonus Plate 02 / 02",
+    "title": "Canonical Virtues & Daily Spiritual Shielding (Ayat al-Kursi)",
+    "desc": "Ayat al-Kursi in the Prophetic Sunnah: Virtues from the Kutub al-Sittah, morning/evening protection, and after prayers."
+  },
+  {
+    "page": 23,
+    "img": "previews_review03/review03_page-23.png",
+    "cat": "kursi",
+    "section": "Bonus: Ayat al-Kursi",
+    "badge": "Mindmap 03",
+    "title": "Visual Relationship Map: Ayat al-Kursi Clause Study",
+    "desc": "Proposed clause-by-clause visual study aid offered for contemplation, reflection, and deep memorization."
+  },
+  {
+    "page": 24,
+    "img": "previews_review03/review03_page-24.png",
+    "cat": "reference",
+    "section": "Reference & Glossary",
+    "badge": "Scholars",
+    "title": "Scholarly Heritage: Classical Sunni Exegetes Cited",
+    "desc": "Biographical overviews of Imam Al-Biqa'i, Ibn Kathir, Al-Tabari, Al-Qurtubi, Fakhr al-Din al-Razi, and As-Sa'di."
+  },
+  {
+    "page": 25,
+    "img": "previews_review03/review03_page-25.png",
+    "cat": "reference",
+    "section": "Reference & Glossary",
+    "badge": "Glossary",
+    "title": "Study Aid: Key Quranic Terms & Plain-English Glossary",
+    "desc": "Definitions of key theological and structural terms: Munasabah, Nazm, Taqwa, Infaq, Riba, Rabb, Sirat, and more."
+  },
+  {
+    "page": 26,
+    "img": "previews_review03/review03_page-26.png",
+    "cat": "reference",
+    "section": "Reference & Glossary",
+    "badge": "Feedback",
+    "title": "Reader & Teacher Feedback Form",
+    "desc": "Invitation for readers, teachers, and scholars to submit corrections, reflections, and insights for future editions."
+  }
+]
