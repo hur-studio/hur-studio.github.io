@@ -5,6 +5,7 @@ const PRECACHE_ASSETS = [
   "./",
   "./index.html",
   "./START_HERE.html",
+  "./surah_plates.js",
   "./manifest.json",
   "./icons/icon-192.png",
   "./icons/icon-512.png",

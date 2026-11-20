@@ -20,7 +20,7 @@
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Cinzel:wght@500;600;700;800&family=Cormorant+Garamond:ital,wght@0,600;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   
   <style>
     :root {
@@ -159,6 +159,18 @@
     .top-btn.portfolio-btn:hover {
       border-color: #3b82f6;
       background: rgba(59, 130, 246, 0.15);
+    }
+
+    .top-btn.amazon-btn {
+      background: linear-gradient(135deg, rgba(245, 158, 11, 0.22), rgba(217, 119, 6, 0.12));
+      border-color: rgba(245, 158, 11, 0.55);
+      color: #fde68a;
+    }
+
+    .top-btn.amazon-btn:hover {
+      background: rgba(245, 158, 11, 0.3);
+      border-color: #fbbf24;
+      color: #fffbeb;
     }
 
     /* Hero Section */
@@ -779,6 +791,31 @@
       background: rgba(239, 68, 68, 0.4);
       color: #fff;
     }
+
+    .lightbox-top-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-shrink: 0;
+    }
+
+    .lightbox-back-btn {
+      background: rgba(212, 175, 89, 0.14);
+      border: 1px solid rgba(212, 175, 89, 0.45);
+      color: var(--gold-light);
+      padding: 6px 14px;
+      border-radius: 999px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+      white-space: nowrap;
+    }
+
+    .lightbox-back-btn:hover {
+      background: var(--gold);
+      color: #05080f;
+    }
     
     .lightbox-center {
       position: relative;
@@ -789,6 +826,13 @@
       padding: 12px 0;
       overflow: hidden;
     }
+
+    .lightbox-center.is-zoomed {
+      overflow: auto;
+      align-items: flex-start;
+      justify-content: flex-start;
+      padding: 16px;
+    }
     
     .lightbox-img {
       max-height: calc(100vh - 160px);
@@ -797,7 +841,224 @@
       border-radius: 8px;
       box-shadow: 0 10px 40px rgba(0, 0, 0, 0.9);
       border: 1px solid rgba(212, 175, 89, 0.2);
+      cursor: zoom-in;
     }
+
+    .lightbox-center.is-zoomed .lightbox-img {
+      max-height: none;
+      max-width: none;
+      width: auto;
+      height: auto;
+      margin: 0 auto;
+      cursor: zoom-out;
+    }
+
+    /* HTML Plate Cards & Full-Size HTML Plate Reader (Replaces small-font Surah PNGs) */
+    .study-html-preview {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 24px 20px;
+      background: radial-gradient(circle at top right, rgba(212, 175, 89, 0.16), rgba(10, 17, 32, 0.96) 70%);
+      border-bottom: 1px solid rgba(212, 175, 89, 0.2);
+    }
+
+    .study-html-ar {
+      font-family: 'Amiri', serif;
+      font-size: 2rem;
+      line-height: 1.5;
+      color: var(--gold-light);
+      margin-bottom: 6px;
+    }
+
+    .study-html-en {
+      font-family: var(--font-title);
+      font-size: 1.05rem;
+      color: var(--text-main);
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .study-html-ayah {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-style: italic;
+      font-size: 0.98rem;
+      color: var(--text-muted);
+      max-width: 92%;
+      line-height: 1.45;
+    }
+
+    .plate-html-thumb {
+      padding: 18px 16px 14px;
+      min-height: 175px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      background: linear-gradient(155deg, #101c33 0%, #0b1324 100%);
+      border-bottom: 1px solid rgba(212, 175, 89, 0.18);
+      position: relative;
+    }
+
+    .plate-html-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 12px;
+    }
+
+    .plate-html-section {
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--gold);
+    }
+
+    .plate-html-chip {
+      font-size: 0.7rem;
+      font-weight: 700;
+      padding: 2px 8px;
+      border-radius: 999px;
+      background: rgba(212, 175, 89, 0.16);
+      color: var(--gold-light);
+      border: 1px solid rgba(212, 175, 89, 0.35);
+    }
+
+    .plate-html-headline {
+      font-family: var(--font-title);
+      font-size: 1.05rem;
+      line-height: 1.35;
+      color: var(--text-main);
+      margin-bottom: 10px;
+    }
+
+    .plate-html-cta {
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: #6ee7b7;
+    }
+
+    .lightbox-html-reader {
+      width: min(1040px, 95vw);
+      max-height: calc(100vh - 150px);
+      overflow-y: auto;
+      background: #0b1220;
+      border: 1px solid rgba(212, 175, 89, 0.3);
+      border-radius: 14px;
+      padding: 28px 26px;
+      color: #e2e8f0;
+      font-size: var(--hp-font-size, 16.5px);
+      line-height: 1.7;
+      box-shadow: 0 18px 50px rgba(0, 0, 0, 0.85);
+      z-index: 2;
+    }
+
+    .lightbox-html-reader[hidden] {
+      display: none;
+    }
+
+    .hp-plate-header {
+      border-bottom: 1px solid rgba(212, 175, 89, 0.25);
+      padding-bottom: 16px;
+      margin-bottom: 20px;
+    }
+
+    .hp-plate-title {
+      font-family: var(--font-title);
+      font-size: 1.45em;
+      color: var(--gold-light);
+      line-height: 1.25;
+      margin-bottom: 6px;
+    }
+
+    .hp-plate-subtitle {
+      font-size: 0.96em;
+      color: #94a3b8;
+      margin-bottom: 12px;
+    }
+
+    .hp-plate-quote {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 1.22em;
+      font-style: italic;
+      color: #f8fafc;
+      background: rgba(212, 175, 89, 0.08);
+      border-left: 3px solid var(--gold);
+      padding: 10px 16px;
+      border-radius: 0 8px 8px 0;
+      margin: 0;
+    }
+
+    .hp-plate-body {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 20px;
+    }
+
+    @media (max-width: 860px) {
+      .lightbox-html-reader {
+        padding: 18px 14px;
+        width: 96vw;
+      }
+      .hp-plate-body {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 14px;
+      }
+    }
+
+    .hp-section {
+      background: rgba(16, 28, 51, 0.72);
+      border: 1px solid rgba(212, 175, 89, 0.18);
+      border-radius: 12px;
+      padding: 16px 18px;
+    }
+
+    .hp-section-title {
+      font-family: var(--font-title);
+      font-size: 1.05em;
+      color: var(--gold);
+      margin-bottom: 10px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .hp-subhead {
+      font-size: 1.02em;
+      font-weight: 700;
+      color: #f8fafc;
+      margin: 14px 0 8px;
+    }
+
+    .hp-entry, .hp-para {
+      margin-bottom: 10px;
+      color: #cbd5e1;
+      font-size: 0.97em;
+    }
+
+    .hp-entry:last-child, .hp-para:last-child {
+      margin-bottom: 0;
+    }
+
+    .hp-tag {
+      display: inline-block;
+      font-family: monospace;
+      font-size: 0.78em;
+      font-weight: 700;
+      padding: 1px 6px;
+      border-radius: 4px;
+      margin-right: 4px;
+    }
+
+    .hp-tag-quran { background: rgba(212, 175, 89, 0.2); color: #f7e7b4; }
+    .hp-tag-hadith { background: rgba(180, 130, 90, 0.25); color: #fed7aa; }
+    .hp-tag-tafsir { background: rgba(16, 185, 129, 0.2); color: #6ee7b7; }
+    .hp-tag-reflection { background: rgba(148, 163, 184, 0.2); color: #e2e8f0; }
+    .hp-ref-code { font-family: monospace; font-size: 0.82em; color: #94a3b8; }
     
     .lightbox-nav-btn {
       position: absolute;
@@ -934,6 +1195,89 @@
       .lightbox-nav-btn.next { right: 6px; }
       .lightbox-img { max-width: 98vw; }
     }
+
+    /* Interactive Ayat al-Kursi 10-Clause Concentric Ring Explorer (hk- namespaced) */
+    .hk-explorer {
+      --hk-bg: #131a17;
+      --hk-elevated: #19221e;
+      --hk-border: rgba(201, 168, 106, 0.24);
+      --hk-gold: #c9a86a;
+      --hk-gold-bright: #e6c88a;
+      --hk-emerald: #4e8c73;
+      --hk-text: #f2efe9;
+      --hk-text-dim: #a8b0ac;
+      --hk-muted: #75807b;
+
+      max-width: 1120px;
+      margin: 3rem auto;
+      background: var(--hk-bg);
+      border: 1px solid var(--hk-border);
+      border-radius: 16px;
+      padding: 2.25rem 1.5rem;
+      color: var(--hk-text);
+      overflow-x: hidden;
+    }
+
+    .hk-header { text-align: center; max-width: 680px; margin: 0 auto 1.75rem; }
+    .hk-eyebrow { font-size: 0.72rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--hk-gold); font-weight: 600; margin-bottom: 0.45rem; }
+    .hk-title { font-family: 'Cormorant Garamond', Georgia, serif; font-size: clamp(1.7rem, 3.2vw, 2.35rem); font-weight: 600; line-height: 1.2; margin-bottom: 0.6rem; }
+    .hk-subtitle { font-size: 0.92rem; color: var(--hk-text-dim); line-height: 1.6; }
+
+    .hk-pills { display: flex; gap: 0.45rem; overflow-x: auto; padding-bottom: 0.5rem; margin-bottom: 1.25rem; scrollbar-width: none; max-width: 100%; }
+    .hk-pills::-webkit-scrollbar { display: none; }
+    .hk-pill { flex: 0 0 auto; background: var(--hk-elevated); border: 1px solid var(--hk-border); color: var(--hk-text-dim); padding: 0.4rem 0.8rem; border-radius: 999px; font-size: 0.78rem; cursor: pointer; transition: 0.2s ease; }
+    .hk-pill:hover { border-color: var(--hk-gold); color: var(--hk-text); }
+    .hk-pill.is-active { background: var(--hk-gold); color: #0d1210; border-color: var(--hk-gold); font-weight: 600; }
+
+    .hk-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr); gap: 2rem; align-items: center; }
+    @media (max-width: 860px) {
+      .hk-grid { grid-template-columns: minmax(0, 1fr); gap: 1.5rem; }
+      .hk-explorer { padding: 1.5rem 1rem; margin: 2rem 0; }
+    }
+
+    .hk-stage { display: flex; flex-direction: column; align-items: center; min-width: 0; }
+    .hk-svg { width: 100%; max-width: 410px; height: auto; overflow: visible; touch-action: manipulation; }
+    .hk-ring { fill: rgba(201, 168, 106, 0.02); stroke: rgba(201, 168, 106, 0.25); stroke-width: 2; cursor: pointer; transition: 0.3s ease; }
+    .hk-ring:hover { stroke: rgba(230, 200, 138, 0.65); fill: rgba(201, 168, 106, 0.06); }
+    .hk-ring.is-pair { stroke: var(--hk-emerald); stroke-width: 2.5; stroke-dasharray: 5 3; fill: rgba(78, 140, 115, 0.08); }
+    .hk-ring.is-active { stroke: var(--hk-gold-bright); stroke-width: 3.5; stroke-dasharray: none; fill: rgba(201, 168, 106, 0.14); filter: drop-shadow(0 0 10px rgba(201, 168, 106, 0.35)); }
+
+    .hk-node { cursor: pointer; }
+    .hk-node circle { fill: var(--hk-bg); stroke: rgba(201, 168, 106, 0.5); stroke-width: 1.5; transition: 0.25s ease; }
+    .hk-node text { fill: var(--hk-text-dim); font-size: 10px; font-weight: 600; text-anchor: middle; dominant-baseline: central; pointer-events: none; }
+    .hk-node.is-pair circle { stroke: var(--hk-emerald); fill: #162620; }
+    .hk-node.is-active circle { fill: var(--hk-gold); stroke: var(--hk-gold-bright); }
+    .hk-node.is-active text { fill: #0d1210; font-weight: 700; }
+
+    .hk-legend { display: flex; gap: 1.25rem; margin-top: 0.9rem; font-size: 0.78rem; color: var(--hk-text-dim); flex-wrap: wrap; justify-content: center; }
+    .hk-legend-item { display: flex; align-items: center; gap: 0.4rem; }
+    .hk-dot-active { display: inline-block; width: 10px; height: 10px; border-radius: 50%; background: var(--hk-gold-bright); }
+    .hk-dot-pair { display: inline-block; width: 10px; height: 10px; border-radius: 50%; border: 1.5px dashed var(--hk-emerald); background: rgba(78, 140, 115, 0.25); }
+
+    .hk-panel { background: var(--hk-elevated); border: 1px solid var(--hk-border); border-radius: 12px; padding: 1.5rem; min-width: 0; }
+    .hk-panel-meta { display: flex; justify-content: space-between; align-items: center; gap: 0.75rem; margin-bottom: 1rem; flex-wrap: wrap; }
+    .hk-clause-badge { font-size: 0.75rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--hk-gold); }
+    .hk-pair-btn { font-size: 0.74rem; color: #8cc9b0; background: rgba(78, 140, 115, 0.15); border: 1px solid rgba(78, 140, 115, 0.35); padding: 0.25rem 0.65rem; border-radius: 999px; cursor: pointer; }
+    .hk-pair-btn:hover { background: rgba(78, 140, 115, 0.28); }
+
+    .hk-block { margin-bottom: 1.1rem; padding-bottom: 1.1rem; border-bottom: 1px solid rgba(255, 255, 255, 0.06); }
+    .hk-block:last-of-type { margin-bottom: 0; padding-bottom: 0; border-bottom: none; }
+    .hk-tag { display: inline-block; font-family: monospace; font-size: 0.72rem; font-weight: 700; padding: 0.15rem 0.45rem; border-radius: 4px; margin-bottom: 0.45rem; }
+    .hk-tag-quran { background: rgba(201, 168, 106, 0.18); color: var(--hk-gold-bright); }
+    .hk-tag-hadith { background: rgba(180, 130, 90, 0.2); color: #e8b88a; }
+    .hk-tag-tafsir { background: rgba(78, 140, 115, 0.18); color: #8cc9b0; }
+    .hk-tag-reflection { background: rgba(168, 176, 172, 0.15); color: #d4dad7; }
+
+    .hk-arabic { font-family: 'Amiri', serif; font-size: clamp(1.6rem, 3vw, 2.05rem); line-height: 1.85; color: var(--hk-text); text-align: right; margin: 0.25rem 0 0.45rem; }
+    .hk-translation { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 1.15rem; font-style: italic; color: var(--hk-gold-bright); }
+    .hk-copy { font-size: 0.9rem; color: var(--hk-text-dim); line-height: 1.6; margin: 0; }
+    .hk-cite { display: block; font-size: 0.76rem; color: var(--hk-muted); margin-top: 0.35rem; }
+
+    .hk-nav { display: flex; justify-content: space-between; align-items: center; gap: 0.5rem; margin-top: 1.35rem; padding-top: 1rem; border-top: 1px solid var(--hk-border); flex-wrap: wrap; }
+    .hk-nav-btn { background: transparent; border: 1px solid var(--hk-border); color: var(--hk-text); padding: 0.45rem 0.95rem; border-radius: 8px; font-size: 0.82rem; cursor: pointer; }
+    .hk-nav-btn:hover { border-color: var(--hk-gold); background: rgba(201, 168, 106, 0.08); }
+    .hk-ring-label { font-size: 0.78rem; color: var(--hk-muted); text-align: center; }
+    .hk-explorer :focus-visible { outline: 2px solid var(--hk-gold-bright); outline-offset: 2px; }
   </style>
 </head>
 <body>
@@ -957,6 +1301,9 @@
       </a>
       <a href="portfolio.html" class="top-btn portfolio-btn" title="View Institutional Investment Suite">
         <span>🏢 Portfolio</span>
+      </a>
+      <a href="https://www.amazon.com/dp/B0HS7ZML5N" target="_blank" rel="noopener noreferrer" class="top-btn amazon-btn" title="Get the Kindle eBook on Amazon">
+        <span>🛒 Kindle eBook</span>
       </a>
     </div>
   </div>
@@ -1061,7 +1408,11 @@
         <!-- Study 1: Surah Al-Fatihah -->
         <div class="study-card">
           <div class="study-thumb-wrap" onclick="openLightbox(4)">
-            <img src="previews_review03/review03_page-04.png" alt="Surah Al-Fatihah Preview">
+            <div class="study-html-preview">
+              <div class="study-html-ar" lang="ar" dir="rtl">سُورَةُ الْفَاتِحَةِ</div>
+              <div class="study-html-en">The Celestial Prologue (1:1–7)</div>
+              <div class="study-html-ayah">“All praise is due to Allah, Lord of the worlds.”</div>
+            </div>
             <div class="study-thumb-overlay">
               <span class="study-badge">Surah 01 • 7 Ayahs</span>
             </div>
@@ -1097,7 +1448,11 @@
         <!-- Study 2: Surah Al-Baqarah -->
         <div class="study-card">
           <div class="study-thumb-wrap" onclick="openLightbox(10)">
-            <img src="previews_review03/review03_page-10.png" alt="Surah Al-Baqarah Preview">
+            <div class="study-html-preview">
+              <div class="study-html-ar" lang="ar" dir="rtl">سُورَةُ الْبَقَرَةِ</div>
+              <div class="study-html-en">Epistemology &amp; Legislation (2:1–286)</div>
+              <div class="study-html-ayah">“This is the Book about which there is no doubt, a guidance for the Muttaqin.”</div>
+            </div>
             <div class="study-thumb-overlay">
               <span class="study-badge">Surah 02 • 286 Ayahs</span>
             </div>
@@ -1133,7 +1488,11 @@
         <!-- Study 3: Bonus Ayat al-Kursi -->
         <div class="study-card">
           <div class="study-thumb-wrap" onclick="openLightbox(21)">
-            <img src="previews_review03/review03_page-21.png" alt="Ayat al-Kursi Preview">
+            <div class="study-html-preview">
+              <div class="study-html-ar" lang="ar" dir="rtl">آيَةُ الْكُرْسِيِّ</div>
+              <div class="study-html-en">The Supreme Throne Verse (2:255)</div>
+              <div class="study-html-ayah">“Allah — there is no deity except Him, the Ever-Living, the All-Sustaining.”</div>
+            </div>
             <div class="study-thumb-overlay">
               <span class="study-badge bonus">Bonus Deep Dive • Ayah 2:255</span>
             </div>
@@ -1166,6 +1525,65 @@
           </div>
         </div>
 
+      </div>
+    </section>
+
+    <!-- Interactive Ayat al-Kursi 10-Clause Concentric Ring Explorer -->
+    <section id="kursi-explorer" class="hk-explorer" tabindex="0" aria-label="Ayat al-Kursi Concentric Ring Explorer">
+      <div class="hk-header">
+        <div class="hk-eyebrow">Interactive Study Plate • Surah Al-Baqarah 2:255</div>
+        <h2 class="hk-title">Ayat al-Kursi: 10-Clause Concentric Ring Map</h2>
+        <p class="hk-subtitle">
+          Select any ring or clause to trace how the outer frame of Divine Majesty mirrors inward toward the central axis of divine omniscience and human humility.
+        </p>
+      </div>
+
+      <div class="hk-pills" id="hkClausePills" role="tablist" aria-label="Select Ayat al-Kursi Clause"></div>
+
+      <div class="hk-grid">
+        <div class="hk-stage">
+          <svg class="hk-svg" viewBox="0 0 420 420" id="hkConcentricSvg" role="img" aria-label="Concentric rings representing the 10 clauses of Ayat al-Kursi"></svg>
+          <div class="hk-legend">
+            <span class="hk-legend-item"><i class="hk-dot-active"></i> Selected Clause</span>
+            <span class="hk-legend-item"><i class="hk-dot-pair"></i> Concentric Symmetry Mirror</span>
+          </div>
+        </div>
+
+        <article class="hk-panel" aria-live="polite">
+          <div class="hk-panel-meta">
+            <span class="hk-clause-badge" id="hkClauseBadge">Clause 01 of 10</span>
+            <button type="button" class="hk-pair-btn" id="hkPairBtn">Symmetry Mirror ⇄</button>
+          </div>
+
+          <div class="hk-block">
+            <span class="hk-tag hk-tag-quran">[QURAN]</span>
+            <div class="hk-arabic" id="hkArabic" lang="ar" dir="rtl"></div>
+            <div class="hk-translation" id="hkTranslation"></div>
+          </div>
+
+          <div class="hk-block" id="hkHadithBlock" hidden>
+            <span class="hk-tag hk-tag-hadith">[HADITH]</span>
+            <p class="hk-copy" id="hkHadithText"></p>
+            <span class="hk-cite" id="hkHadithSource"></span>
+          </div>
+
+          <div class="hk-block">
+            <span class="hk-tag hk-tag-tafsir">[TAFSIR]</span>
+            <p class="hk-copy" id="hkTafsirText"></p>
+            <span class="hk-cite" id="hkTafsirSource"></span>
+          </div>
+
+          <div class="hk-block">
+            <span class="hk-tag hk-tag-reflection">[REFLECTION]</span>
+            <p class="hk-copy" id="hkReflectionText"></p>
+          </div>
+
+          <div class="hk-nav">
+            <button type="button" class="hk-nav-btn" id="hkPrevBtn">← Previous</button>
+            <span class="hk-ring-label" id="hkRingLabel">Ring 1 • Outer Frame</span>
+            <button type="button" class="hk-nav-btn" id="hkNextBtn">Next →</button>
+          </div>
+        </article>
       </div>
     </section>
 
@@ -1220,21 +1638,30 @@
         <span class="lightbox-page-num" id="modalPageNum">Page 01</span>
         <span class="lightbox-plate-title" id="modalPlateTitle">Plate Title</span>
       </div>
-      <button class="lightbox-close" onclick="closeLightbox()" title="Close Lightbox (Esc)">✕</button>
+      <div class="lightbox-top-actions">
+        <button type="button" class="lightbox-back-btn" onclick="closeLightbox(true)" title="Close and return to top of page">← Back to Home</button>
+        <button type="button" class="lightbox-close" onclick="closeLightbox()" title="Close Lightbox (Esc)">✕</button>
+      </div>
     </div>
     
-    <div class="lightbox-center">
-      <button class="lightbox-nav-btn prev" onclick="prevPlate()" title="Previous Plate (Left Arrow)">❮</button>
-      <img src="" alt="Enlarged Plate" class="lightbox-img" id="modalImg">
-      <button class="lightbox-nav-btn next" onclick="nextPlate()" title="Next Plate (Right Arrow)">❯</button>
+    <div class="lightbox-center" id="lightboxCenter" onclick="if (event.target === this) closeLightbox();">
+      <button type="button" class="lightbox-nav-btn prev" onclick="prevPlate()" title="Previous Plate (Left Arrow)">❮</button>
+      <div class="lightbox-html-reader" id="modalHtmlReader"></div>
+      <button type="button" class="lightbox-nav-btn next" onclick="nextPlate()" title="Next Plate (Right Arrow)">❯</button>
     </div>
     
     <div class="lightbox-bottom">
       <div class="lightbox-desc" id="modalPlateDesc">Plate description and exegesis details.</div>
-      <div>
-        <a href="#" target="_blank" class="btn btn-outline" id="modalViewOriginalBtn" style="padding: 6px 14px; font-size: 0.8rem;">
-          <span>🔍 View Full Resolution</span>
-        </a>
+      <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+        <button type="button" class="btn btn-outline" id="modalFontDownBtn" onclick="adjustReaderFont(-1.5)" style="padding: 6px 12px; font-size: 0.8rem;">
+          <span>A-</span>
+        </button>
+        <button type="button" class="btn btn-outline" id="modalFontUpBtn" onclick="adjustReaderFont(1.5)" style="padding: 6px 12px; font-size: 0.8rem;">
+          <span>A+</span>
+        </button>
+        <button type="button" class="btn btn-outline" onclick="closeLightbox()" style="padding: 6px 14px; font-size: 0.8rem;">
+          <span>← Back</span>
+        </button>
       </div>
     </div>
   </div>
@@ -1242,7 +1669,7 @@
   <!-- Footer -->
   <footer>
     <div class="footer-brand">HUURS STUDIO  •  THE VISUAL QURAN ATLAS</div>
-    <div class="footer-sub">Autonomous Sacred Media & Cartography  •  Student Edition 03</div>
+    <div class="footer-sub">Autonomous Sacred Media & Cartography  •  Student Edition 03 • Interactive Plate 04</div>
     <div class="footer-links">
       <a href="index.html">Atlas Gateway</a> •
       <a href="portfolio.html">Institutional Portfolio</a> •
@@ -1255,10 +1682,18 @@
     </p>
   </footer>
 
+  <script src="surah_plates.js"></script>
   <script>
-    const plates = [{"page": 1, "img": "previews_review03/review03_page-01.png", "cat": "prelim", "section": "Preliminaries", "badge": "Cover", "title": "The Visual Quran Atlas (Student Edition 03)", "desc": "Volume I: Surah Al-Fatihah, Surah Al-Baqarah & Bonus Ayat al-Kursi. High-definition vector edition."}, {"page": 2, "img": "previews_review03/review03_page-02.png", "cat": "prelim", "section": "Preliminaries", "badge": "Guide", "title": "Why This Atlas Exists & The 4 Editorial Labels", "desc": "Explaining the student companion philosophy and the 4 visual distinctions: [QURAN], [HADITH], [TAFSIR], [REFLECTION]."}, {"page": 3, "img": "previews_review03/review03_page-03.png", "cat": "prelim", "section": "Preliminaries", "badge": "Index", "title": "Table of Contents & 26-Plate Architecture Matrix", "desc": "Full architectural road-map: 14 thematic plates, 3 visual relationship maps, source registries, and glossary."}, {"page": 4, "img": "previews_review03/review03_page-04.png", "cat": "fatihah", "section": "Surah 01: Al-Fatihah", "badge": "Plate 01 / 04", "title": "The Celestial Prologue & Absolute Praise (1:1\u20132)", "desc": "Pillars 1 & 2: Divine self-introduction, universal Rabb, and the ontological foundations of Hamd."}, {"page": 5, "img": "previews_review03/review03_page-05.png", "cat": "fatihah", "section": "Surah 01: Al-Fatihah", "badge": "Plate 02 / 04", "title": "Oceans of Mercy & Sovereign Accountability (1:3\u20134)", "desc": "Pillars 3 & 4: The pairing of Ar-Rahman and Ar-Rahim balanced against the sovereign authority of Yawm ad-Din."}, {"page": 6, "img": "previews_review03/review03_page-06.png", "cat": "fatihah", "section": "Surah 01: Al-Fatihah", "badge": "Plate 03 / 04", "title": "The Master Covenant & Highway of Guidance (1:5\u20136)", "desc": "Pillars 5 & 6: The exclusive covenant of worship (Iyyaka Na'bud) and the universal plea for Sirat al-Mustaqim."}, {"page": 7, "img": "previews_review03/review03_page-07.png", "cat": "fatihah", "section": "Surah 01: Al-Fatihah", "badge": "Plate 04 / 04", "title": "The Three Human Destinies & Ring Transition (1:7)", "desc": "Pillars 7 & 8: Historical models of guidance, passive adab of wrath, and the architectural ring seed of the Quran."}, {"page": 8, "img": "previews_review03/review03_page-08.png", "cat": "fatihah", "section": "Surah 01: Al-Fatihah", "badge": "Mindmap 01", "title": "Visual Relationship Map: Al-Fatihah & Bridge to Al-Baqarah", "desc": "Complete relational mindmap mapping the concentric ring structure of Al-Fatihah directly into Al-Baqarah."}, {"page": 9, "img": "previews_review03/review03_page-09.png", "cat": "fatihah", "section": "Surah 01: Al-Fatihah", "badge": "References", "title": "Surah 01 Source Registry: Classical Tafsir, Hadith & Lexicology", "desc": "Primary scholarly provenance across Ibn Kathir, Al-Tabari, Al-Qurtubi, Al-Razi, As-Sa'di, and Sahih hadith."}, {"page": 10, "img": "previews_review03/review03_page-10.png", "cat": "baqarah", "section": "Surah 02: Al-Baqarah", "badge": "Plate 01 / 08", "title": "Epistemology of Revelation & Five Marks of Taqwa (2:1\u201320)", "desc": "Pillars 1 & 2: Divine certainty of the Book, unseen belief, and the internal psychology of pious orientation."}, {"page": 11, "img": "previews_review03/review03_page-11.png", "cat": "baqarah", "section": "Surah 02: Al-Baqarah", "badge": "Plate 02 / 08", "title": "Sealed Faculties & The Psychology of Hypocrisy (2:6\u201320)", "desc": "Pillars 3 & 4: Comparative study of overt rejection vs covert hypocrisy, dual parables of fire and rainstorm."}, {"page": 12, "img": "previews_review03/review03_page-12.png", "cat": "baqarah", "section": "Surah 02: Al-Baqarah", "badge": "Plate 03 / 08", "title": "Universal Call, Adam's Caliphate & Primordial Drama (2:21\u201339)", "desc": "Pillars 5 & 6: The first universal call to humanity, angelic dialogue, Adam taught all names, and repentance."}, {"page": 13, "img": "previews_review03/review03_page-13.png", "cat": "baqarah", "section": "Surah 02: Al-Baqarah", "badge": "Plate 04 / 08", "title": "Banu Isra'il, The Covenant of the Heifer & Hard Hearts (2:40\u2013123)", "desc": "Pillars 7 & 8: Historical covenant accountability, the parable of the yellow cow, and the metaphor of tumbling stones."}, {"page": 14, "img": "previews_review03/review03_page-14.png", "cat": "baqarah", "section": "Surah 02: Al-Baqarah", "badge": "Plate 05 / 08", "title": "The Abrahamic Standard & Sacred Qiblah Pivot (2:124\u2013177)", "desc": "Pillars 9 & 10: Building the Ka'bah, the prophetic prayer for Mecca, the shift of spiritual axis, and Birr (righteousness)."}, {"page": 15, "img": "previews_review03/review03_page-15.png", "cat": "baqarah", "section": "Surah 02: Al-Baqarah", "badge": "Plate 06 / 08", "title": "The Medina Constitution & Community Architecture (2:178\u2013242)", "desc": "Pillars 11 & 12: Sacred calendar, Ramadan fasting, defensive war ethics, and the jurisprudence of family equity."}, {"page": 16, "img": "previews_review03/review03_page-16.png", "cat": "baqarah", "section": "Surah 02: Al-Baqarah", "badge": "Plate 07 / 08", "title": "Dedications: Ayat al-Kursi & The Triad of Proofs (2:243\u2013260)", "desc": "Pillars 13 & 14: Kingship, struggle, Talut & Jalut, the Throne Verse, and empirical proofs of resurrection."}, {"page": 17, "img": "previews_review03/review03_page-17.png", "cat": "baqarah", "section": "Surah 02: Al-Baqarah", "badge": "Plate 08 / 08", "title": "The Ethical Economy & The Believers' Supplication (2:261\u2013286)", "desc": "Pillars 15 & 16: Sacred spending (Infaq), eliminating usury (Riba), commercial contracts, and closing Amanar-Rasul."}, {"page": 18, "img": "previews_review03/review03_page-18.png", "cat": "baqarah", "section": "Surah 02: Al-Baqarah", "badge": "Mindmap 02", "title": "Visual Relationship Map: Surah Al-Baqarah Architecture", "desc": "Macrostructural architectural diagram mapping the 16 thematic pillars and structural symmetry of the 286 verses."}, {"page": 19, "img": "previews_review03/review03_page-19.png", "cat": "baqarah", "section": "Surah 02: Al-Baqarah", "badge": "References I", "title": "Surah 02 Source Registry: Classical Tafsir & Hadith", "desc": "Attribution matrix linking each thematic section to classical scholarly commentary and verified hadith."}, {"page": 20, "img": "previews_review03/review03_page-20.png", "cat": "baqarah", "section": "Surah 02: Al-Baqarah", "badge": "References II", "title": "Surah 02 Arabic Root Lexicology & Thematic Munasabah Map", "desc": "Key Arabic root words (Mufradat) and structural transitions linking Surah Al-Baqarah forward into Ali 'Imran."}, {"page": 21, "img": "previews_review03/review03_page-21.png", "cat": "kursi", "section": "Bonus: Ayat al-Kursi", "badge": "Bonus Plate 01 / 02", "title": "The 10 Clauses & Concentric Ring Structure (Ayat al-Kursi, 2:255)", "desc": "The supreme Throne Verse: Ontological foundations, boundless knowledge, absolute sovereignty, and symmetric chiasmus."}, {"page": 22, "img": "previews_review03/review03_page-22.png", "cat": "kursi", "section": "Bonus: Ayat al-Kursi", "badge": "Bonus Plate 02 / 02", "title": "Canonical Virtues & Daily Spiritual Shielding (Ayat al-Kursi)", "desc": "Ayat al-Kursi in the Prophetic Sunnah: Virtues from the Kutub al-Sittah, morning/evening protection, and after prayers."}, {"page": 23, "img": "previews_review03/review03_page-23.png", "cat": "kursi", "section": "Bonus: Ayat al-Kursi", "badge": "Mindmap 03", "title": "Visual Relationship Map: Ayat al-Kursi Clause Study", "desc": "Proposed clause-by-clause visual study aid offered for contemplation, reflection, and deep memorization."}, {"page": 24, "img": "previews_review03/review03_page-24.png", "cat": "reference", "section": "Reference & Glossary", "badge": "Scholars", "title": "Scholarly Heritage: Classical Sunni Exegetes Cited", "desc": "Biographical overviews of Imam Al-Biqa'i, Ibn Kathir, Al-Tabari, Al-Qurtubi, Fakhr al-Din al-Razi, and As-Sa'di."}, {"page": 25, "img": "previews_review03/review03_page-25.png", "cat": "reference", "section": "Reference & Glossary", "badge": "Glossary", "title": "Study Aid: Key Quranic Terms & Plain-English Glossary", "desc": "Definitions of key theological and structural terms: Munasabah, Nazm, Taqwa, Infaq, Riba, Rabb, Sirat, and more."}, {"page": 26, "img": "previews_review03/review03_page-26.png", "cat": "reference", "section": "Reference & Glossary", "badge": "Feedback", "title": "Reader & Teacher Feedback Form", "desc": "Invitation for readers, teachers, and scholars to submit corrections, reflections, and insights for future editions."}];
+    const plates = [{"page": 1, "cat": "prelim", "section": "Preliminaries", "badge": "Cover", "title": "The Visual Quran Atlas (Student Edition 03)", "desc": "Volume I: Surah Al-Fatihah, Surah Al-Baqarah & Bonus Ayat al-Kursi. High-definition vector edition."}, {"page": 2, "cat": "prelim", "section": "Preliminaries", "badge": "Guide", "title": "Why This Atlas Exists & The 4 Editorial Labels", "desc": "Explaining the student companion philosophy and the 4 visual distinctions: [QURAN], [HADITH], [TAFSIR], [REFLECTION]."}, {"page": 3, "cat": "prelim", "section": "Preliminaries", "badge": "Index", "title": "Table of Contents & 26-Plate Architecture Matrix", "desc": "Full architectural road-map: 14 thematic plates, 3 visual relationship maps, source registries, and glossary."}, {"page": 4, "cat": "fatihah", "section": "Surah 01: Al-Fatihah", "badge": "Plate 01 / 04", "title": "The Celestial Prologue & Absolute Praise (1:1\u20132)", "desc": "Pillars 1 & 2: Divine self-introduction, universal Rabb, and the ontological foundations of Hamd."}, {"page": 5, "cat": "fatihah", "section": "Surah 01: Al-Fatihah", "badge": "Plate 02 / 04", "title": "Oceans of Mercy & Sovereign Accountability (1:3\u20134)", "desc": "Pillars 3 & 4: The pairing of Ar-Rahman and Ar-Rahim balanced against the sovereign authority of Yawm ad-Din."}, {"page": 6, "cat": "fatihah", "section": "Surah 01: Al-Fatihah", "badge": "Plate 03 / 04", "title": "The Master Covenant & Highway of Guidance (1:5\u20136)", "desc": "Pillars 5 & 6: The exclusive covenant of worship (Iyyaka Na'bud) and the universal plea for Sirat al-Mustaqim."}, {"page": 7, "cat": "fatihah", "section": "Surah 01: Al-Fatihah", "badge": "Plate 04 / 04", "title": "The Three Human Destinies & Ring Transition (1:7)", "desc": "Pillars 7 & 8: Historical models of guidance, passive adab of wrath, and the architectural ring seed of the Quran."}, {"page": 8, "cat": "fatihah", "section": "Surah 01: Al-Fatihah", "badge": "Mindmap 01", "title": "Visual Relationship Map: Al-Fatihah & Bridge to Al-Baqarah", "desc": "Complete relational mindmap mapping the concentric ring structure of Al-Fatihah directly into Al-Baqarah."}, {"page": 9, "cat": "fatihah", "section": "Surah 01: Al-Fatihah", "badge": "References", "title": "Surah 01 Source Registry: Classical Tafsir, Hadith & Lexicology", "desc": "Primary scholarly provenance across Ibn Kathir, Al-Tabari, Al-Qurtubi, Al-Razi, As-Sa'di, and Sahih hadith."}, {"page": 10, "cat": "baqarah", "section": "Surah 02: Al-Baqarah", "badge": "Plate 01 / 08", "title": "Epistemology of Revelation & Five Marks of Taqwa (2:1\u201320)", "desc": "Pillars 1 & 2: Divine certainty of the Book, unseen belief, and the internal psychology of pious orientation."}, {"page": 11, "cat": "baqarah", "section": "Surah 02: Al-Baqarah", "badge": "Plate 02 / 08", "title": "Sealed Faculties & The Psychology of Hypocrisy (2:6\u201320)", "desc": "Pillars 3 & 4: Comparative study of overt rejection vs covert hypocrisy, dual parables of fire and rainstorm."}, {"page": 12, "cat": "baqarah", "section": "Surah 02: Al-Baqarah", "badge": "Plate 03 / 08", "title": "Universal Call, Adam's Caliphate & Primordial Drama (2:21\u201339)", "desc": "Pillars 5 & 6: The first universal call to humanity, angelic dialogue, Adam taught all names, and repentance."}, {"page": 13, "cat": "baqarah", "section": "Surah 02: Al-Baqarah", "badge": "Plate 04 / 08", "title": "Banu Isra'il, The Covenant of the Heifer & Hard Hearts (2:40\u2013123)", "desc": "Pillars 7 & 8: Historical covenant accountability, the parable of the yellow cow, and the metaphor of tumbling stones."}, {"page": 14, "cat": "baqarah", "section": "Surah 02: Al-Baqarah", "badge": "Plate 05 / 08", "title": "The Abrahamic Standard & Sacred Qiblah Pivot (2:124\u2013177)", "desc": "Pillars 9 & 10: Building the Ka'bah, the prophetic prayer for Mecca, the shift of spiritual axis, and Birr (righteousness)."}, {"page": 15, "cat": "baqarah", "section": "Surah 02: Al-Baqarah", "badge": "Plate 06 / 08", "title": "The Medina Constitution & Community Architecture (2:178\u2013242)", "desc": "Pillars 11 & 12: Sacred calendar, Ramadan fasting, defensive war ethics, and the jurisprudence of family equity."}, {"page": 16, "cat": "baqarah", "section": "Surah 02: Al-Baqarah", "badge": "Plate 07 / 08", "title": "Dedications: Ayat al-Kursi & The Triad of Proofs (2:243\u2013260)", "desc": "Pillars 13 & 14: Kingship, struggle, Talut & Jalut, the Throne Verse, and empirical proofs of resurrection."}, {"page": 17, "cat": "baqarah", "section": "Surah 02: Al-Baqarah", "badge": "Plate 08 / 08", "title": "The Ethical Economy & The Believers' Supplication (2:261\u2013286)", "desc": "Pillars 15 & 16: Sacred spending (Infaq), eliminating usury (Riba), commercial contracts, and closing Amanar-Rasul."}, {"page": 18, "cat": "baqarah", "section": "Surah 02: Al-Baqarah", "badge": "Mindmap 02", "title": "Visual Relationship Map: Surah Al-Baqarah Architecture", "desc": "Macrostructural architectural diagram mapping the 16 thematic pillars and structural symmetry of the 286 verses."}, {"page": 19, "cat": "baqarah", "section": "Surah 02: Al-Baqarah", "badge": "References I", "title": "Surah 02 Source Registry: Classical Tafsir & Hadith", "desc": "Attribution matrix linking each thematic section to classical scholarly commentary and verified hadith."}, {"page": 20, "cat": "baqarah", "section": "Surah 02: Al-Baqarah", "badge": "References II", "title": "Surah 02 Arabic Root Lexicology & Thematic Munasabah Map", "desc": "Key Arabic root words (Mufradat) and structural transitions linking Surah Al-Baqarah forward into Ali 'Imran."}, {"page": 21, "cat": "kursi", "section": "Bonus: Ayat al-Kursi", "badge": "Bonus Plate 01 / 02", "title": "The 10 Clauses & Concentric Ring Structure (Ayat al-Kursi, 2:255)", "desc": "The supreme Throne Verse: Ontological foundations, boundless knowledge, absolute sovereignty, and symmetric chiasmus."}, {"page": 22, "cat": "kursi", "section": "Bonus: Ayat al-Kursi", "badge": "Bonus Plate 02 / 02", "title": "Canonical Virtues & Daily Spiritual Shielding (Ayat al-Kursi)", "desc": "Ayat al-Kursi in the Prophetic Sunnah: Virtues from the Kutub al-Sittah, morning/evening protection, and after prayers."}, {"page": 23, "cat": "kursi", "section": "Bonus: Ayat al-Kursi", "badge": "Mindmap 03", "title": "Visual Relationship Map: Ayat al-Kursi Clause Study", "desc": "Proposed clause-by-clause visual study aid offered for contemplation, reflection, and deep memorization."}, {"page": 24, "cat": "reference", "section": "Reference & Glossary", "badge": "Scholars", "title": "Scholarly Heritage: Classical Sunni Exegetes Cited", "desc": "Biographical overviews of Imam Al-Biqa'i, Ibn Kathir, Al-Tabari, Al-Qurtubi, Fakhr al-Din al-Razi, and As-Sa'di."}, {"page": 25, "cat": "reference", "section": "Reference & Glossary", "badge": "Glossary", "title": "Study Aid: Key Quranic Terms & Plain-English Glossary", "desc": "Definitions of key theological and structural terms: Munasabah, Nazm, Taqwa, Infaq, Riba, Rabb, Sirat, and more."}, {"page": 26, "cat": "reference", "section": "Reference & Glossary", "badge": "Feedback", "title": "Reader & Teacher Feedback Form", "desc": "Invitation for readers, teachers, and scholars to submit corrections, reflections, and insights for future editions."}];
     let currentPlateIndex = 0;
     let currentFilter = 'all';
+    let readerFontSize = 16.5;
+
+    function adjustReaderFont(delta) {
+      readerFontSize = Math.min(22, Math.max(14, readerFontSize + delta));
+      const reader = document.getElementById('modalHtmlReader');
+      if (reader) reader.style.setProperty('--hp-font-size', `${readerFontSize}px`);
+    }
 
     function renderGallery() {
       const grid = document.getElementById('galleryGrid');
@@ -1272,12 +1707,16 @@
         const card = document.createElement('div');
         card.className = 'plate-card';
         card.onclick = () => openLightbox(p.page);
-        
+        const pageLabel = `P. ${p.page < 10 ? '0' + p.page : p.page}`;
+
         card.innerHTML = `
-          <div class="plate-thumb">
-            <img src="${p.img}" alt="${p.title}" loading="lazy">
-            <span class="plate-page-badge">P. ${p.page < 10 ? '0' + p.page : p.page}</span>
-            <span class="plate-cat-badge">${p.badge}</span>
+          <div class="plate-html-thumb">
+            <div class="plate-html-meta">
+              <span class="plate-html-section">${p.section}</span>
+              <span class="plate-html-chip">${pageLabel} • ${p.badge}</span>
+            </div>
+            <div class="plate-html-headline">${p.title}</div>
+            <div class="plate-html-cta">📖 Read HTML Plate →</div>
           </div>
           <div class="plate-info">
             <h4 class="plate-title">${p.title}</h4>
@@ -1313,10 +1752,13 @@
       }
     }
 
-    function closeLightbox() {
+    function closeLightbox(scrollToHome = false) {
       const modal = document.getElementById('lightboxModal');
       modal.classList.remove('active');
       document.body.style.overflow = 'auto';
+      if (scrollToHome) {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
     }
 
     function updateModal() {
@@ -1324,10 +1766,14 @@
       document.getElementById('modalPageNum').textContent = `Page ${p.page < 10 ? '0' + p.page : p.page} / 26 • ${p.badge}`;
       document.getElementById('modalPlateTitle').textContent = p.title;
       document.getElementById('modalPlateDesc').textContent = p.desc;
-      const modalImg = document.getElementById('modalImg');
-      modalImg.src = p.img;
-      modalImg.alt = p.title;
-      document.getElementById('modalViewOriginalBtn').href = p.img;
+      const modalReader = document.getElementById('modalHtmlReader');
+      if (modalReader) {
+        modalReader.innerHTML = (window.SURAH_PLATES_HTML && window.SURAH_PLATES_HTML[p.page])
+          ? window.SURAH_PLATES_HTML[p.page]
+          : `<div class="hp-plate-header"><h3 class="hp-plate-title">${p.title}</h3><p class="hp-plate-subtitle">${p.desc}</p></div>`;
+        modalReader.scrollTop = 0;
+        modalReader.style.setProperty('--hp-font-size', `${readerFontSize}px`);
+      }
     }
 
     function nextPlate() {
@@ -1354,6 +1800,225 @@
     document.addEventListener('DOMContentLoaded', () => {
       renderGallery();
     });
+  </script>
+
+  <script>
+    (() => {
+      const CLAUSES = [
+        {
+          id: 1, pairId: 10, ringLabel: "Ring 1 • Outer Frame (Majesty)",
+          arabic: "اللَّهُ لَا إِلَٰهَ إِلَّا هُوَ الْحَيُّ الْقَيُّومُ",
+          translation: "“Allah — there is no deity except Him, the Ever-Living, the All-Sustaining.”",
+          tafsir: "Opens with absolute Tawhid and two comprehensive Names: Al-Hayy (perfection of divine life) and Al-Qayyum (self-subsisting and sustaining every atom of creation). Classical scholars noted the Greatest Name of Allah (Ism Allah al-A'zam) resides within these attributes.",
+          tafsirSource: "Tafsir Ibn Kathir & Al-Sa'di (2:255)",
+          reflection: "Matches Clause 10 on the outermost ring: the verse begins with Allah's self-sustaining perfection (Al-Hayy Al-Qayyum) and seals with His effortless preservation of creation."
+        },
+        {
+          id: 2, pairId: 9, ringLabel: "Ring 2 • Tireless Vigilance",
+          arabic: "لَا تَأْخُذُهُ سِنَةٌ وَلَا نَوْمٌ",
+          translation: "“Neither drowsiness overtakes Him nor sleep.”",
+          tafsir: "Negates every trace of fatigue, slumber, or lapse in awareness. Unlike created beings whose vigilance fades, Allah's watchfulness over His creation is unbroken for even a fraction of a moment.",
+          tafsirSource: "Tafsir al-Tabari & Al-Qurtubi (2:255)",
+          reflection: "Mirrors Clause 9: because neither drowsiness nor sleep ever touches Him, preserving the heavens and earth causes Him zero fatigue."
+        },
+        {
+          id: 3, pairId: 8, ringLabel: "Ring 3 • Cosmic Sovereignty",
+          arabic: "لَّهُ مَا فِي السَّمَاوَاتِ وَمَا فِي الْأَرْضِ",
+          translation: "“To Him belongs whatever is in the heavens and whatever is on the earth.”",
+          tafsir: "Establishes exclusive ownership (Mulk). Every galaxy, angel, ruler, and human being is an owned servant under His dominion—leaving no room for independent rivals.",
+          tafsirSource: "Tafsir Ibn Kathir (2:255)",
+          reflection: "Mirrors Clause 8 (His Kursi encompassing the heavens and earth): absolute ownership in Clause 3 is visually echoed by all-encompassing expanse in Clause 8."
+        },
+        {
+          id: 4, pairId: 7, ringLabel: "Ring 4 • Boundary of Authority",
+          arabic: "مَن ذَا الَّذِي يَشْفَعُ عِندَهُ إِلَّا بِإِذْنِهِ",
+          translation: "“Who is it that can intercede with Him except by His permission?”",
+          tafsir: "Refutes the illusion that angels, prophets, or idols possess independent lobbying power before God. Intercession occurs solely after Allah grants explicit leave.",
+          tafsirSource: "Tafsir al-Qurtubi & Al-Sa'di (2:255)",
+          reflection: "Mirrors Clause 7: no one can access His decree through intercession without His permission (Clause 4), just as no one can grasp His knowledge except what He wills (Clause 7)."
+        },
+        {
+          id: 5, pairId: 6, ringLabel: "Ring 5 • Inner Core (Omniscience)",
+          arabic: "يَعْلَمُ مَا بَيْنَ أَيْدِيهِمْ وَمَا خَلْفَهُمْ",
+          translation: "“He knows what is before them and what will be after them,”",
+          tafsir: "At the structural center of the verse lies Allah's complete knowledge of human past, present, and future—nothing in a servant's history or tomorrow is hidden from His sight.",
+          tafsirSource: "Tafsir al-Tabari & Ibn Kathir (2:255)",
+          reflection: "Forms the innermost axis with Clause 6: divine omniscience encompasses all human timelines (Clause 5), while human comprehension remains strictly bounded by divine will (Clause 6)."
+        },
+        {
+          id: 6, pairId: 5, ringLabel: "Ring 5 • Inner Core (Human Limit)",
+          arabic: "وَلَا يُحِيطُونَ بِشَيْءٍ مِّنْ عِلْمِهِ إِلَّا بِمَا شَاءَ",
+          translation: "“and they encompass not a thing of His knowledge except for what He wills.”",
+          tafsir: "Instills intellectual humility before revelation. Human reason and empirical inquiry only perceive what Allah chooses to unveil through revelation and creation.",
+          tafsirSource: "Tafsir al-Sa'di (2:255)",
+          reflection: "Paired at the center with Clause 5: when a believer feels anxious about an unknown future, resting inside Allah's boundless knowledge brings immediate calm."
+        },
+        {
+          id: 7, pairId: 4, ringLabel: "Ring 4 • Boundary of Authority",
+          arabic: "وَسِعَ كُرْسِيُّهُ السَّمَاوَاتِ وَالْأَرْضَ",
+          translation: "“His Kursi extends over the heavens and the earth,”",
+          tafsir: "Ibn 'Abbas (may Allah be pleased with him) explained that the Kursi is the footstool before the Throne ('Arsh), and its vastness dwarfs the seven heavens and earth like a ring thrown into an open desert.",
+          tafsirSource: "Narrated via Ibn Abi Shaybah; cited in Tafsir Ibn Kathir",
+          reflection: "Echoes the majestic scale of Clauses 3 & 4—recalibrating human perspective so worldly anxieties shrink beside the vastness of Allah's dominion."
+        },
+        {
+          id: 8, pairId: 3, ringLabel: "Ring 3 • Cosmic Sovereignty",
+          arabic: "وَلَا يَئُودُهُ حِفْظُهُمَا",
+          translation: "“and their preservation tires Him not.”",
+          tafsir: "Upholding the orbits of stars, the provision of every creature, and the protection of His servants places zero burden or strain upon Allah.",
+          tafsirSource: "Tafsir al-Tabari & Ibn Kathir (2:255)",
+          reflection: "Mirrors Clause 3: because all that is in the heavens and earth belongs entirely to Him, sustaining it all is effortless."
+        },
+        {
+          id: 9, pairId: 2, ringLabel: "Ring 2 • Tireless Vigilance",
+          arabic: "وَهُوَ الْعَلِيُّ الْعَظِيمُ",
+          translation: "“And He is the Most High, the Most Great.”",
+          tafsir: "Al-'Aliyy affirms His absolute elevation in essence, status, and power above all creation; Al-'Azim affirms supreme magnificence before which every earthly power bows.",
+          tafsirSource: "Tafsir al-Sa'di (2:255)",
+          reflection: "Completes the outer symmetry with Clauses 1 & 2—sealing the verse with two majestic Names just as it opened with Al-Hayy Al-Qayyum."
+        },
+        {
+          id: 10, pairId: 1, ringLabel: "Ring 1 • Outer Seal (Covenant)",
+          arabic: "﴿ آيَةُ الْكُرْسِيِّ — سُورَةُ الْبَقَرَةِ ٢٥٥ ﴾",
+          translation: "“The Greatest Ayah in the Book of Allah — Complete 10-Clause Shield”",
+          hadith: "The Prophet ﷺ asked Ubayy ibn Ka'b which verse in the Book of Allah is greatest, and affirmed when Ubayy recited Ayat al-Kursi. Reciting it after every obligatory prayer and before sleep brings continuous divine protection.",
+          hadithSource: "Sahih Muslim (810) & Sahih al-Bukhari (2311)",
+          tafsir: "Classical exegetes summarize that Ayat al-Kursi unites the foundations of Divine Names, Attributes, Creation, Command, and Decree in a single self-contained architectural jewel.",
+          tafsirSource: "Tafsir Ibn Kathir & Al-Qurtubi (2:255)",
+          reflection: "Stepping back to view all 10 rings together shows how the entire verse orbits divine knowledge and protection."
+        }
+      ];
+
+      const SVG_NS = "http://www.w3.org/2000/svg";
+      const explorer = document.getElementById("kursi-explorer");
+      const svg = document.getElementById("hkConcentricSvg");
+      const pills = document.getElementById("hkClausePills");
+      if (!explorer || !svg || !pills) return;
+
+      let activeId = 1;
+      const el = (id) => document.getElementById(id);
+
+      function init() {
+        const cx = 210, cy = 210, maxR = 192, stepR = 17.2;
+
+        CLAUSES.forEach((item, idx) => {
+          const r = maxR - idx * stepR;
+          const ring = document.createElementNS(SVG_NS, "circle");
+          ring.setAttribute("cx", cx);
+          ring.setAttribute("cy", cy);
+          ring.setAttribute("r", r);
+          ring.setAttribute("class", "hk-ring");
+          ring.dataset.id = item.id;
+          ring.addEventListener("click", () => render(item.id));
+          svg.appendChild(ring);
+
+          const rad = ((-90 + idx * 36) * Math.PI) / 180;
+          const nx = cx + r * Math.cos(rad);
+          const ny = cy + r * Math.sin(rad);
+
+          const g = document.createElementNS(SVG_NS, "g");
+          g.setAttribute("class", "hk-node");
+          g.setAttribute("role", "button");
+          g.setAttribute("tabindex", "0");
+          g.setAttribute("aria-label", `Select Clause ${String(item.id).padStart(2, "0")}`);
+          g.dataset.id = item.id;
+          g.addEventListener("click", () => render(item.id));
+          g.addEventListener("keydown", (e) => {
+            if (e.key === "Enter" || e.key === " ") {
+              e.preventDefault();
+              render(item.id);
+            }
+          });
+
+          const dot = document.createElementNS(SVG_NS, "circle");
+          dot.setAttribute("cx", nx);
+          dot.setAttribute("cy", ny);
+          dot.setAttribute("r", 10.5);
+
+          const label = document.createElementNS(SVG_NS, "text");
+          label.setAttribute("x", nx);
+          label.setAttribute("y", ny);
+          label.textContent = String(item.id).padStart(2, "0");
+
+          g.appendChild(dot);
+          g.appendChild(label);
+          svg.appendChild(g);
+
+          const pill = document.createElement("button");
+          pill.type = "button";
+          pill.className = "hk-pill";
+          pill.setAttribute("role", "tab");
+          pill.dataset.id = item.id;
+          pill.textContent = `Clause ${String(item.id).padStart(2, "0")}`;
+          pill.addEventListener("click", () => render(item.id));
+          pills.appendChild(pill);
+        });
+
+        el("hkPrevBtn").addEventListener("click", () => render(activeId === 1 ? 10 : activeId - 1));
+        el("hkNextBtn").addEventListener("click", () => render(activeId === 10 ? 1 : activeId + 1));
+
+        document.addEventListener("keydown", (e) => {
+          const modal = document.getElementById("lightboxModal");
+          if (modal && modal.classList.contains("active")) return;
+          if (!explorer.matches(":hover") && !explorer.contains(document.activeElement)) return;
+          if (e.key === "ArrowLeft") {
+            e.preventDefault();
+            render(activeId === 1 ? 10 : activeId - 1);
+          } else if (e.key === "ArrowRight") {
+            e.preventDefault();
+            render(activeId === 10 ? 1 : activeId + 1);
+          }
+        });
+
+        render(1, { scrollPill: false });
+      }
+
+      function render(id, { scrollPill = true } = {}) {
+        activeId = id;
+        const current = CLAUSES.find((c) => c.id === id);
+        if (!current) return;
+
+        svg.querySelectorAll(".hk-ring, .hk-node").forEach((node) => {
+          const nId = Number(node.dataset.id);
+          node.classList.toggle("is-active", nId === current.id);
+          node.classList.toggle("is-pair", nId === current.pairId);
+        });
+
+        pills.querySelectorAll(".hk-pill").forEach((btn) => {
+          const bId = Number(btn.dataset.id);
+          const isMatch = bId === current.id;
+          btn.classList.toggle("is-active", isMatch);
+          btn.setAttribute("aria-selected", isMatch ? "true" : "false");
+          if (isMatch && scrollPill) {
+            btn.scrollIntoView({ behavior: "smooth", block: "nearest", inline: "center" });
+          }
+        });
+
+        el("hkClauseBadge").textContent = `Clause ${String(current.id).padStart(2, "0")} of 10`;
+        const pairBtn = el("hkPairBtn");
+        pairBtn.textContent = `Symmetry Mirror: Clause ${String(current.pairId).padStart(2, "0")} ⇄`;
+        pairBtn.onclick = () => render(current.pairId);
+
+        el("hkArabic").textContent = current.arabic;
+        el("hkTranslation").textContent = current.translation;
+
+        const hadithBlock = el("hkHadithBlock");
+        if (current.hadith) {
+          hadithBlock.hidden = false;
+          el("hkHadithText").textContent = current.hadith;
+          el("hkHadithSource").textContent = `Source: ${current.hadithSource}`;
+        } else {
+          hadithBlock.hidden = true;
+        }
+
+        el("hkTafsirText").textContent = current.tafsir;
+        el("hkTafsirSource").textContent = `Source: ${current.tafsirSource}`;
+        el("hkReflectionText").textContent = current.reflection;
+        el("hkRingLabel").textContent = current.ringLabel;
+      }
+
+      init();
+    })();
   </script>
 
 </body>
