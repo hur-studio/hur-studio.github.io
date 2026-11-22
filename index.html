@@ -16,7 +16,7 @@
   <link rel="apple-touch-icon" href="icons/icon-192.png">
   <link rel="icon" type="image/png" href="icons/favicon.png">
 
-  <title>The Visual Quran Atlas (Student Edition 03) | Huurs Studio</title>
+  <title>The Visual Quran Atlas (Student Edition 03) | HUR Studio</title>
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -67,7 +67,7 @@
     
     /* Top Bar */
     .top-strip {
-      background: rgba(5, 8, 15, 0.92);
+      background: rgba(5, 8, 15, 0.94);
       backdrop-filter: blur(14px);
       border-bottom: 1px solid rgba(212, 175, 89, 0.2);
       padding: 12px 24px;
@@ -77,12 +77,14 @@
       position: sticky;
       top: 0;
       z-index: 100;
+      gap: 16px;
     }
     
     .brand-tag {
       display: flex;
       align-items: center;
       gap: 12px;
+      flex-shrink: 0;
     }
     
     .brand-logo-text {
@@ -92,6 +94,7 @@
       letter-spacing: 0.12em;
       color: var(--gold);
       text-decoration: none;
+      white-space: nowrap;
     }
     
     .edition-pill {
@@ -103,6 +106,7 @@
       font-size: 0.72rem;
       font-weight: 600;
       letter-spacing: 0.05em;
+      white-space: nowrap;
     }
     
     .creed {
@@ -110,26 +114,28 @@
       font-size: 0.8rem;
       letter-spacing: 0.2em;
       color: var(--gold-light);
+      white-space: nowrap;
       display: none;
     }
     
-    @media (min-width: 900px) {
+    @media (min-width: 1400px) {
       .creed { display: block; }
     }
     
     .top-actions {
       display: flex;
-      gap: 10px;
+      gap: 8px;
       align-items: center;
+      flex-shrink: 0;
     }
     
     .top-btn {
       background: rgba(255, 255, 255, 0.06);
       border: 1px solid rgba(255, 255, 255, 0.12);
       color: var(--text-main);
-      padding: 7px 14px;
+      padding: 7px 12px;
       border-radius: 8px;
-      font-size: 0.82rem;
+      font-size: 0.8rem;
       text-decoration: none;
       display: inline-flex;
       align-items: center;
@@ -137,6 +143,7 @@
       cursor: pointer;
       transition: all 0.2s ease;
       font-weight: 500;
+      white-space: nowrap;
     }
     
     .top-btn:hover {
@@ -152,13 +159,15 @@
     }
     
     .top-btn.portfolio-btn {
-      border-color: rgba(59, 130, 246, 0.4);
-      color: #93c5fd;
+      background: rgba(59, 130, 246, 0.15);
+      border-color: rgba(96, 165, 250, 0.5);
+      color: #bfdbfe;
     }
     
     .top-btn.portfolio-btn:hover {
-      border-color: #3b82f6;
-      background: rgba(59, 130, 246, 0.15);
+      border-color: #60a5fa;
+      background: rgba(59, 130, 246, 0.25);
+      color: #ffffff;
     }
 
     .top-btn.amazon-btn {
@@ -384,9 +393,10 @@
       background: rgba(5, 8, 15, 0.6);
       border: 1px solid rgba(255, 255, 255, 0.08);
       border-radius: 10px;
-      padding: 16px;
+      padding: 18px 16px;
       display: flex;
-      gap: 12px;
+      flex-direction: column;
+      gap: 10px;
       align-items: flex-start;
     }
     
@@ -481,7 +491,7 @@
     .study-thumb-wrap {
       position: relative;
       width: 100%;
-      height: 230px;
+      min-height: 240px;
       background: #020408;
       overflow: hidden;
       cursor: pointer;
@@ -502,10 +512,12 @@
     .study-thumb-overlay {
       position: absolute;
       inset: 0;
-      background: linear-gradient(180deg, transparent 40%, rgba(5, 8, 15, 0.85) 100%);
+      background: linear-gradient(180deg, rgba(5, 8, 15, 0.3) 0%, rgba(5, 8, 15, 0.85) 100%);
       display: flex;
-      align-items: flex-end;
-      padding: 16px;
+      align-items: flex-start;
+      justify-content: flex-end;
+      padding: 12px 14px;
+      pointer-events: none;
     }
     
     .study-badge {
@@ -560,13 +572,14 @@
       font-size: 0.88rem;
       line-height: 1.6;
       margin-bottom: 20px;
-      flex-grow: 1;
+      min-height: 4.8em;
     }
     
     .study-specs {
       background: rgba(5, 8, 15, 0.4);
       border-radius: 8px;
       padding: 12px;
+      margin-top: auto;
       margin-bottom: 20px;
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -587,14 +600,15 @@
     
     .study-btn-group {
       display: flex;
-      gap: 10px;
+      gap: 8px;
     }
     
     .study-btn-group .btn {
       flex: 1;
-      padding: 10px 14px;
-      font-size: 0.82rem;
+      padding: 10px 8px;
+      font-size: 0.8rem;
       justify-content: center;
+      white-space: nowrap;
     }
 
     /* Gallery Filter Tabs */
@@ -893,8 +907,8 @@
     }
 
     .plate-html-thumb {
-      padding: 18px 16px 14px;
-      min-height: 175px;
+      padding: 16px 14px;
+      min-height: 150px;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
@@ -908,7 +922,7 @@
       justify-content: space-between;
       align-items: center;
       gap: 8px;
-      margin-bottom: 12px;
+      margin-bottom: 8px;
     }
 
     .plate-html-section {
@@ -929,18 +943,21 @@
       border: 1px solid rgba(212, 175, 89, 0.35);
     }
 
-    .plate-html-headline {
-      font-family: var(--font-title);
-      font-size: 1.05rem;
-      line-height: 1.35;
-      color: var(--text-main);
-      margin-bottom: 10px;
+    .plate-html-motif {
+      font-family: 'Amiri', serif;
+      font-size: 1.45rem;
+      line-height: 1.4;
+      color: var(--gold-light);
+      text-align: center;
+      margin: 8px 0;
+      text-shadow: 0 0 16px rgba(212, 175, 89, 0.25);
     }
 
     .plate-html-cta {
       font-size: 0.78rem;
       font-weight: 600;
       color: #6ee7b7;
+      text-align: right;
     }
 
     .lightbox-html-reader {
@@ -1000,6 +1017,16 @@
       gap: 20px;
     }
 
+    .hp-section-full {
+      grid-column: 1 / -1;
+    }
+
+    .hp-3col-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+    }
+
     @media (max-width: 860px) {
       .lightbox-html-reader {
         padding: 18px 14px;
@@ -1008,6 +1035,9 @@
       .hp-plate-body {
         grid-template-columns: minmax(0, 1fr);
         gap: 14px;
+      }
+      .hp-3col-grid {
+        grid-template-columns: 1fr;
       }
     }
 
@@ -1054,11 +1084,11 @@
       margin-right: 4px;
     }
 
-    .hp-tag-quran { background: rgba(212, 175, 89, 0.2); color: #f7e7b4; }
-    .hp-tag-hadith { background: rgba(180, 130, 90, 0.25); color: #fed7aa; }
-    .hp-tag-tafsir { background: rgba(16, 185, 129, 0.2); color: #6ee7b7; }
-    .hp-tag-reflection { background: rgba(148, 163, 184, 0.2); color: #e2e8f0; }
-    .hp-ref-code { font-family: monospace; font-size: 0.82em; color: #94a3b8; }
+    .hp-tag-quran { background: rgba(16, 185, 129, 0.2); color: #34d399; border: 1px solid #10b981; }
+    .hp-tag-hadith { background: rgba(59, 130, 246, 0.2); color: #93c5fd; border: 1px solid #3b82f6; }
+    .hp-tag-tafsir { background: rgba(212, 175, 89, 0.2); color: #fde047; border: 1px solid #d4af59; }
+    .hp-tag-reflection { background: rgba(168, 85, 247, 0.2); color: #d8b4fe; border: 1px solid #a855f7; }
+    .hp-ref-code { font-family: monospace; font-size: 0.85em; font-weight: 600; color: #38bdf8; }
     
     .lightbox-nav-btn {
       position: absolute;
@@ -1162,7 +1192,8 @@
     .footer-links {
       display: flex;
       justify-content: center;
-      gap: 20px;
+      align-items: center;
+      gap: 10px 22px;
       flex-wrap: wrap;
       margin-bottom: 16px;
     }
@@ -1172,10 +1203,22 @@
       text-decoration: none;
       font-size: 0.85rem;
       font-weight: 500;
+      position: relative;
     }
     
     .footer-links a:hover {
+      color: var(--gold);
       text-decoration: underline;
+    }
+
+    @media (min-width: 641px) {
+      .footer-links a:not(:last-child)::after {
+        content: "•";
+        position: absolute;
+        right: -13px;
+        color: rgba(212, 175, 89, 0.4);
+        pointer-events: none;
+      }
     }
     
     .footer-waqf {
@@ -1187,10 +1230,38 @@
     }
 
     /* Mobile adjustments */
-    @media (max-width: 768px) {
+    @media (max-width: 860px) {
+      .top-strip {
+        padding: 10px 16px;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 10px;
+      }
+      .brand-tag {
+        justify-content: space-between;
+        width: 100%;
+      }
+      .top-actions {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        max-width: 100%;
+        padding-bottom: 4px;
+        gap: 6px;
+        scrollbar-width: none;
+      }
+      .top-actions::-webkit-scrollbar {
+        display: none;
+      }
+      .top-btn {
+        padding: 6px 11px;
+        font-size: 0.76rem;
+        flex-shrink: 0;
+      }
       .hero { padding: 40px 16px 30px; }
       .container { padding: 30px 16px; }
       .methodology-box { padding: 24px 16px; }
+      .gallery-filter-bar { gap: 6px; }
+      .filter-tab { padding: 6px 12px; font-size: 0.76rem; }
       .lightbox-nav-btn.prev { left: 6px; }
       .lightbox-nav-btn.next { right: 6px; }
       .lightbox-img { max-width: 98vw; }
@@ -1263,10 +1334,10 @@
     .hk-block { margin-bottom: 1.1rem; padding-bottom: 1.1rem; border-bottom: 1px solid rgba(255, 255, 255, 0.06); }
     .hk-block:last-of-type { margin-bottom: 0; padding-bottom: 0; border-bottom: none; }
     .hk-tag { display: inline-block; font-family: monospace; font-size: 0.72rem; font-weight: 700; padding: 0.15rem 0.45rem; border-radius: 4px; margin-bottom: 0.45rem; }
-    .hk-tag-quran { background: rgba(201, 168, 106, 0.18); color: var(--hk-gold-bright); }
-    .hk-tag-hadith { background: rgba(180, 130, 90, 0.2); color: #e8b88a; }
-    .hk-tag-tafsir { background: rgba(78, 140, 115, 0.18); color: #8cc9b0; }
-    .hk-tag-reflection { background: rgba(168, 176, 172, 0.15); color: #d4dad7; }
+    .hk-tag-quran { background: rgba(16, 185, 129, 0.2); color: #34d399; border: 1px solid #10b981; }
+    .hk-tag-hadith { background: rgba(59, 130, 246, 0.2); color: #93c5fd; border: 1px solid #3b82f6; }
+    .hk-tag-tafsir { background: rgba(212, 175, 89, 0.2); color: #fde047; border: 1px solid #d4af59; }
+    .hk-tag-reflection { background: rgba(168, 85, 247, 0.2); color: #d8b4fe; border: 1px solid #a855f7; }
 
     .hk-arabic { font-family: 'Amiri', serif; font-size: clamp(1.6rem, 3vw, 2.05rem); line-height: 1.85; color: var(--hk-text); text-align: right; margin: 0.25rem 0 0.45rem; }
     .hk-translation { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 1.15rem; font-style: italic; color: var(--hk-gold-bright); }
@@ -1299,8 +1370,8 @@
       <a href="1st_step_review03.pdf" class="top-btn gold" download="1st_step_review03.pdf">
         <span>📥 Download PDF</span>
       </a>
-      <a href="portfolio.html" class="top-btn portfolio-btn" title="View Institutional Investment Suite">
-        <span>🏢 Portfolio</span>
+      <a href="products.html" class="top-btn portfolio-btn" title="Browse HUR Studio Products & Open-Source Tools">
+        <span>🧩 Our Products</span>
       </a>
       <a href="https://www.amazon.com/dp/B0HS7ZML5N" target="_blank" rel="noopener noreferrer" class="top-btn amazon-btn" title="The Visual Qur'an Atlas — Volume 01: Covenant, Law & Prophetic History (Kindle)">
         <span>🛒 Kindle Vol. 01</span>
@@ -1327,8 +1398,8 @@
       <a href="#gallery" class="btn btn-outline">
         <span>👁️ Browse 26-Plate Visual Gallery</span>
       </a>
-      <a href="portfolio.html" class="btn btn-portfolio">
-        <span>🏢 Institutional Portfolio & Deliverables ➔</span>
+      <a href="products.html" class="btn btn-portfolio">
+        <span>🧩 Explore Our Products ➔</span>
       </a>
     </div>
 
@@ -1626,8 +1697,8 @@
         <a href="1st_step_review03.pdf" class="btn btn-gold" download="1st_step_review03.pdf">
           <span>📥 Download Vector Master PDF (1.0 MB)</span>
         </a>
-        <a href="portfolio.html" class="btn btn-portfolio">
-          <span>🏢 Explore Huurs Studio Master Portfolio</span>
+        <a href="products.html" class="btn btn-portfolio">
+          <span>🧩 Explore HUR Studio Products</span>
         </a>
       </div>
     </section>
@@ -1642,8 +1713,7 @@
         <span class="lightbox-plate-title" id="modalPlateTitle">Plate Title</span>
       </div>
       <div class="lightbox-top-actions">
-        <button type="button" class="lightbox-back-btn" onclick="closeLightbox(true)" title="Close and return to top of page">← Back to Home</button>
-        <button type="button" class="lightbox-close" onclick="closeLightbox()" title="Close Lightbox (Esc)">✕</button>
+        <button type="button" class="lightbox-close" onclick="closeLightbox()" title="Close Plate Reader (Esc)" aria-label="Close Plate Reader">✕</button>
       </div>
     </div>
     
@@ -1659,11 +1729,8 @@
         <button type="button" class="btn btn-outline" id="modalFontDownBtn" onclick="adjustReaderFont(-1.5)" style="padding: 6px 12px; font-size: 0.8rem;">
           <span>A-</span>
         </button>
-        <button type="button" class="btn btn-outline" id="modalFontUpBtn" onclick="adjustReaderFont(1.5)" style="padding: 6px 12px; font-size: 0.8rem;">
+        <button type="button" class="btn btn-outline" id="modalFontUpBtn" onclick="adjustReaderFont(1.5)" style="padding: 6px 12px; font-size: 0.8rem;" title="Increase font size">
           <span>A+</span>
-        </button>
-        <button type="button" class="btn btn-outline" onclick="closeLightbox()" style="padding: 6px 14px; font-size: 0.8rem;">
-          <span>← Back</span>
         </button>
       </div>
     </div>
@@ -1671,13 +1738,13 @@
 
   <!-- Footer -->
   <footer>
-    <div class="footer-brand">HUURS STUDIO  •  THE VISUAL QURAN ATLAS</div>
-    <div class="footer-sub">Autonomous Sacred Media & Cartography  •  Student Edition 03 • Interactive Plate 04</div>
+    <div class="footer-brand">HUR STUDIO  •  THE VISUAL QURAN ATLAS</div>
+    <div class="footer-sub">Autonomous Sacred Media & Cartography  •  Student Edition 03</div>
     <div class="footer-links">
-      <a href="index.html">Atlas Gateway</a> •
-      <a href="portfolio.html">Institutional Portfolio</a> •
-      <a href="documentation.html">Master Documentation</a> •
-      <a href="1st_step_review03.pdf" download="1st_step_review03.pdf">Download PDF</a> •
+      <a href="index.html">Atlas Gateway</a>
+      <a href="products.html">Our Products</a>
+      <a href="documentation.html">Master Documentation</a>
+      <a href="1st_step_review03.pdf" download="1st_step_review03.pdf">Download PDF</a>
       <a href="https://hur-studio.github.io/quran-camp/" target="_blank">Quran Study Portal</a>
     </div>
     <p class="footer-waqf">
@@ -1712,14 +1779,18 @@
         card.onclick = () => openLightbox(p.page);
         const pageLabel = `P. ${p.page < 10 ? '0' + p.page : p.page}`;
 
+        const motif = p.cat === 'fatihah' ? 'سُورَةُ الْفَاتِحَةِ' :
+                      p.cat === 'baqarah' ? 'سُورَةُ الْبَقَرَةِ' :
+                      p.cat === 'kursi' ? 'آيَةُ الْكُرْسِيِّ' : 'بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ';
+
         card.innerHTML = `
           <div class="plate-html-thumb">
             <div class="plate-html-meta">
               <span class="plate-html-section">${p.section}</span>
               <span class="plate-html-chip">${pageLabel} • ${p.badge}</span>
             </div>
-            <div class="plate-html-headline">${p.title}</div>
-            <div class="plate-html-cta">📖 Read HTML Plate →</div>
+            <div class="plate-html-motif" lang="ar" dir="rtl">${motif}</div>
+            <div class="plate-html-cta">📖 Open Plate Reader →</div>
           </div>
           <div class="plate-info">
             <h4 class="plate-title">${p.title}</h4>
